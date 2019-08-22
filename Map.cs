@@ -31,9 +31,9 @@ namespace Game3
         {
             this.mapName = mapname;
         }
-        public void spawn_door(int dx, int dy, int dz, string s1 = "sounds/door1.wav", string s2 = "sounds/dooropen.wav", string s3 = "sounds/doorclose.wav")
+        public void spawn_door(int dx, int dy, int dz, string s2 = "sounds/dooropen.wav", string s3 = "sounds/doorclose.wav", bool isopen=false)
         {
-            door.Add(new Doors(this, dx, dy, dz, s1, s2, s3));
+            door.Add(new Doors(this, dx, dy, dz, s2, s3, isopen));
         }
 
         public void Drawmap()
@@ -45,7 +45,8 @@ namespace Game3
                 spawn_tile(13, 100, 0, 100, 0, 0, "tile");
                 spawn_tile(12, 12, 0, 11, 0, 0, "tile");
                 spawn_tile(0, 12, 13, 100, 0, 0, "tile");
-                spawn_door(5, 5, 0, "sounds/door1.wav", "sounds/doorope.wav", "sounds/doorclose.wav");
+                spawn_door(5, 5, 0, "sounds/dooropen.wav", "sounds/doorclose.wav", false);
+                spawn_door(10, 5, 0, "sounds/dooropen.wav", "sounds/doorclose.wav", true);
                 player = new Player(this, Vector3.Zero);
             }
         }
@@ -53,9 +54,19 @@ namespace Game3
     public void Update(KeyboardState keystate, GameTime gameTime)
         {
             player.Update(keystate, gameTime);
-            door[0].Update();
+            engine.SetListenerPosition(player.me.X, player.me.Y, player.me.Z, 0, 0, 1);
+            updateDoors(gameTime);
+            engine.Update();
         }
 
+
+        public void updateDoors(GameTime gameTime)
+        {
+            for(int i=0; i<door.Count(); i++)
+            {
+                door[i].Update(gameTime);
+            }
+        }
         public void spawn_tile(int minx, int maxx, int miny, int maxy, int minz, int maxz, string tile)
         {
 for(int x=minx; x<=maxx; x++)

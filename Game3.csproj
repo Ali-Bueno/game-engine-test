@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Doors.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="KeyboardExtender.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

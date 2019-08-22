@@ -29,7 +29,7 @@ namespace Game3
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            KeyboardExtender.oldKeystate = Keyboard.GetState();
             base.Initialize();
         }
 
@@ -69,6 +69,7 @@ namespace Game3
             // TODO: Add your update logic here
             keystate = Keyboard.GetState();
             map.Update(keystate, gameTime);
+            KeyboardExtender.oldKeystate = keystate;
 
             base.Update(gameTime);
         }

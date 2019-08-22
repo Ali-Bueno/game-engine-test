@@ -43,7 +43,8 @@ namespace Game3
         }
         Doors doors;
         KeyboardState keystate = Keyboard.GetState();
-public Player(Map map, Vector3 Me)
+        KeyboardState keystate1;
+        public Player(Map map, Vector3 Me)
         {
             this.map = map;
             this.me = Me;
@@ -54,12 +55,25 @@ public Player(Map map, Vector3 Me)
             CoolDown += gameTime.ElapsedGameTime.TotalMilliseconds;
         }
 
-        
-        
+public void tryToInteract()
+        {
+            for (int i= 0; i< map.door.Count; i++)
+            {
+                if(checkDistance(me, map.door[i].x, map.door[i].y, map.door[i].z)<=1)
+                {
+                    map.door[i].interact();
+                }
+            }
+        }
         
         public void UpdateMovement(KeyboardState keystate)
             {
-                if (CoolDown >= 225 && keystate.IsKeyDown(Keys.Up))
+            if(keystate.isKeyPress(Keys.Enter))
+            {
+                tryToInteract();
+                CoolDown = 0;
+            }
+            if (CoolDown >= 225 && keystate.IsKeyDown(Keys.Up))
             {
                 if (me.Y < 100)
                 {
@@ -100,6 +114,15 @@ public Player(Map map, Vector3 Me)
                 }
                 }
             }
+
+        public float checkDistance(Vector3 vec, float x, float y, float z)
+        {
+            float a = x - vec.X;
+            float b = y - vec.Y;
+            float c = z - vec.Z;
+            return (float)Math.Sqrt(a * a + b * b + c * c);
+        }
+
     }
     }
 
