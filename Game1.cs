@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using DavyKager;
 
 namespace Game3
 {
@@ -29,7 +30,8 @@ namespace Game3
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            KeyboardExtender.oldKeystate = Keyboard.GetState();
+            KeyboardExtender.oldKeystate = Keyboard.GetState();            Tolk.DetectScreenReader();
+            Tolk.Load();
             base.Initialize();
         }
 
@@ -70,8 +72,11 @@ namespace Game3
             keystate = Keyboard.GetState();
             map.Update(keystate, gameTime);
             KeyboardExtender.oldKeystate = keystate;
-
-            base.Update(gameTime);
+            if(keystate.IsKeyDown(Keys.C))
+            {
+                Tolk.Speak(map.Player.me.X+","+map.Player.me.Y+","+map.Player.me.Z, true);
+            }
+                base.Update(gameTime);
         }
 
         /// <summary>

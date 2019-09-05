@@ -19,21 +19,12 @@ namespace Game3
         }
         Player player;
         public Dictionary<string, string> tiles = new Dictionary<string, string>();
-        public Doors Doors
-{
-        get { return doors; }
-
-}
-        Doors doors;
+        public List<Stairs> staircases = new List<Stairs>();
         public List<Doors> door = new List<Doors>();
         int mapName;
         public Map(int mapname)
         {
             this.mapName = mapname;
-        }
-        public void spawn_door(int dx, int dy, int dz, string s2 = "sounds/dooropen.wav", string s3 = "sounds/doorclose.wav", bool isopen=false)
-        {
-            door.Add(new Doors(this, dx, dy, dz, s2, s3, isopen));
         }
 
         public void Drawmap()
@@ -42,12 +33,13 @@ namespace Game3
             {
             spawn_tile(0, 11, 0, 11, 0, 0, "rocks");
             spawn_tile(0, 12, 12, 12, 0, 5, "woodwall");
-                spawn_tile(13, 100, 0, 100, 0, 0, "tile");
+                spawn_tile(13, 89, 0, 89, 0, 0, "tile");
                 spawn_tile(12, 12, 0, 11, 0, 0, "tile");
-                spawn_tile(0, 12, 13, 100, 0, 0, "tile");
-                spawn_door(5, 5, 0, "sounds/dooropen.wav", "sounds/doorclose.wav", false);
-                spawn_door(10, 5, 0, "sounds/dooropen.wav", "sounds/doorclose.wav", true);
-                player = new Player(this, Vector3.Zero);
+                spawn_tile(0, 12, 13, 89, 0, 0, "tile");
+                spawn_staircases(90, 100, 90, 100, 0, 10, "rocks");
+                spawn_door(5, 5, 0, "sounds/door1.wav", "sounds/dooropen.wav", "sounds/doorclose.wav", false);
+                spawn_door(10, 5, 0, "sounds/door1.wav", "sounds/dooropen.wav", "sounds/doorclose.wav", true);
+                spawn_player(89, 89, 0);
             }
         }
 
@@ -56,7 +48,7 @@ namespace Game3
             player.Update(keystate, gameTime);
             engine.SetListenerPosition(player.me.X, player.me.Y, player.me.Z, 0, 0, 1);
             updateDoors(gameTime);
-            engine.Update();
+            updateStairs(gameTime);
         }
 
 
@@ -67,6 +59,34 @@ namespace Game3
                 door[i].Update(gameTime);
             }
         }
+
+        public void updateStairs(GameTime gameTime)
+        {
+            for(int i=0; i<staircases.Count(); i++)
+            {
+                staircases[i].Update(gameTime);
+            }
+        }
+
+        public void spawn_player(float x, float y, float z)
+        {
+            player = new Player(this);
+            player.me.X = x;
+            player.me.Y = y;
+            player.me.Z = z;
+        }
+
+        public void spawn_door(int dx, int dy, int dz, string s1 = "sounds/door1.wav", string s2 = "sounds/dooropen.wav", string s3 = "sounds/doorclose.wav", bool isopen = false)
+        {
+            door.Add(new Doors(this, dx, dy, dz, s1, s2, s3, isopen));
+        }
+
+        public void spawn_staircases(int minsx, int maxsx, int minsy, int maxsy, int minsz, int maxsz, string stile)
+        {
+            staircases.Add(new Stairs(this, minsx, maxsx, minsy, maxsy, minsz, maxsz, stile));
+            spawn_tile(minsx, maxsx, minsy, maxsy, minsz, maxsz, stile);
+        }
+
         public void spawn_tile(int minx, int maxx, int miny, int maxy, int minz, int maxz, string tile)
         {
 for(int x=minx; x<=maxx; x++)
@@ -120,9 +140,13 @@ for(int x=minx; x<=maxx; x++)
 
         public  void bounce()
         {
-            if (player.orientation==Player.playerOrientation.Up)
+            if (player.orientation==Player.playerOrientation.Front)
             {
                 player.me.Y += -1;
+            }
+            else if (player.orientation == Player.playerOrientation.Up)
+            {
+                player.me.Z += -1;
             }
             else if (player.orientation==Player.playerOrientation.Left)
             {
@@ -132,9 +156,13 @@ for(int x=minx; x<=maxx; x++)
             {
                 player.me.X += -1;
             }
-            else if (player.orientation==Player.playerOrientation.Down)
+            else if (player.orientation==Player.playerOrientation.Back)
             {
                 player.me.Y += 1;
+            }
+            else if (player.orientation == Player.playerOrientation.Down)
+            {
+                player.me.Z += 1;
             }
         }
 
