@@ -11,6 +11,16 @@ namespace Game3
 {
     public class Map
     {
+ public enum orientation
+        {
+            front,
+            back,
+            left,
+            right,
+up,
+down,
+        }
+        public orientation o;
         Random random = new Random();
         public ISoundEngine engine = new ISoundEngine();
         public Player Player
@@ -31,15 +41,13 @@ namespace Game3
         {
             if (mapName == 1)
             {
-            spawn_tile(0, 11, 0, 11, 0, 0, "rocks");
-            spawn_tile(0, 12, 12, 12, 0, 5, "woodwall");
-                spawn_tile(13, 89, 0, 89, 0, 0, "tile");
-                spawn_tile(12, 12, 0, 11, 0, 0, "tile");
-                spawn_tile(0, 12, 13, 89, 0, 0, "tile");
-                spawn_staircases(90, 100, 90, 100, 0, 10, "rocks");
+                spawn_tile(30, 35, 88, 93, 0, 0, "rocks");
+                spawn_tile(30, 35, 97, 100, 2, 2, "tile");
+                spawn_staircases(30, 35, 94, 96, 0, 1, orientation.front, "rocks");
+                spawn_staircases(90, 100, 90, 100, 0, 1, orientation.front, "rocks");
                 spawn_door(5, 5, 0, "sounds/door1.wav", "sounds/dooropen.wav", "sounds/doorclose.wav", false);
                 spawn_door(10, 5, 0, "sounds/door1.wav", "sounds/dooropen.wav", "sounds/doorclose.wav", true);
-                spawn_player(89, 89, 0);
+                spawn_player(35, 89, 0);
             }
         }
 
@@ -81,10 +89,10 @@ namespace Game3
             door.Add(new Doors(this, dx, dy, dz, s1, s2, s3, isopen));
         }
 
-        public void spawn_staircases(int minsx, int maxsx, int minsy, int maxsy, int minsz, int maxsz, string stile)
+        public void spawn_staircases(int minsx, int maxsx, int minsy, int maxsy, int sz, int sheigth, orientation o, string stile)
         {
-            staircases.Add(new Stairs(this, minsx, maxsx, minsy, maxsy, minsz, maxsz, stile));
-            spawn_tile(minsx, maxsx, minsy, maxsy, minsz, maxsz, stile);
+            staircases.Add(new Stairs(this, minsx, maxsx, minsy, maxsy, sz, sheigth, o, stile));
+            spawn_tileWithSlope(minsx, maxsx, minsy, maxsy, sz, sheigth, o, stile);
         }
 
         public void spawn_tile(int minx, int maxx, int miny, int maxy, int minz, int maxz, string tile)
@@ -97,6 +105,55 @@ for(int x=minx; x<=maxx; x++)
                     {
                         tiles.Add(x+":"+y+":"+z, tile);
                     }
+                }
+            }
+        }
+
+public void spawn_tileWithSlope(int minx, int maxx, int miny, int maxy, int minz, int stepHeight, orientation o, string tile)
+        {
+            int maxz = 0;
+            int basez = minz;
+if(o==orientation.left||o==orientation.right)
+            {
+                maxz = maxx - minx;
+            }
+            else
+            {
+                maxz = maxy - miny;
+            }
+            maxz = Math.Abs(maxz * stepHeight);
+            int factor = stepHeight;
+if(o==orientation.left||o==orientation.back)
+            {
+                factor = -1 * factor;
+                basez = maxz;
+            }
+if(o==orientation.left || o==orientation.right)
+            {
+                for(int x=minx; x<=maxx; x++)
+                {
+                    for(int y=miny; y<=maxy; y++)
+                    {
+                        for(int z=basez; z<=maxz; z++)
+                        {
+                            tiles.Add(x + ":" + y + ":" + z, tile);
+                        }
+                    }
+                    basez += factor;
+                }
+            }
+            else
+            {
+for(int y=miny; y<=maxy; y++)
+                {
+                    for(int x=minx; x<=maxx; x++)
+                    {
+                        for(int z=basez; z<=maxz; z++)
+                        {
+                            tiles.Add(x + ":" + y + ":" + z, tile);
+                        }
+                    }
+                    basez += factor;
                 }
             }
         }
