@@ -21,10 +21,17 @@ namespace Game3
             Up,
             Down,
         }
-
         public playerOrientation orientation;
-        public bool ismoving;
+        public enum state
+        {
+            IsWalking,
+            IsOnStairs,
+        }
+        public state playerState;
+        private Rotation rotation = new Rotation();
+        public bool isMoving;
         int maxx = 100;
+        public int facing;
         int runtime;
         int run = 12;
         int speedtime;
@@ -46,20 +53,23 @@ namespace Game3
         }
         public void Update(KeyboardState keystate, GameTime gameTime)
         {
-            for (int i = 0; i < map.staircases.Count(); i++)
-            {
-                if (map.staircases[i].onstaircase == true)
-                {
-                    IsOnStairs(keystate);
-                }
-                else
-                {
-                    IsWalking(keystate);
-                }
-            }
-                IsInteracting(keystate);
+            moveUpdate(keystate);
+            IsInteracting(keystate);
             CoolDown += gameTime.ElapsedGameTime.TotalMilliseconds;
         }
+
+        public void moveUpdate(KeyboardState keystate)
+        {
+            checktiles();
+            if (playerState==state.IsWalking)
+            {
+                MoveOnGround(keystate);
+            }
+else
+            {
+                moveOnStairs(keystate);
+            }
+}
 
         public void tryToInteract()
         {
@@ -80,117 +90,145 @@ namespace Game3
             }
         }
 
-        public void IsWalking(KeyboardState keystate)
+        public void checktiles()
         {
-            if (keystate.IsKeyDown(Keys.W)&&me.Y<100)
+            playerState = state.IsWalking;
+            for (int i=0; i<map.staircases.Count(); i++)
             {
-                    if (CoolDown >= 225)
-                    {
-                    ismoving = true;
-                    move(4);
-                    CoolDown = 0;
-                    }
-                    }
-            else if (keystate.IsKeyDown(Keys.S)&&me.Y>0)
-            {
-                            if (CoolDown >= 225)
-                            {
-                    ismoving = true;
-                    move(3);
-                    CoolDown = 0;
-                        }
-                    }
-            else if (keystate.IsKeyDown(Keys.A)&&me.X>0)
-            {
-                            if (CoolDown >= 225)
-                            {
-                    ismoving = true;
-                    move(1);
-                    CoolDown = 0;
+                if (map.staircases[i].onstaircase == true)
+                {
+                    playerState = state.IsOnStairs;
+                    break;
                 }
-            }
-            else if (keystate.IsKeyDown(Keys.D)&&me.X<maxx)
-            {
-                            if (CoolDown >= 225)
-                            {
-                    ismoving = true;
-                    move(2);
-                    CoolDown = 0;
-                }
-            }
-            }
-
-    public void move(float dir)
-{
-    if (dir == 1)
-    {
-                orientation = playerOrientation.Left;
-        me.X += -1;
-                map.playstep();
-            }
-else if(dir==2)
-    {
-        orientation = playerOrientation.Right;
-        me.X += 1;
-                map.playstep();
-            }
-    else if(dir==3)
-            {
-                orientation = playerOrientation.Back;
-                me.Y += -1;
-                map.playstep();
-            }
-else if(dir==4)
-            {
-                orientation = playerOrientation.Front;
-                me.Y += 1;
-                map.playstep();
             }
         }
 
-        public void IsOnStairs(KeyboardState keystate)
+        public void MoveOnGround(KeyboardState keystate)
         {
-            for(int i=0; i<map.staircases.Count(); i++)
+            if (keystate.IsKeyDown  (Keys.W) && me.Y < 100)
+                {
+                                if (CoolDown >= 35)
+                            {
+                                isMoving = true;
+                    me=rotation.move(me.X, me.Y, me.Z, 0, facing);
+                    map.playstep();
+                    CoolDown = 0;
+                            }
+                        }
+                if (keystate.IsKeyDown(Keys.S) && me.Y > 0)
+                {
+                    if (CoolDown >= 35)
+                    {
+                        isMoving = true;
+                    me = rotation.move(me.X, me.Y, me.Z, 180, facing);
+                    map.playstep();
+                    CoolDown = 0;
+                    }
+                }
+                if (keystate.IsKeyDown(Keys.A) && me.X > 0)
+                {
+                    if (CoolDown >= 35)
+                    {
+                        isMoving = true;
+                    me = rotation.move(me.X, me.Y, me.Z, 270, facing);
+                    map.playstep();
+                    CoolDown = 0;
+                    }
+                }
+                if (keystate.IsKeyDown(Keys.D) && me.X < maxx)
+                {
+                    if (CoolDown >= 35)
+                    {
+                        isMoving = true;
+                    me = rotation.move(me.X, me.Y, me.Z, 90, facing);
+                    map.playstep();
+                    CoolDown = 0;
+                    }
+                }
+            }
+
+        public void moveOnStairs(KeyboardState keystate)
+        {
+            for (int i = 0; i < map.staircases.Count(); i++)
             {
                 if (map.staircases[i].o == Map.orientation.front)
-                { 
-                    if (keystate.IsKeyDown(Keys.W)&&me.Y<=map.staircases[i].maxy)
                 {
-                        if (CoolDown >= 500)
-                        {
+                    if (keystate.IsKeyDown(Keys.W) &&map.staircases[i].onstaircase==true&&CoolDown>=500&& me.Y <= map.staircases[i].maxy)
+                    {
                             if (me.Y == map.staircases[i].maxy)
-                            {
-                                move(4);
-                                CoolDown = 0;
-                            }
+                                {
+                            move(4);
+                            CoolDown = 0;
+                        }
                             else
                             {
                                 me.Z += map.staircases[i].heigth;
                                 move(4);
                                 CoolDown = 0;
                             }
-                            }
                         }
-else if(keystate.IsKeyDown(Keys.S)&&me.Y>=map.staircases[i].miny)
+                     else if (keystate.IsKeyDown(Keys.S) &&map.staircases[i].onstaircase==true&&CoolDown>=500&& me.Y >= map.staircases[i].miny)
                     {
-                        if(CoolDown>=500)
+                        if (me.Y == map.staircases[i].miny)
                         {
-                            if (me.Z == map.staircases[i].z)
-                            {
-                                move(3);
-                                CoolDown = 0;
-                            }
-                            else
-                            {
-                                me.Z += -map.staircases[i].heigth;
-                                move(3);
-                                CoolDown = 0;
-                            }
+                            move(3);
+                            CoolDown = 0;
+                            map.staircases[i].onstaircase = false;
                         }
+                        else
+                        {
+                            me.Z += -map.staircases[i].heigth;
+                            move(3);
+                            CoolDown = 0;
+                        }
+                        }
+else if(keystate.IsKeyDown(Keys.A)&&CoolDown>=500)
+{
+                            move(1);
+                            CoolDown = 0;
+                    }
+else if(keystate.IsKeyDown(Keys.D)&&CoolDown>=500)
+                    {
+                        move(2);
+                        CoolDown = 0;
                     }
                 }
             }
         }
+
+        public bool move(float dir)
+{
+            if (dir == 1)
+    {
+                orientation = playerOrientation.Left;
+        me.X += -1;
+                map.playstep();
+                return (true);
+            }
+            else if(dir==2)
+    {
+                orientation = playerOrientation.Right;
+        me.X += 1;
+                map.playstep();
+                return (true);
+            }
+            else if(dir==3)
+            {
+                orientation = playerOrientation.Back;
+                me.Y += -1;
+                map.playstep();
+                return (true);
+            }
+            else if(dir==4)
+            {
+                orientation = playerOrientation.Front;
+                me.Y += 1;
+                map.playstep();
+                return (true);
+            }
+            return (false);
+        }
+
 
         public float checkDistance(Vector3 vec, float x, float y, float z)
         {

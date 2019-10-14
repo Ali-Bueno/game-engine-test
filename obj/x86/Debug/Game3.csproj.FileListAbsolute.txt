@@ -10,7 +10,6 @@ C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.dll
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.DXGI.dll
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XInput.dll
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\MonoGame.Framework.xml
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
@@ -18,7 +17,6 @@ C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.xml
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.DXGI.xml
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.csproj.CopyComplete
 C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.exe

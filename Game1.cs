@@ -14,7 +14,6 @@ namespace Game3
         SpriteBatch spriteBatch;
         KeyboardState keystate;
         public Map map;
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
