@@ -211,7 +211,7 @@ rooms.TryGetValue(player.me.X+":"+player.me.Y+":"+player.me.Z, out outval);
 
         public string gmt()
         {
-            if (tiles.ContainsKey(player.me.X + ":" + player.me.Y + ":" + player.me.Z))
+            if (tiles.ContainsKey((int)player.me.X + ":" + (int)player.me.Y + ":" + (int)player.me.Z))
                 {
                 string outval;
                 tiles.TryGetValue((int)player.me.X + ":" + (int)player.me.Y + ":" + (int)player.me.Z, out outval);
@@ -232,8 +232,8 @@ rooms.TryGetValue(player.me.X+":"+player.me.Y+":"+player.me.Z, out outval);
 
         public  void playstep()
         {
-            string stx = player.me.X.ToString();
-            string sty = player.me.Y.ToString();
+            string stx = player.me.X.ToString("R");
+            string sty = player.me.Y.ToString("R");
             if (gmt().IndexOf("wall", 0) > -1)
             {
                 engine.Play2D("sounds/" + gmt() + ".wav");
@@ -241,7 +241,7 @@ rooms.TryGetValue(player.me.X+":"+player.me.Y+":"+player.me.Z, out outval);
             }
             if (stx.Contains(",1") && stx!=oldEaredX)
             {
-                engine.Play2D("sounds/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "step" + random.Next(1, 5) + ".wav");
+                engine.Play2D("sounds/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/"+ get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z)+"step" + random.Next(1, 5) + ".wav");
                 oldEaredX = stx;
             }
             else if(stx.Contains(",5")&&stx!=oldEaredX)
@@ -251,12 +251,12 @@ rooms.TryGetValue(player.me.X+":"+player.me.Y+":"+player.me.Z, out outval);
             }
                     else if (sty.Contains(",1")&&sty!=oldEaredY)
             {
-                engine.Play2D("sounds/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "step" + random.Next(1, 5) + ".wav");
+                engine.Play2D("sounds/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/"+ get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "step" + random.Next(1, 5) + ".wav");
                 oldEaredY = sty;
             }
                     else if(sty.Contains(",5")&&sty!=oldEaredY)
 {
-                engine.Play2D("sounds/Movement/stepback" + random.Next(1, 7) + ".wav");
+                engine.Play2D("sounds/Movement/move" + random.Next(1, 12) + ".mp3");
                 oldEaredY = sty;
             }
         }
