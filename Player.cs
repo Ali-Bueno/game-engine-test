@@ -30,6 +30,10 @@ namespace Game3
         public state playerState;
         private Rotation rotation = new Rotation();
         public bool isMoving;
+        public bool canMove=true;
+        public bool canInteract = true;
+        public int angle;
+        public bool interaction;
         int maxx = 100;
         public int facing;
         int runtime;
@@ -46,7 +50,6 @@ namespace Game3
             get { return map; }
         }
         Map map;
-        KeyboardState keystate = Keyboard.GetState();
         public Player(Map map)
         {
             this.map = map;
@@ -67,7 +70,7 @@ namespace Game3
             }
 else
             {
-                moveOnStairs(keystate);
+                moveOnStairs();
             }
 }
 
@@ -75,18 +78,29 @@ else
         {
             for (int i = 0; i < map.door.Count; i++)
             {
-                if (checkDistance(me, map.door[i].x, map.door[i].y, map.door[i].z) <= 1)
+                if (checkDistance(me, map.door[i].x, map.door[i].y, map.door[i].z) <= 1.8f)
                 {
                     map.door[i].interact();
+                }
+            }
+for(int j=0; j<map.obj.Count(); j++)
+            {
+                if(checkDistance(me, map.obj[j].x, map.obj[j].y, map.obj[j].z) <= 1.8f)
+{
+                    map.obj[j].interact();
                 }
             }
         }
 
         public void IsInteracting(KeyboardState keystate)
         {
-            if (keystate.isKeyPress(Keys.E))
+            if (Input.WasKeyPressed(Keys.E))
             {
                 tryToInteract();
+            }
+if(canInteract==false)
+            {
+                return;
             }
         }
 
@@ -105,55 +119,55 @@ else
 
         public void MoveOnGround(KeyboardState keystate)
         {
-            if (keystate.IsKeyDown  (Keys.W) && me.Y < 100)
+            if (keystate.IsKeyDown(Keys.W) && me.Y < 100)
+            {
+                if (CoolDown >= 35)
                 {
-                                if (CoolDown >= 35)
-                            {
-                                isMoving = true;
-                    me=rotation.move(me.X, me.Y, me.Z, 0, facing);
+                    isMoving = true;
+                     me=rotation.move(me.X, me.Y, me.Z, angle=0, facing);
                     map.playstep();
                     CoolDown = 0;
-                            }
-                        }
-                if (keystate.IsKeyDown(Keys.S) && me.Y > 0)
-                {
-                    if (CoolDown >= 35)
-                    {
-                        isMoving = true;
-                    me = rotation.move(me.X, me.Y, me.Z, 180, facing);
-                    map.playstep();
-                    CoolDown = 0;
-                    }
-                }
-                if (keystate.IsKeyDown(Keys.A) && me.X > 0)
-                {
-                    if (CoolDown >= 35)
-                    {
-                        isMoving = true;
-                    me = rotation.move(me.X, me.Y, me.Z, 270, facing);
-                    map.playstep();
-                    CoolDown = 0;
-                    }
-                }
-                if (keystate.IsKeyDown(Keys.D) && me.X < maxx)
-                {
-                    if (CoolDown >= 35)
-                    {
-                        isMoving = true;
-                    me = rotation.move(me.X, me.Y, me.Z, 90, facing);
-                    map.playstep();
-                    CoolDown = 0;
-                    }
                 }
             }
+            if (keystate.IsKeyDown(Keys.S) && me.Y > 0)
+            {
+                if (CoolDown >= 35)
+                {
+                    isMoving = true;
+                    me = rotation.move(me.X, me.Y, me.Z, angle=180, facing);
+                    map.playstep();
+                    CoolDown = 0;
+                }
+            }
+            if (keystate.IsKeyDown(Keys.A) && me.X > 0)
+            {
+                if (CoolDown >= 35)
+                {
+                    isMoving = true;
+                    me = rotation.move(me.X, me.Y, me.Z, angle=270, facing);
+                    map.playstep();
+                    CoolDown = 0;
+                }
+            }
+            if (keystate.IsKeyDown(Keys.D) && me.X < maxx)
+            {
+                if (CoolDown >= 35)
+                {
+                    isMoving = true;
+                    me = rotation.move(me.X, me.Y, me.Z, angle=90, facing);
+                    map.playstep();
+                    CoolDown = 0;
+                }
+            }
+        }
 
-        public void moveOnStairs(KeyboardState keystate)
+        public void moveOnStairs()
         {
             for (int i = 0; i < map.staircases.Count(); i++)
             {
                 if (map.staircases[i].o == Map.orientation.front)
                 {
-                    if (keystate.IsKeyDown(Keys.W) &&map.staircases[i].onstaircase==true&&CoolDown>=500&& me.Y <= map.staircases[i].maxy)
+                    if (Input.keystate.IsKeyDown(Keys.W) &&map.staircases[i].onstaircase==true&&CoolDown>=500&& me.Y <= map.staircases[i].maxy)
                     {
                             if (me.Y == map.staircases[i].maxy)
                                 {
@@ -167,7 +181,7 @@ else
                                 CoolDown = 0;
                             }
                         }
-                     else if (keystate.IsKeyDown(Keys.S) &&map.staircases[i].onstaircase==true&&CoolDown>=500&& me.Y >= map.staircases[i].miny)
+                     else if (Input.keystate.IsKeyDown(Keys.S) &&map.staircases[i].onstaircase==true&&CoolDown>=500&& me.Y >= map.staircases[i].miny)
                     {
                         if (me.Y == map.staircases[i].miny)
                         {
@@ -182,12 +196,12 @@ else
                             CoolDown = 0;
                         }
                         }
-else if(keystate.IsKeyDown(Keys.A)&&CoolDown>=500)
+else if(Input.keystate.IsKeyDown(Keys.A)&&CoolDown>=500)
 {
                             move(1);
                             CoolDown = 0;
                     }
-else if(keystate.IsKeyDown(Keys.D)&&CoolDown>=500)
+else if(Input.keystate.IsKeyDown(Keys.D)&&CoolDown>=500)
                     {
                         move(2);
                         CoolDown = 0;

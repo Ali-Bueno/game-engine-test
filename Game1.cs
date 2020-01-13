@@ -12,7 +12,6 @@ namespace Game3
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        KeyboardState keystate;
         public Map map;
         public Game1()
         {
@@ -29,7 +28,6 @@ namespace Game3
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            KeyboardExtender.oldKeystate = Keyboard.GetState();            Tolk.DetectScreenReader();
             Tolk.Load();
             base.Initialize();
         }
@@ -66,23 +64,21 @@ namespace Game3
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
             // TODO: Add your update logic here
-            keystate = Keyboard.GetState();
-            map.Update(keystate, gameTime);
-            KeyboardExtender.oldKeystate = keystate;
-            if(keystate.IsKeyDown(Keys.C))
+            Input.Update();
+           map.Update(Input.keystate, gameTime);
+            if(Input.WasKeyPressed(Keys.C))
             {
                 Tolk.Speak(map.Player.me.X+","+map.Player.me.Y+","+map.Player.me.Z, true);
             }
                 base.Update(gameTime);
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Draw(GameTime gameTime)
+   /// <summary>
+    /// This is called when the game should draw itself.
+    /// </summary>
+    /// <param name="gameTime">Provides a snapshot of timing values.</param>
+    protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 

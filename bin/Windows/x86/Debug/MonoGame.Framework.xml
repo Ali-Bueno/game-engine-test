@@ -2165,6 +2165,12 @@
             Represents the value of pi times two(6.28318548).
             </summary>
         </member>
+        <member name="F:Microsoft.Xna.Framework.MathHelper.Tau">
+            <summary>
+            Represents the value of pi times two(6.28318548).
+            This is an alias of TwoPi.
+            </summary>
+        </member>
         <member name="M:Microsoft.Xna.Framework.MathHelper.Barycentric(System.Single,System.Single,System.Single,System.Single,System.Single)">
             <summary>
             Returns the Cartesian coordinate for one axis of a point that is defined by a given triangle and two normalized barycentric (areal) coordinates.
@@ -3423,6 +3429,17 @@
             <param name="rightMotor">The speed of the right motor, between 0.0 and 1.0. This motor is a high-frequency motor.</param>
             <returns>Returns true if the vibration motors were set.</returns>
         </member>
+        <member name="M:Microsoft.Xna.Framework.Input.GamePad.SetVibration(Microsoft.Xna.Framework.PlayerIndex,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Sets the vibration motor speeds on the controller device if supported.
+            </summary>
+            <param name="playerIndex">Player index that identifies the controller to set.</param>
+            <param name="leftMotor">The speed of the left motor, between 0.0 and 1.0. This motor is a low-frequency motor.</param>
+            <param name="rightMotor">The speed of the right motor, between 0.0 and 1.0. This motor is a high-frequency motor.</param>
+            <param name="leftTrigger">(Xbox One controller only) The speed of the left trigger motor, between 0.0 and 1.0. This motor is a high-frequency motor.</param>
+            <param name="rightTrigger">(Xbox One controller only) The speed of the right trigger motor, between 0.0 and 1.0. This motor is a high-frequency motor.</param>
+            <returns>Returns true if the vibration motors were set.</returns>
+        </member>
         <member name="M:Microsoft.Xna.Framework.Input.GamePad.SetVibration(System.Int32,System.Single,System.Single)">
             <summary>
             Sets the vibration motor speeds on the controller device if supported.
@@ -3430,6 +3447,17 @@
             <param name="index">Index for the controller you want to query.</param>
             <param name="leftMotor">The speed of the left motor, between 0.0 and 1.0. This motor is a low-frequency motor.</param>
             <param name="rightMotor">The speed of the right motor, between 0.0 and 1.0. This motor is a high-frequency motor.</param>
+            <returns>Returns true if the vibration motors were set.</returns>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Input.GamePad.SetVibration(System.Int32,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Sets the vibration motor speeds on the controller device if supported.
+            </summary>
+            <param name="index">Index for the controller you want to query.</param>
+            <param name="leftMotor">The speed of the left motor, between 0.0 and 1.0. This motor is a low-frequency motor.</param>
+            <param name="rightMotor">The speed of the right motor, between 0.0 and 1.0. This motor is a high-frequency motor.</param>
+            <param name="leftTrigger">(Xbox One controller only) The speed of the left trigger motor, between 0.0 and 1.0. This motor is a high-frequency motor.</param>
+            <param name="rightTrigger">(Xbox One controller only) The speed of the right trigger motor, between 0.0 and 1.0. This motor is a high-frequency motor.</param>
             <returns>Returns true if the vibration motors were set.</returns>
         </member>
         <member name="P:Microsoft.Xna.Framework.Input.GamePad.MaximumGamePadCount">
@@ -7116,6 +7144,12 @@
             <summary>
             Virtual property to allow a derived ContentManager to have it's assets reloaded
             </summary>
+        </member>
+        <member name="M:Microsoft.Xna.Framework.Content.ContentReaderExtensions.GetGraphicsDevice(Microsoft.Xna.Framework.Content.ContentReader)">
+            <summary>
+            Gets the GraphicsDevice from the ContentManager.ServiceProvider.
+            </summary>
+            <returns>The <see cref="T:Microsoft.Xna.Framework.Graphics.GraphicsDevice"/>.</returns>
         </member>
         <member name="T:Microsoft.Xna.Framework.Content.ExternalReferenceReader">
             <summary>
@@ -11565,6 +11599,11 @@
             Gets the support for ETC1
             </summary>
         </member>
+        <member name="P:Microsoft.Xna.Framework.Graphics.GraphicsCapabilities.SupportsEtc2">
+            <summary>
+            Gets the support for ETC2
+            </summary>
+        </member>
         <member name="P:Microsoft.Xna.Framework.Graphics.GraphicsCapabilities.SupportsAtitc">
             <summary>
             Gets the support for ATITC
@@ -14169,6 +14208,36 @@
         <member name="F:Microsoft.Xna.Framework.Graphics.SurfaceFormat.RgbaAtcInterpolatedAlpha">
             <summary>
             ATC/ATITC compression (Android)
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.Graphics.SurfaceFormat.Rgb8Etc2">
+            <summary>
+            Etc2 RGB8 (Android/iOS withh OpenglES 3.0)
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.Graphics.SurfaceFormat.Srgb8Etc2">
+            <summary>
+            Etc2 SRGB8 (Android/iOS withh OpenglES 3.0)
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.Graphics.SurfaceFormat.Rgb8A1Etc2">
+            <summary>
+            Etc2 RGB8A1 (Android/iOS withh OpenglES 3.0)
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.Graphics.SurfaceFormat.Srgb8A1Etc2">
+            <summary>
+            Etc2 SRGB8A1 (Android/iOS withh OpenglES 3.0)
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.Graphics.SurfaceFormat.Rgba8Etc2">
+            <summary>
+            Etc2 RGBA8 EAC (Android/iOS withh OpenglES 3.0)
+            </summary>
+        </member>
+        <member name="F:Microsoft.Xna.Framework.Graphics.SurfaceFormat.SRgb8A8Etc2">
+            <summary>
+            Etc2 SRGB8A8 EAC (Android/iOS withh OpenglES 3.0)
             </summary>
         </member>
         <member name="T:Microsoft.Xna.Framework.Graphics.SwapChainRenderTarget">

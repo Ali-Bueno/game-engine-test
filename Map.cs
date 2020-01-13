@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using IrrKlang;
@@ -22,17 +23,20 @@ down,
         }
         public orientation o;
         Random random = new Random();
-        public ISoundEngine engine = new ISoundEngine(SoundOutputDriver.DirectSound, SoundEngineOptionFlag.DefaultOptions);
+        private Rotation rotation = new Rotation();
+        public ISoundEngine engine = new ISoundEngine();
         public Player Player
         {
             get { return player; }
         }
         Player player;
-        public List<Rooms> room = new List<Rooms>();
+        public DialogBox dialog;
         public Dictionary<string, string> tiles = new Dictionary<string, string>();
-        public Dictionary<string, string> rooms = new Dictionary<string, string>();
+        public Dictionary<string, string> walls = new Dictionary<string, string>();
+        public List<Object> obj = new List<Object>();
         public List<Stairs> staircases = new List<Stairs>();
         public List<Doors> door = new List<Doors>();
+        public List<Rooms> room = new List<Rooms>();
         int mapName;
         string oldEaredX;
         string oldEaredY;
@@ -40,27 +44,20 @@ down,
         public Map(int mapname)
         {
             this.mapName = mapname;
+            dialog = new DialogBox(this);
         }
 
         public void Drawmap()
         {
             if (mapName == 1)
             {
-                spawn_tile(0, 40, 0, 10, 0, 0, "rocks");
-                spawn_tile(0, 10, 11, 11, 0, 5, "woodwall");
-                spawn_tile(0, 40, 12, 20, 0, 0, "rocks");
-                spawn_tile(30, 35, 70, 79, 0, 0, "rocks");
-                spawn_room1(5, 7, 0, "sounds/rainroom.wav");
-                spawn_tile(30, 35, 91, 100, 10, 10, "tile");
-                spawn_staircases(90, 98, 80, 81, 0, 1, orientation.front, "wood");
-                spawn_tile(89, 89, 80, 90, 0, 10, "woodwall");
-                spawn_staircases(30, 35, 80, 90, 0, 1, orientation.front, "wood");
-                spawn_staircases(36, 40, 80, 90, 0, 1, orientation.front, "tile");
-                spawn_tile(90, 100, 82, 100, 1, 1, "tile");
-                spawn_tile(80, 100, 70, 79, 0, 0, "rocks");
-                spawn_door(5, 5, 5, "sounds/door1.wav", "sounds/dooropen.wav", "sounds/doorclose.wav", false);
-                spawn_door(10, 5, 0, "sounds/door1.wav", "sounds/dooropen.wav", "sounds/doorclose.wav", true);
-                spawn_player(0, 0, 0);
+                spawn_tile(0, 100, 0, 100, 0, 0, "womanstep");
+                spawn_walls(0, 10, 11, 11, 0, 5         , "woodwall");
+                spawn_room(0, 100, 0, 100, 0, 20, "rain house");
+                spawn_walls(13, 13, 0, 11, 0, 5, "woodwall");
+                spawn_door(12, 11, 0, "door1", true);
+                spawn_object(0, 20, 0, "window", true);
+                spawn_player(0, 19, 0);
             }
         }
 
@@ -68,14 +65,24 @@ down,
         {
             player.Update(keystate, gameTime);
             engine.SetListenerPosition(player.me.X, player.me.Y, player.me.Z, 0, 0, 1);
+            engine.SetRolloffFactor(1.0f);
             updateDoors(gameTime);
             updateStairs(gameTime);
             UpdateRooms(gameTime);
+            UpdateObjects(gameTime);
+        }
+
+        public void UpdateObjects(GameTime gameTime)
+        {
+            for(int i=0; i<obj.Count(); i++)
+            {
+                obj[i].Update(gameTime);
+            }
         }
 
         public void UpdateRooms(GameTime gameTime)
         {
-            for(int i=0; i<room.Count(); i++)
+for(int i=0; i<room.Count(); i++)
             {
                 room[i].Update(gameTime);
             }
@@ -105,14 +112,20 @@ down,
             player.me.Z = z;
         }
 
-        public void spawn_room1(int x, int y, int z, string sound)
+        public void spawn_object(int x, int y, int z, string name, bool interactable)
         {
-            room.Add(new Rooms(this, x, y, z, sound));
+            obj.Add(new Object(this, x, y, z, name, interactable));
+            spawn_walls(x, x, y, y, z, z, "doorwall");
         }
 
-        public void spawn_door(int dx, int dy, int dz, string s1 = "sounds/door1.wav", string s2 = "sounds/dooropen.wav", string s3 = "sounds/doorclose.wav", bool isopen = false)
+        public void spawn_room(int minx, int maxx, int miny, int maxy, int minz, int maxz, string name)
         {
-            door.Add(new Doors(this, dx, dy, dz, s1, s2, s3, isopen));
+            room.Add(new Rooms(this, minx, maxx, miny, maxy, minz, maxz, name));
+        }
+
+        public void spawn_door(int dx, int dy, int dz, string name, bool isopen = false)
+        {
+            door.Add(new Doors(this, dx, dy, dz, name, isopen));
         }
 
         public void spawn_staircases(int minsx, int maxsx, int minsy, int maxsy, int sz, int sheigth, orientation o, string stile)
@@ -130,6 +143,34 @@ for(int x=minx; x<=maxx; x++)
                     for(int z=minz; z<=maxz; z++)
                     {
                         tiles.Add(x+":"+y+":"+z, tile);
+                    }
+                }
+            }
+        }
+
+        public void spawn_walls(int minx, int maxx, int miny, int maxy, int minz, int maxz, string tile)
+        {
+            for(int x=minx; x<=maxx; x++)
+            {
+                for(int y=miny; y<=maxy; y++)
+                {
+                    for(int z=minz; z<=maxz; z++)
+                    {
+                        walls.Add(x + ":" + y + ":" + z, tile);
+                    }
+                }
+            }
+        }
+
+        public void remove_walls(int minx, int maxx, int miny, int maxy, int minz, int maxz)
+        {
+            for(int x=minx; x<=maxx; x++)
+            {
+                for(int y=miny; y<=maxy; y++)
+                {
+                    for(int z=minz; z<=maxz; z++)
+                    {
+                        walls.Remove(x + ":" + y + ":" + z);
                     }
                 }
             }
@@ -184,37 +225,13 @@ for(int y=miny; y<=maxy; y++)
             }
         }
 
-        public void spawn_room(int minx, int maxx, int miny, int maxy, int minz, int maxz, string sound)
-        {
-            for(int x=minx; x<=maxx; x++)
-            {
-                for(int y=miny; y<=maxy; y++)
-                {
-                    for(int z=minz; z<=maxz; z++)
-                    {
-                        rooms.Add(x + ":" + y + ":" + z, sound);
-                    }
-                }
-            }
-        }
 
-        public string gmr()
+        public string gmw()
         {
-            if(rooms.ContainsKey(player.me.X+":"+player.me.Y+":"+player.me.Z))
-{
-                string outval;
-rooms.TryGetValue(player.me.X+":"+player.me.Y+":"+player.me.Z, out outval);
-                return outval;
-            }
-            return "";
-        }
-
-        public string gmt()
-        {
-            if (tiles.ContainsKey((int)player.me.X + ":" + (int)player.me.Y + ":" + (int)player.me.Z))
+            if (walls.ContainsKey((int)player.me.X + ":" + (int)player.me.Y + ":" + (int)player.me.Z))
                 {
                 string outval;
-                tiles.TryGetValue((int)player.me.X + ":" + (int)player.me.Y + ":" + (int)player.me.Z, out outval);
+                walls.TryGetValue((int)player.me.X + ":" + (int)player.me.Y + ":" + (int)player.me.Z, out outval);
                 return outval;
             }
                     return "";
@@ -228,20 +245,18 @@ rooms.TryGetValue(player.me.X+":"+player.me.Y+":"+player.me.Z, out outval);
             return o;
         }
 
-
-
         public  void playstep()
         {
             string stx = player.me.X.ToString("R");
             string sty = player.me.Y.ToString("R");
-            if (gmt().IndexOf("wall", 0) > -1)
+            if (gmw().IndexOf("wall", 0) > -1)
             {
-                engine.Play2D("sounds/" + gmt() + ".wav");
+                engine.Play2D("sounds/walls/" + gmw() + ".wav");
                 bounce();
             }
             if (stx.Contains(",1") && stx!=oldEaredX)
             {
-                engine.Play2D("sounds/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/"+ get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z)+"step" + random.Next(1, 5) + ".wav");
+                engine.Play2D("sounds/steps/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/" + random.Next(1, Directory.GetFiles("sounds/steps/"+get_tile_at((int)player.me.X,  (int)player.me.Y, (int)player.me.Z)).Length+1) + ".ogg");
                 oldEaredX = stx;
             }
             else if(stx.Contains(",5")&&stx!=oldEaredX)
@@ -251,12 +266,12 @@ rooms.TryGetValue(player.me.X+":"+player.me.Y+":"+player.me.Z, out outval);
             }
                     else if (sty.Contains(",1")&&sty!=oldEaredY)
             {
-                engine.Play2D("sounds/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/"+ get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "step" + random.Next(1, 5) + ".wav");
+                engine.Play2D("sounds/steps/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/" + random.Next(1, Directory.GetFiles("sounds/steps/"+get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z)+"/").Length+1) + ".ogg");
                 oldEaredY = sty;
             }
                     else if(sty.Contains(",5")&&sty!=oldEaredY)
 {
-                engine.Play2D("sounds/Movement/move" + random.Next(1, 12) + ".mp3");
+                engine.Play2D("sounds/Movement/move" + random.Next(1, 12) + ".ogg");
                 oldEaredY = sty;
             }
         }
@@ -266,29 +281,21 @@ rooms.TryGetValue(player.me.X+":"+player.me.Y+":"+player.me.Z, out outval);
 
         public  void bounce()
         {
-            if (player.orientation==Player.playerOrientation.Front)
+if(player.angle==rotation.north)
             {
                 player.me.Y += -1;
             }
-            else if (player.orientation == Player.playerOrientation.Up)
-            {
-                player.me.Z += -1;
-            }
-            else if (player.orientation==Player.playerOrientation.Left)
-            {
-                player.me.X += 1;
-            }
-            else if (player.orientation==Player.playerOrientation.Right)
-            {
-                player.me.X += -1;
-            }
-            else if (player.orientation==Player.playerOrientation.Back)
+else if(player.angle==rotation.south)
             {
                 player.me.Y += 1;
             }
-            else if (player.orientation == Player.playerOrientation.Down)
+else if(player.angle==rotation.east)
             {
-                player.me.Z += 1;
+                player.me.X += -1;
+            }
+else if(player.angle==rotation.west)
+            {
+                player.me.X += 1;
             }
         }
 

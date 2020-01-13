@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using IrrKlang;
 using Microsoft.Xna.Framework;
 
@@ -13,41 +14,41 @@ namespace Game3
         ISoundEngine engine = new ISoundEngine();
         public int x, y, z;
         public double delaytime;
-        string location;
-        int doorsound;
+        string doorname;
         string dcs, dos;
          bool isopen;
+bool isInpassable;
         public Map Map
         {
             get { return map; }
         }
         Map map;
         
-        public Doors(Map map, int dx, int dy, int dz, string snd="door1.wav", string snd2="sounds/dooropen.wav", string snd3="sounds/doorclose.wav", bool isOpen=false)
+        public Doors(Map map, int dx, int dy, int dz, string name, bool isOpen=false)
         {
             this.map = map;
             this.x = dx;
             this.y = dy;
             this.z = dz;
-            this.dcs = snd2;
-            this.dos = snd3;
             this.isopen = isOpen;
-            map.engine.Play3D(snd, x, y, z, true);
+            this.doorname = name;
+           map.engine.Play3D("sounds/doors/"+name+"/loop.mp3", x, y, z, true);
         }
 
         public void Update(GameTime gameTime)
         {
-            if (Map.Player.me.X == x && Map.Player.me.Y == y && Map.Player.me.Z == z)
+            if ((int)Map.Player.me.X == x && (int)Map.Player.me.Y == y && (int)Map.Player.me.Z == z)
             {
                     if (isopen==false)
                     {
-                        engine.Play2D("sounds/doorwall.wav");
-                        Map.bounce();
-                    }
+                    isInpassable = true;
+                    map.engine.Play3D("sounds/doors/" + doorname + "/wall.mp3", x, y, z);
+                    map.bounce();
+                }
                     else 
                     {
-                        return;
-                    }
+                    isInpassable = false;
+                }
                 }
             }
 
@@ -66,13 +67,13 @@ namespace Game3
         public void open()
         {
             isopen = true;
-            ISound door2= map.engine.Play3D(dcs, x, y, z);
+           map.engine.Play3D("sounds/doors/"+doorname+"/open.mp3", x, y, z);
         }
 
         public void close()
         {
             isopen = false;
-            map.engine.Play3D(dos, x, y, z);
+            map.engine.Play3D("sounds/doors/"+doorname+"/close.mp3", x, y, z);
         }
 
 
