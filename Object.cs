@@ -34,7 +34,7 @@ public Map Map
         
         public void interact()
         {
-                map.dialog.dlg("this is a" + name);
+            map.activeOverWindow = new DialogBox(this.map, $"hola, soy un lindo {this.name} ");
         }
 
     }

@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game3
 {
-    public  class DialogBox
+    public  class DialogBox : iOverWindow
     {
 public  Map Map
         {
@@ -19,29 +19,43 @@ public  Map Map
          Map map;
         public ISoundEngine engine = new ISoundEngine();
         public bool IsInDialog;
+        private string content;
+        private bool firstCall;
         KeyboardState keystate = Keyboard.GetState();
 
-        public DialogBox(Map map)
+        public DialogBox(Map map, string content)
         {
             this.map = map;
+            this.content = content;
+            this.firstCall = true;
         }
 
-        public void dlg(string message)
+        public bool finished()
         {
-            Tolk.Speak(message, true);
-            engine.Play2D("sounds/UI/menuconfirm.mp3");
-            while (true)
+            return (!this.IsInDialog);
+        }
+
+        public void update(GameTime gt)
+        {
+            if(this.firstCall)
             {
+                this.IsInDialog = true;
+                Tolk.Speak(this.content, true);
+                engine.Play2D("sounds/UI/menuconfirm.mp3");
+                this.firstCall = false;
+            }
+
                 if (Input.WasKeyPressed(Keys.E))
                 {
-                    Tolk.Speak(message, true);
+                    Tolk.Speak(this.content, true);
                 }
                  if (Input.WasKeyPressed(Keys.Enter))
                 {
+                    Tolk.Speak("dieron enter");
                     engine.Play2D("sounds/UI/menuback.mp3");
-                    break;
+                this.IsInDialog = false;
                         }
-            }
+            
         }
 
 

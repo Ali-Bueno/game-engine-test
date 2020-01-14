@@ -30,7 +30,7 @@ down,
             get { return player; }
         }
         Player player;
-        public DialogBox dialog;
+        public iOverWindow activeOverWindow;
         public Dictionary<string, string> tiles = new Dictionary<string, string>();
         public Dictionary<string, string> walls = new Dictionary<string, string>();
         public List<Object> obj = new List<Object>();
@@ -44,7 +44,7 @@ down,
         public Map(int mapname)
         {
             this.mapName = mapname;
-            dialog = new DialogBox(this);
+            
         }
 
         public void Drawmap()
@@ -61,17 +61,27 @@ down,
             }
         }
 
-    public void Update(KeyboardState keystate, GameTime gameTime)
+        public void Update(KeyboardState keystate, GameTime gameTime)
         {
-            player.Update(keystate, gameTime);
-            engine.SetListenerPosition(player.me.X, player.me.Y, player.me.Z, 0, 0, 1);
-            engine.SetRolloffFactor(1.0f);
-            updateDoors(gameTime);
-            updateStairs(gameTime);
-            UpdateRooms(gameTime);
-            UpdateObjects(gameTime);
+            if (activeOverWindow != null)
+            {
+                activeOverWindow.update(gameTime);
+                if (activeOverWindow.finished())
+                {
+                    activeOverWindow = null;
+                }
+            }
+            else
+            {
+player.Update(keystate, gameTime);
+                engine.SetListenerPosition(player.me.X, player.me.Y, player.me.Z, 0, 0, 1);
+                engine.SetRolloffFactor(1.0f);
+                updateDoors(gameTime);
+                updateStairs(gameTime);
+                UpdateRooms(gameTime);
+                UpdateObjects(gameTime);
+            }
         }
-
         public void UpdateObjects(GameTime gameTime)
         {
             for(int i=0; i<obj.Count(); i++)

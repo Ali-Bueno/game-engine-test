@@ -16,6 +16,7 @@ namespace Game3
         {
             lastKeystate = keystate;
             keystate = Keyboard.GetState();
+           
         }
 
 

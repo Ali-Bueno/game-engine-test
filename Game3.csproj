@@ -45,6 +45,7 @@
     <Compile Include="Doors.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Input.cs" />
+    <Compile Include="iOverWindow.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Object.cs" />
     <Compile Include="Player.cs" />

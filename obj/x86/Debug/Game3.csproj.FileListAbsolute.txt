@@ -20,3 +20,26 @@ C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.csproj.CopyComplete
 C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.exe
 C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.pdb
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\Game3.exe
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\Game3.pdb
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.dll
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.xml
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\Programacion\c#\game-engine-test\obj\x86\Debug\Game3.csprojAssemblyReference.cache
+D:\Programacion\c#\game-engine-test\obj\x86\Debug\Game3.csproj.CoreCompileInputs.cache
+D:\Programacion\c#\game-engine-test\obj\x86\Debug\Game3.csproj.CopyComplete
+D:\Programacion\c#\game-engine-test\obj\x86\Debug\Game3.exe
+D:\Programacion\c#\game-engine-test\obj\x86\Debug\Game3.pdb
