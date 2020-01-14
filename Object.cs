@@ -15,7 +15,6 @@ public Map Map
         }
             Map map;
         public int x, y, z;
-        public string texto;
         public string name;
         public bool IsInteractable;
         public Object(Map map, int ox, int oy, int oz, string oname, bool interactable=false)
@@ -27,7 +26,6 @@ public Map Map
             this.name = oname;
             this.IsInteractable = interactable;
             map.engine.Play3D("sounds/rooms/" + oname + ".mp3", ox, oy, oz, true);
-            Tolk.Load();
         }
 
         public void Update(GameTime gameTime)

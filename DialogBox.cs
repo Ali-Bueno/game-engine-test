@@ -24,7 +24,6 @@ public  Map Map
         public DialogBox(Map map)
         {
             this.map = map;
-            Tolk.Load();
         }
 
         public void dlg(string message)
