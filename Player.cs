@@ -97,11 +97,7 @@ for(int j=0; j<map.obj.Count(); j++)
             if (Input.WasKeyPressed(Keys.E))
             {
                 tryToInteract();
-            }
-if(canInteract==false)
-            {
-                return;
-            }
+                }
         }
 
         public void checktiles()
