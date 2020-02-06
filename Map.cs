@@ -7,6 +7,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using IrrKlang;
+using tfj.exploudEngine;
 
 namespace Game3
 {
@@ -39,25 +40,25 @@ down,
         public List<Rooms> room = new List<Rooms>();
         int mapName;
         string oldEaredX;
-        string oldEaredY;
+        string oldEaredZ;
+        eSound stepsound;
 
         public Map(int mapname)
         {
             this.mapName = mapname;
-            
         }
 
         public void Drawmap()
         {
             if (mapName == 1)
             {
-                spawn_tile(0, 100, 0, 100, 0, 0, "womanstep");
-                spawn_walls(0, 10, 11, 11, 0, 5         , "woodwall");
-                spawn_room(0, 100, 0, 100, 0, 20, "rain house");
-                spawn_walls(13, 13, 0, 11, 0, 5, "woodwall");
-                spawn_door(12, 11, 0, "door1", true);
-                spawn_object(0, 20, 0, "window", true);
-                spawn_player(0, 19, 0);
+                spawn_tile(0, 100, 0, 0, 0, 100, "womanstep");
+                spawn_walls(13, 13, 0, 5, 0, 12, "woodwall");
+                spawn_room(0, 100, 0, 20, 0, 100, "rain house");
+                spawn_walls(0, 11, 0, 5, 11, 11, "woodwall");
+                spawn_door(12, 0, 11, "door1", true);
+                spawn_object(0, 1.50f, 20, "window", true);
+                spawn_player(0, 0, 19, 1.75f);
             }
         }
 
@@ -74,7 +75,10 @@ down,
             else
             {
 player.Update(keystate, gameTime);
-                engine.SetListenerPosition(player.me.X, player.me.Y, player.me.Z, 0, 0, 1);
+                engine.SetListenerPosition(player.me.X, player.me.Y, player.me.Z, 0, 1, 0);
+                Game1.fmodengine.listener.x = player.me.X;
+                Game1.fmodengine.listener.y = player.currentsice;
+                Game1.fmodengine.listener.z = player.me.Z;
                 engine.SetRolloffFactor(1.0f);
                 updateDoors(gameTime);
                 updateStairs(gameTime);
@@ -114,18 +118,18 @@ for(int i=0; i<room.Count(); i++)
             }
         }
 
-        public void spawn_player(float x, float y, float z)
+        public void spawn_player(float x, float y, float z, float sice)
         {
-            player = new Player(this);
+            player = new Player(this, sice);
             player.me.X = x;
             player.me.Y = y;
             player.me.Z = z;
         }
 
-        public void spawn_object(int x, int y, int z, string name, bool interactable)
+        public void spawn_object(float x, float y, float z, string name, bool interactable)
         {
             obj.Add(new Object(this, x, y, z, name, interactable));
-            spawn_walls(x, x, y, y, z, z, "doorwall");
+            //spawn_walls(x, x, y, y, z, z, "doorwall");
         }
 
         public void spawn_room(int minx, int maxx, int miny, int maxy, int minz, int maxz, string name)
@@ -258,7 +262,7 @@ for(int y=miny; y<=maxy; y++)
         public  void playstep()
         {
             string stx = player.me.X.ToString("R");
-            string sty = player.me.Y.ToString("R");
+            string stz = player.me.Z.ToString("R");
             if (gmw().IndexOf("wall", 0) > -1)
             {
                 engine.Play2D("sounds/walls/" + gmw() + ".wav");
@@ -266,23 +270,25 @@ for(int y=miny; y<=maxy; y++)
             }
             if (stx.Contains(",1") && stx!=oldEaredX)
             {
-                engine.Play2D("sounds/steps/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/" + random.Next(1, Directory.GetFiles("sounds/steps/"+get_tile_at((int)player.me.X,  (int)player.me.Y, (int)player.me.Z)).Length+1) + ".ogg");
-                oldEaredX = stx;
+                this.stepsound = Game1.fmodengine.loadSound("sounds/steps/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/" + random.Next(1, Directory.GetFiles("sounds/steps/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z)).Length + 1) + ".ogg");
+                this.stepsound.play2d(player.me.X, player.me.Y, loopMode.noLoop);
+                    oldEaredX = stx;
             }
             else if(stx.Contains(",5")&&stx!=oldEaredX)
                 {
                 engine.Play2D("sounds/Movement/stepback" + random.Next(1, 7) + ".wav");
                 oldEaredX = stx;
             }
-                    else if (sty.Contains(",1")&&sty!=oldEaredY)
+                    else if (stz.Contains(",1")&&stz!=oldEaredZ)
             {
-                engine.Play2D("sounds/steps/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/" + random.Next(1, Directory.GetFiles("sounds/steps/"+get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z)+"/").Length+1) + ".ogg");
-                oldEaredY = sty;
+                this.stepsound = Game1.fmodengine.loadSound("sounds/steps/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z) + "/" + random.Next(1, Directory.GetFiles("sounds/steps/" + get_tile_at((int)player.me.X, (int)player.me.Y, (int)player.me.Z)).Length + 1) + ".ogg");
+                this.stepsound.play2d(player.me.X, player.me.Y, loopMode.noLoop);
+                oldEaredZ = stz;
             }
-                    else if(sty.Contains(",5")&&sty!=oldEaredY)
+                    else if(stz.Contains(",5")&&stz!=oldEaredZ)
 {
                 engine.Play2D("sounds/Movement/move" + random.Next(1, 12) + ".ogg");
-                oldEaredY = sty;
+                oldEaredZ = stz;
             }
         }
 
@@ -293,11 +299,11 @@ for(int y=miny; y<=maxy; y++)
         {
 if(player.angle==rotation.north)
             {
-                player.me.Y += -1;
+                player.me.Z += -1;
             }
 else if(player.angle==rotation.south)
             {
-                player.me.Y += 1;
+                player.me.Z += 1;
             }
 else if(player.angle==rotation.east)
             {

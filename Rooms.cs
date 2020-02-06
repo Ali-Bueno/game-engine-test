@@ -31,11 +31,12 @@ namespace Game3
             this.minz = rminz;
             this.maxz = rmaxz;
             this.sound = rsound;
-            engine.Play2D("sounds/rooms/"+rsound+".mp3", true);
+            //engine.Play2D("sounds/rooms/"+rsound+".mp3", true);
         }
 
         public void Update(GameTime gameTime)
         {
+/*
             if ((int)map.Player.me.X >= minx && (int)map.Player.me.X <= maxx && (int)map.Player.me.Y >= miny && (int)map.Player.me.Y <= maxy)
             {
                 onRoom = true;
@@ -53,6 +54,7 @@ else
                 onRoom = false;
                 engine.RemoveAllSoundSources();
             }
+*/
         }
 
 

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using DavyKager;
+using tfj.exploudEngine;
+
 namespace Game3
 {
     public class Object
@@ -14,10 +16,13 @@ public Map Map
             get { return map; }
         }
             Map map;
-        public int x, y, z;
+        public float x, z;
+        public float y;
+        eSound loop;
+         eInstance instancia;
         public string name;
         public bool IsInteractable;
-        public Object(Map map, int ox, int oy, int oz, string oname, bool interactable=false)
+        public Object(Map map, float ox, float oy, float oz, string oname, bool interactable=false)
         {
             this.map = map;
             this.x = ox;
@@ -25,8 +30,11 @@ public Map Map
             this.z = oz;
             this.name = oname;
             this.IsInteractable = interactable;
-            map.engine.Play3D("sounds/rooms/" + oname + ".mp3", ox, oy, oz, true);
-        }
+            this.loop = Game1.fmodengine.loadSound("sounds/" + oname + "/loop.mp3");
+            this.instancia = this.loop.play3d(x, y, z, loopMode.simpleLoop);
+            this.instancia.minDistance = 1.0f;
+            this.instancia.maxDistance = 75;
+          }
 
         public void Update(GameTime gameTime)
         {

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using DavyKager;
+using tfj.exploudEngine;
 
 namespace Game3
 {
@@ -13,6 +14,7 @@ namespace Game3
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public Map map;
+        public static eSoundEngine fmodengine;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -29,6 +31,7 @@ namespace Game3
         {
             // TODO: Add your initialization logic here
             Tolk.Load();
+            fmodengine = new eSoundEngine();
             base.Initialize();
         }
 
@@ -67,9 +70,14 @@ namespace Game3
             // TODO: Add your update logic here
             Input.Update();
            map.Update(Input.keystate, gameTime);
+            fmodengine.update();
             if(Input.WasKeyPressed(Keys.C))
             {
                 Tolk.Speak(map.Player.me.X+","+map.Player.me.Y+","+map.Player.me.Z, true);
+            }
+if(Input.WasKeyPressed(Keys.L))
+            {
+                Tolk.Speak("altura del jugador:"+map.Player.currentsice, true);
             }
                 base.Update(gameTime);
         }

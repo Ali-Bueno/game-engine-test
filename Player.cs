@@ -26,6 +26,10 @@ namespace Game3
         {
             IsWalking,
             IsOnStairs,
+            IsCrouching,
+            IsStanding,
+IsCrouch,
+IsStand,
         }
         public state playerState;
         private Rotation rotation = new Rotation();
@@ -44,21 +48,30 @@ namespace Game3
         public Vector3 me;
         public Random random = new Random();
         public double CoolDown = 0;
-        ISoundEngine engine = new ISoundEngine();
+        public double crouchCoolDown;
+        public float sice;
+        public float currentsice;
+        public float crouchsice;
         public Map Map
         {
             get { return map; }
         }
         Map map;
-        public Player(Map map)
+        public Player(Map map, float Sice)
         {
             this.map = map;
+            this.sice = Sice;
+            sice += me.Y;
+            currentsice += sice;
+            this.crouchsice += sice / 2;
         }
         public void Update(KeyboardState keystate, GameTime gameTime)
         {
+            checkcrouch();
             moveUpdate(keystate);
             IsInteracting(keystate);
             CoolDown += gameTime.ElapsedGameTime.TotalMilliseconds;
+crouchCoolDown += gameTime.ElapsedGameTime.TotalMilliseconds;
         }
 
         public void moveUpdate(KeyboardState keystate)
@@ -71,6 +84,10 @@ namespace Game3
 else
             {
                 moveOnStairs();
+            }
+if(Input.WasKeyPressed(Keys.K))
+            {
+                playerState = state.IsCrouching;
             }
 }
 
@@ -120,17 +137,17 @@ for(int j=0; j<map.obj.Count(); j++)
                 if (CoolDown >= 35)
                 {
                     isMoving = true;
-                     me=rotation.move(me.X, me.Y, me.Z, angle=0, facing);
+                     me=rotation.move(me, angle=0);
                     map.playstep();
                     CoolDown = 0;
                 }
             }
-            if (keystate.IsKeyDown(Keys.S) && me.Y > 0)
+            if (keystate.IsKeyDown(Keys.S) && me.Z > 0)
             {
                 if (CoolDown >= 35)
                 {
                     isMoving = true;
-                    me = rotation.move(me.X, me.Y, me.Z, angle=180, facing);
+                    me = rotation.move(me, angle = 180);
                     map.playstep();
                     CoolDown = 0;
                 }
@@ -140,7 +157,7 @@ for(int j=0; j<map.obj.Count(); j++)
                 if (CoolDown >= 35)
                 {
                     isMoving = true;
-                    me = rotation.move(me.X, me.Y, me.Z, angle=270, facing);
+                    me = rotation.move(me, angle = 270);
                     map.playstep();
                     CoolDown = 0;
                 }
@@ -150,7 +167,7 @@ for(int j=0; j<map.obj.Count(); j++)
                 if (CoolDown >= 35)
                 {
                     isMoving = true;
-                    me = rotation.move(me.X, me.Y, me.Z, angle=90, facing);
+                    me = rotation.move(me, angle = 90);
                     map.playstep();
                     CoolDown = 0;
                 }
@@ -248,6 +265,53 @@ else if(Input.keystate.IsKeyDown(Keys.D)&&CoolDown>=500)
             return (float)Math.Sqrt(a * a + b * b + c * c);
         }
 
-    }
-    }
+public void checkcrouch()
+        {
+            switch (playerState)
+            {
+                case state.IsCrouching:
+                    crouching();
+                    break;
+                case state.IsStanding:
+                    standing();
+                    break;
+                case state.IsCrouch:
+                    crouched();
+                    break;
+            }
+        }
 
+        public void standing()
+        {
+            if(currentsice<sice)
+            {
+                currentsice += 0.1f;
+            }
+            else
+            {
+                playerState = state.IsStand;
+            }
+        }
+
+        public void crouching()
+        {
+            if(currentsice>crouchsice)
+            {
+                currentsice -= 0.1f;
+            }
+            else
+            {
+                playerState = state.IsCrouch;
+            }
+        }
+
+        public void crouched()
+        {
+            if(Input.WasKeyPressed(Keys.K))
+            {
+                playerState = state.IsStanding;
+            }
+        }
+
+    }
+    }

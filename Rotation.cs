@@ -21,72 +21,29 @@ namespace Game3
         public int streightup = 90;
         public int halfdown = 135;
         public int streightdown = 180;
-        public int theta;
 
-        public Vector3 move2D(float x, float y, float z, int theta, float distance)
+public Vector3 move(Vector3 coords, int deg, float pich=0.0f, float factor=0.1f)
         {
-            return move3D(x, y, 0, theta, distance);
-        }
-
-        public Vector3 move3D(float x, float y, float z, int theta, float distance)
-        {
+            float x = coords.X;
+            float y = coords.Y;
+            float z = coords.Z;
+            float steplength = factor * (float)Math.Cos(CalculateRadians(pich));
             Vector3 r;
-            r.X = x +distance*(float)Math.Sin(theta *3.14)/180;
-            r.Y = y +distance*(float)Math.Cos(theta*3.14)/180;
-            r.Z =z+distance*(float)Math.Sin(theta*3.14)/180;
+            r.X = x + steplength * (float)Math.Sin(CalculateRadians(deg));
+            r.Y = y + factor * (float)Math.Sin(CalculateRadians(pich));
+            r.Z = z + steplength * (float)Math.Cos(CalculateRadians(deg));
             r.X = (float)Math.Round(r.X, 1);
             r.Y = (float)Math.Round(r.Y, 1);
             r.Z = (float)Math.Round(r.Z, 1);
             return r;
         }
 
-        public Vector3 move(float x, float y, float deg, float dir = 0.0f)
-        {
-            return move(x, y, 0, deg, 0, dir, 0);
-        }
-
-        public Vector3 move(float x, float y, float z, float deg, float dir)
-        {
-            return move(x, y, z, deg, 0, dir, 0);
-        }
-
-
-        public Vector3 move(float x, float y, float z, float deg, float zdeg, float dir, float zdir)
-        {
-            if(dir!=0.0f)
-            {
-                float d2 = deg + dir;
-if(d2>=360)
-                {
-                    d2 -= 369;
-                }
-                deg = d2;
-            }
-if(zdir!=0.0f)
-            {
-                float d2 = zdeg + zdir;
-if(d2>=360)
-                {
-                    d2 -= 360;
-                }
-                zdeg = d2;
-            }
-            Vector3 R;
-            R.X = x + 0.1f * (float)Math.Sin(CalculateTheta(deg));
-            R.Y = y + 0.1f * (float)Math.Cos(CalculateTheta(deg));
-            R.Z = z + 0.1f * (int)Math.Sin(CalculateTheta(deg));
-            R.X = (float)Math.Round(R.X, 1);
-            R.Y = (float)Math.Round(R.Y, 1);
-            R.Z = (float)Math.Round(R.Z, 1);
-            return R;
-        }
-
-        public float CalculateTheta(float deg)
+        public float CalculateRadians(float deg)
         {
             return deg * (float)Math.PI / 180;
         }
 
-public float getdir(float facing)
+        public float getdir(float facing)
         {
             if(facing>=north&&facing>=northeast)
             {

@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 using System.IO;
 using IrrKlang;
 using Microsoft.Xna.Framework;
+using tfj.exploudEngine;
 
 namespace Game3
 {
     public class Doors
     {
         ISoundEngine engine = new ISoundEngine();
+        eSound loop;
+        eSound opensound;
+        eSound closesound;
+        eSound wallsound;
+        eInstance openinstance;
+        eInstance closeinstance;
+        eInstance wallinstance;
         public int x, y, z;
         public double delaytime;
         string doorname;
@@ -32,7 +40,11 @@ bool isInpassable;
             this.z = dz;
             this.isopen = isOpen;
             this.doorname = name;
-           map.engine.Play3D("sounds/doors/"+name+"/loop.mp3", x, y, z, true);
+            this.wallsound = Game1.fmodengine.loadSound("sounds/doors/" + name + "/wall.mp3");
+            this.opensound = Game1.fmodengine.loadSound("sounds/doors/" + name + "/open.mp3");
+            this.closesound = Game1.fmodengine.loadSound("sounds/doors/" + name + "/close.mp3");
+            this.loop = Game1.fmodengine.loadSound("sounds/doors/" + name + "/loop.mp3");
+            this.loop.play3d(x, y, z, loopMode.simpleLoop);
         }
 
         public void Update(GameTime gameTime)
@@ -42,7 +54,7 @@ bool isInpassable;
                     if (isopen==false)
                     {
                     isInpassable = true;
-                    map.engine.Play3D("sounds/doors/" + doorname + "/wall.mp3", x, y, z);
+                    wallinstance = this.wallsound.play3d(x, y, z, loopMode.noLoop);
                     map.bounce();
                 }
                     else 
@@ -67,15 +79,14 @@ bool isInpassable;
         public void open()
         {
             isopen = true;
-           map.engine.Play3D("sounds/doors/"+doorname+"/open.mp3", x, y, z);
+            this.openinstance = this.opensound.play3d(x, y, z, loopMode.noLoop);
         }
 
         public void close()
         {
             isopen = false;
-            map.engine.Play3D("sounds/doors/"+doorname+"/close.mp3", x, y, z);
+            this.closeinstance = this.closesound.play3d(x, y, z, loopMode.noLoop);
         }
-
 
     }
 }
