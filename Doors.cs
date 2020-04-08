@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using IrrKlang;
 using Microsoft.Xna.Framework;
 using tfj.exploudEngine;
 
@@ -12,7 +11,6 @@ namespace Game3
 {
     public class Doors
     {
-        ISoundEngine engine = new ISoundEngine();
         eSound loop;
         eSound opensound;
         eSound closesound;

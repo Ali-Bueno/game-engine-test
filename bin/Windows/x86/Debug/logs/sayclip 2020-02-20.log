@@ -1,0 +1,306 @@
+2020-02-20 08:31:47.5467 INFO logSystem started at 20/02/2020 8:31:47
+2020-02-20 08:31:47.6266 INFO starting exploud engine
+2020-02-20 08:31:48.1881 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-20 08:31:49.7574 DEBUG plugins loaded
+2020-02-20 08:31:50.6398 INFO loading sounds.doors.door1.wall.mp3 sound
+2020-02-20 08:31:50.6512 INFO sounds.doors.door1.wall.mp3 sound loaded
+2020-02-20 08:31:50.6512 INFO loading sounds.doors.door1.open.mp3 sound
+2020-02-20 08:31:50.6874 INFO sounds.doors.door1.open.mp3 sound loaded
+2020-02-20 08:31:50.6874 INFO loading sounds.doors.door1.close.mp3 sound
+2020-02-20 08:31:50.6993 INFO sounds.doors.door1.close.mp3 sound loaded
+2020-02-20 08:31:50.6993 INFO loading sounds.doors.door1.loop.mp3 sound
+2020-02-20 08:31:50.7301 INFO sounds.doors.door1.loop.mp3 sound loaded
+2020-02-20 08:31:50.7301 INFO loading sounds.window.loop.mp3 sound
+2020-02-20 08:31:51.1179 INFO sounds.window.loop.mp3 sound loaded
+2020-02-20 08:31:51.1179 INFO loading sounds.window.break.mp3 sound
+2020-02-20 08:31:51.1363 INFO sounds.window.break.mp3 sound loaded
+2020-02-20 08:31:52.4715 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-20 08:31:52.4814 INFO sounds.steps.womanstep.4.ogg sound loaded
+2020-02-20 08:31:53.5675 INFO loading sounds.UI.menuconfirm.mp3 sound
+2020-02-20 08:31:53.6477 INFO sounds.UI.menuconfirm.mp3 sound loaded
+2020-02-20 08:31:53.6477 INFO loading sounds.UI.menumove.mp3 sound
+2020-02-20 08:31:53.6477 INFO sounds.UI.menumove.mp3 sound loaded
+2020-02-20 08:31:53.6477 INFO loading sounds.UI.menuback.mp3 sound
+2020-02-20 08:31:53.6685 INFO sounds.UI.menuback.mp3 sound loaded
+2020-02-20 08:32:02.6728 INFO loading sounds.UI.menuconfirm.mp3 sound
+2020-02-20 08:32:02.6728 INFO sounds.UI.menuconfirm.mp3 sound was loaded previously. returning kached data
+2020-02-20 08:32:02.6728 INFO loading sounds.UI.menumove.mp3 sound
+2020-02-20 08:32:02.6728 INFO sounds.UI.menumove.mp3 sound was loaded previously. returning kached data
+2020-02-20 08:32:02.6728 INFO loading sounds.UI.menuback.mp3 sound
+2020-02-20 08:32:02.6728 INFO sounds.UI.menuback.mp3 sound was loaded previously. returning kached data
+2020-02-20 08:41:16.9574 INFO logSystem started at 20/02/2020 8:41:16
+2020-02-20 08:41:16.9986 INFO starting exploud engine
+2020-02-20 08:41:17.2471 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-20 08:41:17.4331 DEBUG plugins loaded
+2020-02-20 08:41:17.5100 INFO loading sounds.rooms.rain house.mp3 music
+2020-02-20 08:41:17.6627 INFO sounds.rooms.rain house.mp3 music loaded
+2020-02-20 08:41:17.8477 INFO loading sounds.doors.door1.wall.mp3 sound
+2020-02-20 08:41:17.8567 INFO sounds.doors.door1.wall.mp3 sound loaded
+2020-02-20 08:41:17.8567 INFO loading sounds.doors.door1.open.mp3 sound
+2020-02-20 08:41:17.8676 INFO sounds.doors.door1.open.mp3 sound loaded
+2020-02-20 08:41:17.8676 INFO loading sounds.doors.door1.close.mp3 sound
+2020-02-20 08:41:17.9013 INFO sounds.doors.door1.close.mp3 sound loaded
+2020-02-20 08:41:17.9013 INFO loading sounds.doors.door1.loop.mp3 sound
+2020-02-20 08:41:17.9817 INFO sounds.doors.door1.loop.mp3 sound loaded
+2020-02-20 08:41:17.9936 INFO loading sounds.window.loop.mp3 sound
+2020-02-20 08:41:18.4345 INFO sounds.window.loop.mp3 sound loaded
+2020-02-20 08:41:18.4345 INFO loading sounds.window.break.mp3 sound
+2020-02-20 08:41:18.4509 INFO sounds.window.break.mp3 sound loaded
+2020-02-20 08:42:27.5090 INFO logSystem started at 20/02/2020 8:42:27
+2020-02-20 08:42:27.5492 INFO starting exploud engine
+2020-02-20 08:42:27.7659 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-20 08:42:27.8989 DEBUG plugins loaded
+2020-02-20 08:42:27.9489 INFO loading sounds.rooms.rain house.mp3 music
+2020-02-20 08:42:27.9594 INFO sounds.rooms.rain house.mp3 music loaded
+2020-02-20 08:42:28.1225 INFO loading sounds.doors.door1.wall.mp3 sound
+2020-02-20 08:42:28.1330 INFO sounds.doors.door1.wall.mp3 sound loaded
+2020-02-20 08:42:28.1330 INFO loading sounds.doors.door1.open.mp3 sound
+2020-02-20 08:42:28.1330 INFO sounds.doors.door1.open.mp3 sound loaded
+2020-02-20 08:42:28.1474 INFO loading sounds.doors.door1.close.mp3 sound
+2020-02-20 08:42:28.1627 INFO sounds.doors.door1.close.mp3 sound loaded
+2020-02-20 08:42:28.1627 INFO loading sounds.doors.door1.loop.mp3 sound
+2020-02-20 08:42:28.2178 INFO sounds.doors.door1.loop.mp3 sound loaded
+2020-02-20 08:42:28.2178 INFO loading sounds.window.loop.mp3 sound
+2020-02-20 08:42:28.9742 INFO sounds.window.loop.mp3 sound loaded
+2020-02-20 08:42:28.9752 INFO loading sounds.window.break.mp3 sound
+2020-02-20 08:42:28.9906 INFO sounds.window.break.mp3 sound loaded
+2020-02-20 08:44:44.0966 INFO logSystem started at 20/02/2020 8:44:44
+2020-02-20 08:44:44.1422 INFO starting exploud engine
+2020-02-20 08:44:44.3719 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-20 08:44:44.5122 DEBUG plugins loaded
+2020-02-20 08:44:44.5564 INFO loading sounds.rooms.rain house.mp3 music
+2020-02-20 08:44:44.5564 INFO sounds.rooms.rain house.mp3 music loaded
+2020-02-20 08:44:44.6928 INFO loading sounds.doors.door1.wall.mp3 sound
+2020-02-20 08:44:44.7171 INFO sounds.doors.door1.wall.mp3 sound loaded
+2020-02-20 08:44:44.7171 INFO loading sounds.doors.door1.open.mp3 sound
+2020-02-20 08:44:44.7270 INFO sounds.doors.door1.open.mp3 sound loaded
+2020-02-20 08:44:44.7270 INFO loading sounds.doors.door1.close.mp3 sound
+2020-02-20 08:44:44.7419 INFO sounds.doors.door1.close.mp3 sound loaded
+2020-02-20 08:44:44.7419 INFO loading sounds.doors.door1.loop.mp3 sound
+2020-02-20 08:44:44.8267 INFO sounds.doors.door1.loop.mp3 sound loaded
+2020-02-20 08:44:44.8267 INFO loading sounds.window.loop.mp3 sound
+2020-02-20 08:44:45.6025 INFO sounds.window.loop.mp3 sound loaded
+2020-02-20 08:44:45.6025 INFO loading sounds.window.break.mp3 sound
+2020-02-20 08:44:45.6307 INFO sounds.window.break.mp3 sound loaded
+2020-02-20 08:44:46.3742 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-20 08:44:46.4080 INFO sounds.steps.womanstep.6.ogg sound loaded
+2020-02-20 08:44:46.8563 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-20 08:44:46.9893 INFO sounds.steps.womanstep.5.ogg sound loaded
+2020-02-20 08:44:47.3563 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-20 08:44:47.3563 INFO sounds.steps.womanstep.4.ogg sound loaded
+2020-02-20 08:44:47.4069 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-20 08:44:47.5121 INFO sounds.steps.womanstep.12.ogg sound loaded
+2020-02-20 08:44:47.9064 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-20 08:44:47.9163 INFO sounds.steps.womanstep.8.ogg sound loaded
+2020-02-20 08:44:48.6563 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-20 08:44:48.6563 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:49.1565 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-20 08:44:49.1809 INFO sounds.steps.womanstep.3.ogg sound loaded
+2020-02-20 08:44:49.6675 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-20 08:44:49.6675 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:52.1836 INFO loading sounds.steps.woodstep.4.ogg sound
+2020-02-20 08:44:52.1935 INFO sounds.steps.woodstep.4.ogg sound loaded
+2020-02-20 08:44:52.6840 INFO loading sounds.steps.woodstep.4.ogg sound
+2020-02-20 08:44:52.6840 INFO sounds.steps.woodstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:53.1846 INFO loading sounds.steps.woodstep.3.ogg sound
+2020-02-20 08:44:53.1846 INFO sounds.steps.woodstep.3.ogg sound loaded
+2020-02-20 08:44:53.6840 INFO loading sounds.steps.woodstep.2.ogg sound
+2020-02-20 08:44:53.7113 INFO sounds.steps.woodstep.2.ogg sound loaded
+2020-02-20 08:44:54.1845 INFO loading sounds.steps.woodstep.2.ogg sound
+2020-02-20 08:44:54.1845 INFO sounds.steps.woodstep.2.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:54.6833 INFO loading sounds.steps.woodstep.4.ogg sound
+2020-02-20 08:44:54.6833 INFO sounds.steps.woodstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:55.1843 INFO loading sounds.steps.woodstep.1.ogg sound
+2020-02-20 08:44:55.2298 INFO sounds.steps.woodstep.1.ogg sound loaded
+2020-02-20 08:44:55.6836 INFO loading sounds.steps.woodstep.4.ogg sound
+2020-02-20 08:44:55.6836 INFO sounds.steps.woodstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:56.1840 INFO loading sounds.steps.woodstep.3.ogg sound
+2020-02-20 08:44:56.1840 INFO sounds.steps.woodstep.3.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:56.6838 INFO loading sounds.steps.woodstep.2.ogg sound
+2020-02-20 08:44:56.6838 INFO sounds.steps.woodstep.2.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:57.1838 INFO loading sounds.steps.woodstep.4.ogg sound
+2020-02-20 08:44:57.1838 INFO sounds.steps.woodstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:57.6830 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-20 08:44:57.6830 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:58.1829 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-20 08:44:58.1934 INFO sounds.steps.womanstep.2.ogg sound loaded
+2020-02-20 08:44:58.6834 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-20 08:44:58.6834 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-20 08:44:59.9327 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-20 08:44:59.9327 INFO sounds.steps.womanstep.7.ogg sound loaded
+2020-02-20 08:45:00.4327 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-20 08:45:00.4327 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:00.9336 INFO loading sounds.steps.woodstep.2.ogg sound
+2020-02-20 08:45:00.9336 INFO sounds.steps.woodstep.2.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:01.4326 INFO loading sounds.steps.woodstep.4.ogg sound
+2020-02-20 08:45:01.4326 INFO sounds.steps.woodstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:01.9331 INFO loading sounds.steps.woodstep.4.ogg sound
+2020-02-20 08:45:01.9331 INFO sounds.steps.woodstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:02.4325 INFO loading sounds.steps.woodstep.2.ogg sound
+2020-02-20 08:45:02.4325 INFO sounds.steps.woodstep.2.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:02.9331 INFO loading sounds.steps.woodstep.3.ogg sound
+2020-02-20 08:45:02.9331 INFO sounds.steps.woodstep.3.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:03.4334 INFO loading sounds.steps.woodstep.3.ogg sound
+2020-02-20 08:45:03.4334 INFO sounds.steps.woodstep.3.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:03.9321 INFO loading sounds.steps.woodstep.1.ogg sound
+2020-02-20 08:45:03.9321 INFO sounds.steps.woodstep.1.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:04.4326 INFO loading sounds.steps.woodstep.3.ogg sound
+2020-02-20 08:45:04.4326 INFO sounds.steps.woodstep.3.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:04.9327 INFO loading sounds.steps.woodstep.1.ogg sound
+2020-02-20 08:45:04.9327 INFO sounds.steps.woodstep.1.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:05.4325 INFO loading sounds.steps.woodstep.4.ogg sound
+2020-02-20 08:45:05.4325 INFO sounds.steps.woodstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:05.9329 INFO loading sounds.steps.woodstep.3.ogg sound
+2020-02-20 08:45:05.9329 INFO sounds.steps.woodstep.3.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:06.4319 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-20 08:45:06.4319 INFO sounds.steps.womanstep.13.ogg sound loaded
+2020-02-20 08:45:07.6823 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-20 08:45:07.6823 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:08.1818 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-20 08:45:08.1818 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:08.6818 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-20 08:45:08.6818 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-20 08:45:09.1823 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-20 08:45:09.1946 INFO sounds.steps.womanstep.11.ogg sound loaded
+2020-02-20 08:45:09.7165 INFO loading sounds.UI.menuconfirm.mp3 sound
+2020-02-20 08:45:09.7165 INFO sounds.UI.menuconfirm.mp3 sound loaded
+2020-02-20 08:45:09.7165 INFO loading sounds.UI.menumove.mp3 sound
+2020-02-20 08:45:09.7165 INFO sounds.UI.menumove.mp3 sound loaded
+2020-02-20 08:45:09.7165 INFO loading sounds.UI.menuback.mp3 sound
+2020-02-20 08:45:09.7165 INFO sounds.UI.menuback.mp3 sound loaded
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9783 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:13.9907 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0060 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0219 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0373 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0373 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0373 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0373 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0373 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0373 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0373 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:14.0373 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-20 08:45:14.0373 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-20 08:45:16.5896 INFO loading sounds.UI.menuconfirm.mp3 sound
+2020-02-20 08:45:16.5896 INFO sounds.UI.menuconfirm.mp3 sound was loaded previously. returning kached data
+2020-02-20 08:45:16.5896 INFO loading sounds.UI.menumove.mp3 sound
+2020-02-20 08:45:16.5896 INFO sounds.UI.menumove.mp3 sound was loaded previously. returning kached data
+2020-02-20 08:45:16.5896 INFO loading sounds.UI.menuback.mp3 sound
+2020-02-20 08:45:16.5896 INFO sounds.UI.menuback.mp3 sound was loaded previously. returning kached data
+2020-02-20 09:04:14.8595 INFO logSystem started at 20/02/2020 9:04:14
+2020-02-20 09:04:14.9349 INFO starting exploud engine
+2020-02-20 09:04:15.1591 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-20 09:04:15.3645 DEBUG plugins loaded
+2020-02-20 09:04:15.4304 INFO loading sounds.rooms.rain house.mp3 music
+2020-02-20 09:04:15.6993 INFO sounds.rooms.rain house.mp3 music loaded
+2020-02-20 09:04:15.7117 INFO loading sounds.doors.door1.wall.mp3 sound
+2020-02-20 09:04:15.7841 INFO sounds.doors.door1.wall.mp3 sound loaded
+2020-02-20 09:04:15.7841 INFO loading sounds.doors.door1.open.mp3 sound
+2020-02-20 09:04:15.8218 INFO sounds.doors.door1.open.mp3 sound loaded
+2020-02-20 09:04:15.8218 INFO loading sounds.doors.door1.close.mp3 sound
+2020-02-20 09:04:15.8768 INFO sounds.doors.door1.close.mp3 sound loaded
+2020-02-20 09:04:15.8768 INFO loading sounds.doors.door1.loop.mp3 sound
+2020-02-20 09:04:15.9636 INFO sounds.doors.door1.loop.mp3 sound loaded
+2020-02-20 09:04:15.9914 INFO loading sounds.window.loop.mp3 sound
+2020-02-20 09:04:16.5494 INFO sounds.window.loop.mp3 sound loaded
+2020-02-20 09:04:16.5494 INFO loading sounds.window.break.mp3 sound
+2020-02-20 09:04:16.5876 INFO sounds.window.break.mp3 sound loaded
+2020-02-20 09:04:23.1111 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-20 09:04:23.1987 INFO sounds.steps.womanstep.3.ogg sound loaded
+2020-02-20 09:04:23.6192 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-20 09:04:23.6554 INFO sounds.steps.womanstep.12.ogg sound loaded
+2020-02-20 09:04:24.1186 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-20 09:04:24.1404 INFO sounds.steps.womanstep.11.ogg sound loaded
+2020-02-20 09:04:24.8346 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-20 09:04:24.8346 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-20 09:04:25.3338 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-20 09:04:25.3450 INFO sounds.steps.womanstep.13.ogg sound loaded
+2020-02-20 09:04:25.8347 INFO loading sounds.steps.woodstep.2.ogg sound
+2020-02-20 09:04:26.0009 INFO sounds.steps.woodstep.2.ogg sound loaded
+2020-02-20 09:04:26.3339 INFO loading sounds.steps.woodstep.3.ogg sound
+2020-02-20 09:04:26.5393 INFO sounds.steps.woodstep.3.ogg sound loaded
+2020-02-20 09:04:27.1507 INFO loading sounds.steps.woodstep.1.ogg sound
+2020-02-20 09:04:27.1790 INFO sounds.steps.woodstep.1.ogg sound loaded
+2020-02-20 09:04:27.6510 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-20 09:04:27.7204 INFO sounds.steps.womanstep.9.ogg sound loaded
+2020-02-20 09:04:28.7173 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-20 09:04:28.8493 INFO sounds.steps.womanstep.6.ogg sound loaded
+2020-02-20 09:04:29.1849 INFO loading sounds.UI.menuconfirm.mp3 sound
+2020-02-20 09:04:29.4519 INFO sounds.UI.menuconfirm.mp3 sound loaded
+2020-02-20 09:04:29.4519 INFO loading sounds.UI.menumove.mp3 sound
+2020-02-20 09:04:29.6114 INFO sounds.UI.menumove.mp3 sound loaded
+2020-02-20 09:04:29.6114 INFO loading sounds.UI.menuback.mp3 sound
+2020-02-20 09:04:30.4786 INFO sounds.UI.menuback.mp3 sound loaded
+2020-02-20 09:04:31.8338 INFO loading sounds.UI.menuconfirm.mp3 sound
+2020-02-20 09:04:31.8343 INFO sounds.UI.menuconfirm.mp3 sound was loaded previously. returning kached data
+2020-02-20 09:04:31.8343 INFO loading sounds.UI.menumove.mp3 sound
+2020-02-20 09:04:31.8343 INFO sounds.UI.menumove.mp3 sound was loaded previously. returning kached data
+2020-02-20 09:04:31.8343 INFO loading sounds.UI.menuback.mp3 sound
+2020-02-20 09:04:31.8343 INFO sounds.UI.menuback.mp3 sound was loaded previously. returning kached data

@@ -1,25 +1,3 @@
-C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.csprojAssemblyReference.cache
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\Game3.exe
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\Game3.pdb
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\irrKlang.NET4.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\MonoGame.Framework.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\TolkDotNet.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.DXGI.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XInput.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\MonoGame.Framework.xml
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.xml
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.DXGI.xml
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XInput.xml
-C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.csproj.CopyComplete
-C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.exe
-C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.pdb
 D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\Game3.exe
 D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\Game3.pdb
 D:\Programacion\c#\game-engine-test\bin\Windows\x86\Debug\MonoGame.Framework.dll
@@ -44,6 +22,27 @@ D:\Programacion\c#\game-engine-test\obj\x86\Debug\Game3.csproj.CopyComplete
 D:\Programacion\c#\game-engine-test\obj\x86\Debug\Game3.exe
 D:\Programacion\c#\game-engine-test\obj\x86\Debug\Game3.pdb
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\Game3.exe.config
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\Game3.exe
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\Game3.pdb
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\TolkDotNet.dll
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.csprojAssemblyReference.cache
+C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.csproj.CopyComplete
+C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.exe
+C:\Users\alisson\games etc\vs\Game3\obj\x86\Debug\Game3.pdb
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\Microsoft.Win32.Primitives.dll
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\netstandard.dll
@@ -140,9 +139,4 @@ C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\System.Xml.XmlDocument
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\System.Xml.XmlSerializer.dll
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\System.Xml.XPath.dll
 C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\System.Xml.XPath.XDocument.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\Fmod_Wraper.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\logSystem.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\NLog.dll
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\tfj_exploud_engine.pdb
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\Fmod_Wraper.pdb
-C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\logSystem.pdb
+C:\Users\alisson\games etc\vs\Game3\bin\Windows\x86\Debug\tfj_exploud_engine.dll

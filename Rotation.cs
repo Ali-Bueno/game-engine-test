@@ -9,21 +9,31 @@ namespace Game3
 {
     class Rotation
     {
-        public int north = 0;
-        public int northeast = 45;
-        public int east = 90;
-        public int southeast = 135;
-        public int south = 180;
-        public int southwest = 225;
-        public int west = 270;
-        public int northwest = 315;
-        public int halfup = 45;
-        public int streightup = 90;
-        public int halfdown = 135;
-        public int streightdown = 180;
+        public float north = 0;
+        public float northeast = 45;
+        public float east = 90;
+        public float southeast = 135;
+        public float south = 180;
+        public float southwest = 225;
+        public float west = 270;
+        public float northwest = 315;
+        public float halfup = 45;
+        public float streightup = 90;
+        public float halfdown = 135;
+        public float streightdown = 180;
+        public float angle;
 
-public Vector3 move(Vector3 coords, int deg, float pich=0.0f, float factor=0.1f)
+public Vector3 move(Vector3 coords, float deg, float dir, float pich=0.0f, float factor=0.1f)
         {
+            if(dir!=0.0f)
+            {
+                float d2 = deg + dir;
+                if (d2 >= 360)
+                {
+                    d2 -= 360;
+                }
+                deg = d2;
+            }
             float x = coords.X;
             float y = coords.Y;
             float z = coords.Z;
@@ -102,29 +112,26 @@ if(d>=360)
             {
                 d -= 360;
             }
-            d = (float)Math.Round(d, 0);
             return d;
         }
 
-        float turnleft(float deg, float inc)
+        public float turnleft(float deg, float inc=5)
         {
             deg -= inc;
 if(deg<0)
             {
                 deg += 360;
             }
-            deg = (float)Math.Round(deg, 0);
             return deg;
         }
 
-        float turnright(float deg, float inc)
+        public float turnright(float deg, float inc=5)
         {
             deg += inc;
 if(deg>=360)
             {
                 deg -= 360;
             }
-            deg = (float)Math.Round(deg, 0);
             return deg;
         }
 

@@ -1,0 +1,698 @@
+2020-02-07 21:33:28.4537 INFO logSystem started at 07/02/2020 21:33:28
+2020-02-07 21:33:28.4966 INFO starting exploud engine
+2020-02-07 21:33:28.6917 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 21:33:28.8592 DEBUG plugins loaded
+2020-02-07 21:33:29.1875 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 21:33:29.2279 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 21:33:29.2972 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 21:33:29.3192 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 21:33:29.3610 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 21:33:30.3454 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 21:33:30.3454 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 21:33:30.4033 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 21:33:30.4033 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 21:33:30.9994 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 21:33:31.7771 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 21:33:31.7931 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 21:33:32.2708 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 21:33:32.2708 INFO sounds/steps/womanstep/12.ogg sound loaded
+2020-02-07 21:33:32.7705 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 21:33:32.7705 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 21:33:33.2707 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 21:33:33.2707 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 21:33:33.7706 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 21:33:33.7706 INFO sounds/steps/womanstep/10.ogg sound loaded
+2020-02-07 21:39:24.6717 INFO logSystem started at 07/02/2020 21:39:24
+2020-02-07 21:39:24.7148 INFO starting exploud engine
+2020-02-07 21:39:25.0393 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 21:39:25.2493 DEBUG plugins loaded
+2020-02-07 21:39:25.8159 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 21:39:25.9160 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 21:39:25.9310 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 21:39:25.9560 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 21:39:25.9579 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 21:39:26.0230 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 21:39:26.0230 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 21:39:26.1700 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 21:39:26.1890 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 21:39:26.9455 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 21:39:46.1535 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 21:39:46.1674 INFO sounds/steps/womanstep/11.ogg sound loaded
+2020-02-07 21:39:46.6524 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 21:39:46.6644 INFO sounds/steps/womanstep/9.ogg sound loaded
+2020-02-07 21:39:47.1677 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 21:39:47.1777 INFO sounds/steps/womanstep/4.ogg sound loaded
+2020-02-07 21:39:51.5844 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 21:39:51.5844 INFO sounds/steps/womanstep/8.ogg sound loaded
+2020-02-07 21:39:53.4676 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 21:39:53.4765 INFO sounds/steps/womanstep/5.ogg sound loaded
+2020-02-07 21:39:53.9683 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 21:39:53.9683 INFO sounds/steps/womanstep/9.ogg sound was loaded previously. returning kached data
+2020-02-07 21:39:54.4679 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 21:39:54.4768 INFO sounds/steps/womanstep/1.ogg sound loaded
+2020-02-07 21:39:57.3181 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 21:39:57.3181 INFO sounds/steps/womanstep/12.ogg sound loaded
+2020-02-07 21:39:57.8186 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 21:39:57.8186 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 21:39:58.3184 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 21:39:58.3184 INFO sounds/steps/womanstep/10.ogg sound loaded
+2020-02-07 21:39:59.5852 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 21:39:59.5852 INFO sounds/steps/womanstep/13.ogg sound loaded
+2020-02-07 21:40:00.0851 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 21:40:00.0851 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:00.5851 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 21:40:00.5851 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 21:40:01.0844 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 21:40:01.0844 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:01.5848 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 21:40:01.5848 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:02.0844 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 21:40:02.0844 INFO sounds/steps/womanstep/10.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:02.5848 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 21:40:02.5848 INFO sounds/steps/womanstep/7.ogg sound loaded
+2020-02-07 21:40:03.0843 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 21:40:03.0843 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:03.5846 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 21:40:03.5846 INFO sounds/steps/womanstep/2.ogg sound loaded
+2020-02-07 21:40:04.0844 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 21:40:04.0844 INFO sounds/steps/womanstep/9.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:04.5978 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 21:40:04.5988 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:05.0977 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 21:40:05.0997 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:05.5984 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 21:40:05.5984 INFO sounds/steps/womanstep/10.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:06.0978 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 21:40:06.0998 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:07.7313 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 21:40:07.7402 INFO sounds/steps/womanstep/3.ogg sound loaded
+2020-02-07 21:40:08.2316 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 21:40:08.2316 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:08.7305 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 21:40:08.7305 INFO sounds/steps/womanstep/1.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:09.2311 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 21:40:09.2311 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:09.7309 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 21:40:09.7309 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:10.2313 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 21:40:10.2313 INFO sounds/steps/womanstep/3.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:10.7308 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 21:40:10.7308 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 21:40:12.0814 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 21:40:12.1236 INFO sounds/steps/womanstep/9.ogg sound was loaded previously. returning kached data
+2020-02-07 21:44:34.9765 INFO logSystem started at 07/02/2020 21:44:34
+2020-02-07 21:44:35.0768 INFO starting exploud engine
+2020-02-07 21:44:35.4313 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 21:44:35.6403 DEBUG plugins loaded
+2020-02-07 21:44:35.9814 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 21:44:35.9934 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 21:44:35.9934 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 21:44:35.9934 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 21:44:35.9934 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 21:44:36.0133 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 21:44:36.0133 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 21:44:36.0736 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 21:44:36.0906 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 21:44:36.7723 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 21:44:44.0951 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 21:44:44.1011 INFO sounds/steps/womanstep/11.ogg sound loaded
+2020-02-07 21:44:44.5927 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 21:44:44.6359 INFO sounds/steps/womanstep/7.ogg sound loaded
+2020-02-07 21:47:09.7595 INFO logSystem started at 07/02/2020 21:47:09
+2020-02-07 21:47:09.8885 INFO starting exploud engine
+2020-02-07 21:47:10.4029 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 21:47:10.6111 DEBUG plugins loaded
+2020-02-07 21:47:10.9020 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 21:47:10.9160 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 21:47:10.9160 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 21:47:10.9160 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 21:47:10.9160 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 21:47:10.9360 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 21:47:10.9360 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 21:47:10.9829 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 21:47:10.9829 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 21:47:11.5946 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 21:47:12.3247 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 21:47:12.3356 INFO sounds/steps/womanstep/11.ogg sound loaded
+2020-02-07 21:47:12.8104 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 21:47:12.8104 INFO sounds/steps/womanstep/7.ogg sound loaded
+2020-02-07 21:47:23.4822 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 21:47:23.4892 INFO sounds/steps/womanstep/1.ogg sound loaded
+2020-02-07 21:47:23.9823 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 21:47:23.9823 INFO sounds/steps/womanstep/3.ogg sound loaded
+2020-02-07 21:47:26.4074 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 21:47:26.4123 INFO sounds/steps/womanstep/12.ogg sound loaded
+2020-02-07 21:47:27.9081 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 21:47:27.9081 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 21:47:28.4072 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 21:47:28.4072 INFO sounds/steps/womanstep/1.ogg sound was loaded previously. returning kached data
+2020-02-07 21:47:28.9065 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 21:47:28.9114 INFO sounds/steps/womanstep/10.ogg sound loaded
+2020-02-07 21:47:29.3577 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 21:47:29.3577 INFO sounds/steps/womanstep/13.ogg sound loaded
+2020-02-07 21:47:29.8578 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 21:47:29.8578 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 21:47:30.5406 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 21:47:30.5406 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 21:47:31.0400 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 21:47:31.0400 INFO sounds/steps/womanstep/8.ogg sound loaded
+2020-02-07 21:47:31.5407 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 21:47:31.5407 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 21:47:32.0410 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 21:47:32.0410 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 21:47:32.7731 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 21:47:32.7731 INFO sounds/steps/womanstep/2.ogg sound loaded
+2020-02-07 21:47:33.2765 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 21:47:33.2765 INFO sounds/steps/womanstep/5.ogg sound loaded
+2020-02-07 21:47:33.8730 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 21:47:33.8730 INFO sounds/steps/womanstep/3.ogg sound was loaded previously. returning kached data
+2020-02-07 21:47:34.3728 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 21:47:34.3728 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 21:47:34.8728 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 21:47:34.8728 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 21:47:35.4229 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 21:47:35.4229 INFO sounds/steps/womanstep/10.ogg sound was loaded previously. returning kached data
+2020-02-07 21:47:35.9241 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 21:47:35.9241 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 21:50:55.9874 INFO logSystem started at 07/02/2020 21:50:55
+2020-02-07 21:50:56.0342 INFO starting exploud engine
+2020-02-07 21:50:56.1659 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 21:50:56.2871 DEBUG plugins loaded
+2020-02-07 21:50:56.4678 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 21:50:56.4738 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 21:50:56.4738 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 21:50:56.4738 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 21:50:56.4738 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 21:50:56.4738 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 21:50:56.4738 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 21:50:56.5167 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 21:50:56.5217 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 21:50:56.8769 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 21:50:57.7735 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 21:50:57.7735 INFO sounds/steps/womanstep/3.ogg sound loaded
+2020-02-07 21:51:09.1821 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 21:51:09.1821 INFO sounds/steps/womanstep/4.ogg sound loaded
+2020-02-07 21:51:10.5324 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 21:51:10.5363 INFO sounds/steps/womanstep/7.ogg sound loaded
+2020-02-07 21:51:10.7323 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 21:51:10.7323 INFO sounds/steps/womanstep/13.ogg sound loaded
+2020-02-07 21:51:11.2320 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 21:51:11.2320 INFO sounds/steps/womanstep/2.ogg sound loaded
+2020-02-07 21:51:11.7317 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 21:51:11.7317 INFO sounds/steps/womanstep/11.ogg sound loaded
+2020-02-07 21:51:12.5651 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 21:51:12.5651 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 21:51:13.2656 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 21:51:13.2656 INFO sounds/steps/womanstep/8.ogg sound loaded
+2020-02-07 21:51:13.7654 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 21:51:13.7654 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 21:51:14.2654 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 21:51:14.2654 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 21:51:14.7652 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 21:51:14.7652 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 21:51:15.2653 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 21:51:15.2653 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:12.1786 INFO logSystem started at 07/02/2020 22:04:12
+2020-02-07 22:04:12.2454 INFO starting exploud engine
+2020-02-07 22:04:12.6135 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:04:12.7631 DEBUG plugins loaded
+2020-02-07 22:04:13.2384 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:04:13.2551 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:04:13.2551 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:04:13.2860 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:04:13.2860 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:04:13.3070 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:04:13.3070 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:04:13.3709 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:04:13.3859 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:04:14.2811 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:04:15.3268 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:04:15.3358 INFO sounds/steps/womanstep/3.ogg sound loaded
+2020-02-07 22:04:15.3998 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:04:15.3998 INFO sounds/steps/womanstep/12.ogg sound loaded
+2020-02-07 22:04:19.4679 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:04:19.4679 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:20.0176 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:04:20.0176 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:24.1008 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:04:24.1008 INFO sounds/steps/womanstep/5.ogg sound loaded
+2020-02-07 22:04:24.6014 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:04:24.6014 INFO sounds/steps/womanstep/7.ogg sound loaded
+2020-02-07 22:04:25.1016 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:04:25.1016 INFO sounds/steps/womanstep/8.ogg sound loaded
+2020-02-07 22:04:25.6013 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:04:25.6013 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:26.1007 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:04:26.1007 INFO sounds/steps/womanstep/2.ogg sound loaded
+2020-02-07 22:04:26.8013 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:04:26.8023 INFO sounds/steps/womanstep/3.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:27.3014 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:04:27.3014 INFO sounds/steps/womanstep/11.ogg sound loaded
+2020-02-07 22:04:27.8015 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:04:27.8015 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:28.5345 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:04:28.5345 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:29.0346 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:04:29.0346 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:29.5350 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:04:29.5400 INFO sounds/steps/womanstep/4.ogg sound loaded
+2020-02-07 22:04:30.0849 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:04:30.0849 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 22:04:31.2178 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:04:31.2178 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:31.7180 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:04:31.7180 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:32.2178 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 22:04:32.2178 INFO sounds/steps/womanstep/9.ogg sound loaded
+2020-02-07 22:04:32.7176 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 22:04:32.7176 INFO sounds/steps/womanstep/9.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:33.2180 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:04:33.2180 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:33.7180 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:04:33.7180 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:34.2179 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:04:34.2179 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:34.7176 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:04:34.7176 INFO sounds/steps/womanstep/3.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:35.2248 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:04:35.2248 INFO sounds/steps/womanstep/1.ogg sound loaded
+2020-02-07 22:04:35.7243 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:04:35.7243 INFO sounds/steps/womanstep/13.ogg sound loaded
+2020-02-07 22:04:36.2407 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:04:36.2407 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:36.7409 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:04:36.7409 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:37.2408 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:04:37.2408 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:37.7409 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 22:04:37.7409 INFO sounds/steps/womanstep/9.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:39.5409 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:04:39.5409 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:40.0401 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:04:40.0401 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:40.5398 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:04:40.5398 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:41.1398 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:04:41.1398 INFO sounds/steps/womanstep/1.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:41.6410 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:04:41.6410 INFO sounds/steps/womanstep/1.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:42.1401 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:04:42.1401 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:42.6406 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:04:42.6406 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:43.1402 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:04:43.1402 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:43.6397 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:04:43.6397 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:44.1401 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:04:44.1401 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:44.6397 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:04:44.6397 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:45.0901 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:04:45.0901 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:45.5898 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:04:45.5898 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:46.8892 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:04:46.8892 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:47.3895 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:04:47.3895 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:48.3400 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:04:48.3400 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:48.8400 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:04:48.8400 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:49.3389 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:04:49.3389 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:55.7556 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_HANDLE
+2020-02-07 22:04:55.7556 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-07 22:04:56.5388 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:04:56.5388 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:57.0382 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:04:57.0382 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:57.5383 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:04:57.5383 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:58.5383 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:04:58.5383 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:59.0373 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:04:59.0373 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:04:59.5382 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:04:59.5382 INFO sounds/steps/womanstep/1.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:00.0378 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:05:00.0378 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:00.5395 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:05:00.5395 INFO sounds/steps/womanstep/3.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:01.0380 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:05:01.0380 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:01.5387 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:05:01.5387 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:02.0372 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:05:02.0372 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:02.5377 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:05:02.5377 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:03.0380 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:05:03.0380 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:03.5385 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:05:03.5385 INFO sounds/steps/womanstep/1.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:04.0378 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 22:05:04.0378 INFO sounds/steps/womanstep/9.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:05.0541 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:05:05.0541 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:05.5539 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 22:05:05.5539 INFO sounds/steps/womanstep/10.ogg sound loaded
+2020-02-07 22:05:06.0535 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:05:06.0535 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:06.5549 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:05:06.5549 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:07.0543 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:05:07.0543 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:07.5538 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:05:07.5538 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:08.0533 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:05:08.0533 INFO sounds/steps/womanstep/3.ogg sound was loaded previously. returning kached data
+2020-02-07 22:05:08.9535 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:05:08.9535 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 22:09:05.6367 INFO logSystem started at 07/02/2020 22:09:05
+2020-02-07 22:09:05.7128 INFO starting exploud engine
+2020-02-07 22:09:06.1390 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:09:06.3480 DEBUG plugins loaded
+2020-02-07 22:09:06.8891 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:09:06.9091 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:09:06.9141 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:09:06.9141 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:09:06.9141 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:09:06.9501 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:09:06.9501 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:09:07.0341 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:09:07.0440 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:09:07.6536 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:09:38.4747 INFO logSystem started at 07/02/2020 22:09:38
+2020-02-07 22:09:38.5325 INFO starting exploud engine
+2020-02-07 22:09:38.8058 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:09:38.9713 DEBUG plugins loaded
+2020-02-07 22:09:39.2541 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:09:39.2721 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:09:39.2721 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:09:39.2721 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:09:39.2721 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:09:39.2915 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:09:39.2915 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:09:39.3543 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:09:39.3788 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:09:40.1488 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:09:40.8349 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 22:09:40.8349 INFO sounds/steps/womanstep/9.ogg sound loaded
+2020-02-07 22:09:45.1018 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:09:45.1018 INFO sounds/steps/womanstep/3.ogg sound loaded
+2020-02-07 22:09:45.6009 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:09:45.6009 INFO sounds/steps/womanstep/12.ogg sound loaded
+2020-02-07 22:09:46.1002 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:09:46.1002 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 22:09:46.6007 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:09:46.6007 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:09:47.7673 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:09:47.7721 INFO sounds/steps/womanstep/1.ogg sound loaded
+2020-02-07 22:09:48.2679 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:09:48.2679 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 22:09:48.7677 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:09:48.7727 INFO sounds/steps/womanstep/2.ogg sound loaded
+2020-02-07 22:09:49.2671 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:09:49.2721 INFO sounds/steps/womanstep/5.ogg sound loaded
+2020-02-07 22:09:49.7667 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:09:49.7716 INFO sounds/steps/womanstep/4.ogg sound loaded
+2020-02-07 22:09:51.6334 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:09:51.6334 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:12:55.1220 INFO logSystem started at 07/02/2020 22:12:55
+2020-02-07 22:12:55.1698 INFO starting exploud engine
+2020-02-07 22:12:55.4781 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:12:55.7440 DEBUG plugins loaded
+2020-02-07 22:12:56.1873 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:12:56.2192 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:12:56.2232 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:12:56.2501 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:12:56.2501 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:12:56.2721 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:12:56.2721 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:12:56.3688 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:12:56.8495 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:12:57.3073 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:12:57.9855 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:12:58.2398 INFO sounds/steps/womanstep/11.ogg sound loaded
+2020-02-07 22:12:58.4921 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:12:58.4921 INFO sounds/steps/womanstep/2.ogg sound loaded
+2020-02-07 22:13:02.8472 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:13:02.8581 INFO sounds/steps/womanstep/3.ogg sound loaded
+2020-02-07 22:13:03.3470 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:13:04.0928 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:04.0928 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 22:13:04.1038 INFO sounds/steps/womanstep/10.ogg sound loaded
+2020-02-07 22:13:04.8752 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:13:04.8752 INFO sounds/steps/womanstep/3.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:05.3754 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:13:05.3754 INFO sounds/steps/womanstep/3.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:06.3255 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 22:13:06.5380 INFO sounds/steps/womanstep/9.ogg sound loaded
+2020-02-07 22:13:06.8244 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:13:06.8353 INFO sounds/steps/womanstep/7.ogg sound loaded
+2020-02-07 22:13:07.3248 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:13:07.3248 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:07.8254 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:13:07.8334 INFO sounds/steps/womanstep/13.ogg sound loaded
+2020-02-07 22:13:08.3244 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 22:13:08.3244 INFO sounds/steps/womanstep/10.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:08.8247 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:13:09.3141 INFO sounds/steps/womanstep/5.ogg sound loaded
+2020-02-07 22:13:09.3251 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:13:09.3331 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 22:13:09.8252 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:13:09.8252 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:10.3242 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:13:10.3342 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:10.8245 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:13:10.8245 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:11.3239 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 22:13:11.3239 INFO sounds/steps/womanstep/10.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:11.8244 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:13:11.8244 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:12.3246 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:13:12.3246 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:12.8255 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:13:12.8255 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:13.3239 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:13:13.3239 INFO sounds/steps/womanstep/4.ogg sound loaded
+2020-02-07 22:13:16.2739 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:13:16.2739 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:13:16.7738 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:13:16.7738 INFO sounds/steps/womanstep/12.ogg sound loaded
+2020-02-07 22:16:21.5180 INFO logSystem started at 07/02/2020 22:16:21
+2020-02-07 22:16:21.5560 INFO starting exploud engine
+2020-02-07 22:16:21.9849 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:16:22.2431 DEBUG plugins loaded
+2020-02-07 22:16:22.6372 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:16:22.6502 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:16:22.6502 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:16:22.6623 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:16:22.6623 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:16:22.6623 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:16:22.6782 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:16:22.7512 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:16:22.7572 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:16:23.3597 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:16:24.0791 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:16:24.0851 INFO sounds/steps/womanstep/13.ogg sound loaded
+2020-02-07 22:16:32.1461 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:16:32.1461 INFO sounds/steps/womanstep/7.ogg sound loaded
+2020-02-07 22:16:32.9799 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:16:32.9799 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:33.4791 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:16:33.4791 INFO sounds/steps/womanstep/5.ogg sound loaded
+2020-02-07 22:16:34.2962 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 22:16:34.3022 INFO sounds/steps/womanstep/9.ogg sound loaded
+2020-02-07 22:16:34.7960 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 22:16:34.7960 INFO sounds/steps/womanstep/10.ogg sound loaded
+2020-02-07 22:16:35.2966 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:16:35.3016 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 22:16:35.7467 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:16:35.7467 INFO sounds/steps/womanstep/4.ogg sound loaded
+2020-02-07 22:16:36.2463 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 22:16:36.2463 INFO sounds/steps/womanstep/10.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:36.8962 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:16:36.8962 INFO sounds/steps/womanstep/11.ogg sound loaded
+2020-02-07 22:16:38.0798 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:16:38.0798 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:38.5798 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 22:16:38.5798 INFO sounds/steps/womanstep/10.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:39.0794 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:16:39.0901 INFO sounds/steps/womanstep/1.ogg sound loaded
+2020-02-07 22:16:39.6800 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:16:39.6800 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:40.1796 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:16:40.1796 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:40.6799 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:16:40.6799 INFO sounds/steps/womanstep/2.ogg sound loaded
+2020-02-07 22:16:41.3294 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:16:41.3334 INFO sounds/steps/womanstep/12.ogg sound loaded
+2020-02-07 22:16:42.2797 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:16:42.2797 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:42.7792 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:16:42.7792 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:43.2793 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:16:43.2793 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:43.6293 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:16:43.6303 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:44.1291 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:16:44.1302 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:46.3130 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:16:46.3130 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:46.8131 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 22:16:46.8131 INFO sounds/steps/womanstep/9.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:47.3960 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:16:47.3960 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:47.9959 INFO loading sounds/steps/womanstep/9.ogg sound
+2020-02-07 22:16:47.9959 INFO sounds/steps/womanstep/9.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:48.4959 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:16:48.4959 INFO sounds/steps/womanstep/11.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:49.7959 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:16:49.7959 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:50.6465 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:16:50.6465 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:51.3961 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:16:51.3961 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:51.8960 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:16:51.8960 INFO sounds/steps/womanstep/13.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:52.3959 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:16:52.3959 INFO sounds/steps/womanstep/8.ogg sound loaded
+2020-02-07 22:16:53.4959 INFO loading sounds/steps/womanstep/10.ogg sound
+2020-02-07 22:16:53.4959 INFO sounds/steps/womanstep/10.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:53.9966 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:16:53.9966 INFO sounds/steps/womanstep/8.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:54.0963 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:16:54.0963 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:54.8466 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:16:54.8466 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 22:16:56.3629 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:16:56.3639 INFO sounds/steps/womanstep/5.ogg sound was loaded previously. returning kached data
+2020-02-07 22:19:12.8621 INFO logSystem started at 07/02/2020 22:19:12
+2020-02-07 22:19:12.9210 INFO starting exploud engine
+2020-02-07 22:19:13.1793 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:19:13.3847 DEBUG plugins loaded
+2020-02-07 22:19:13.6581 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:19:13.6710 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:19:13.6710 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:19:13.6850 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:19:13.6850 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:19:13.7109 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:19:13.7109 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:19:13.8027 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:19:13.8027 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:19:14.4169 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:19:18.2722 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:19:18.2722 INFO sounds/steps/womanstep/4.ogg sound loaded
+2020-02-07 22:19:18.7711 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:19:18.7711 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 22:19:23.1379 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:19:23.1379 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 22:19:23.6373 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:19:23.6463 INFO sounds/steps/womanstep/2.ogg sound loaded
+2020-02-07 22:19:24.0379 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:19:24.0379 INFO sounds/steps/womanstep/1.ogg sound loaded
+2020-02-07 22:19:24.5371 INFO loading sounds/steps/womanstep/4.ogg sound
+2020-02-07 22:19:24.5371 INFO sounds/steps/womanstep/4.ogg sound was loaded previously. returning kached data
+2020-02-07 22:19:25.0370 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:19:25.0370 INFO sounds/steps/womanstep/12.ogg sound loaded
+2020-02-07 22:19:25.5378 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:19:25.5378 INFO sounds/steps/womanstep/5.ogg sound loaded
+2020-02-07 22:19:26.6377 INFO loading sounds/steps/womanstep/12.ogg sound
+2020-02-07 22:19:26.6377 INFO sounds/steps/womanstep/12.ogg sound was loaded previously. returning kached data
+2020-02-07 22:19:27.1378 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:19:27.1378 INFO sounds/steps/womanstep/2.ogg sound was loaded previously. returning kached data
+2020-02-07 22:19:28.3207 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:19:28.3207 INFO sounds/steps/womanstep/1.ogg sound was loaded previously. returning kached data
+2020-02-07 22:19:28.8206 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:19:28.8206 INFO sounds/steps/womanstep/7.ogg sound loaded
+2020-02-07 22:19:29.7377 INFO loading sounds/steps/womanstep/3.ogg sound
+2020-02-07 22:19:29.7427 INFO sounds/steps/womanstep/3.ogg sound loaded
+2020-02-07 22:19:30.2379 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:19:30.2430 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 22:19:30.7375 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:19:30.7375 INFO sounds/steps/womanstep/7.ogg sound was loaded previously. returning kached data
+2020-02-07 22:19:31.4875 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:19:31.4926 INFO sounds/steps/womanstep/11.ogg sound loaded
+2020-02-07 22:19:32.4045 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:19:32.4045 INFO sounds/steps/womanstep/6.ogg sound was loaded previously. returning kached data
+2020-02-07 22:20:10.6634 INFO logSystem started at 07/02/2020 22:20:10
+2020-02-07 22:20:10.7134 INFO starting exploud engine
+2020-02-07 22:20:11.0413 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:20:11.2512 DEBUG plugins loaded
+2020-02-07 22:20:11.5501 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:20:11.5641 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:20:11.5641 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:20:11.5731 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:20:11.5731 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:20:11.5866 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:20:11.5866 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:20:11.6450 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:20:11.6510 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:20:12.0634 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:20:20.2851 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:20:20.2900 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 22:20:20.7833 INFO loading sounds/steps/womanstep/8.ogg sound
+2020-02-07 22:20:20.7882 INFO sounds/steps/womanstep/8.ogg sound loaded
+2020-02-07 22:20:22.5000 INFO loading sounds/steps/womanstep/13.ogg sound
+2020-02-07 22:20:22.5000 INFO sounds/steps/womanstep/13.ogg sound loaded
+2020-02-07 22:36:05.8935 INFO logSystem started at 07/02/2020 22:36:05
+2020-02-07 22:36:05.9224 INFO starting exploud engine
+2020-02-07 22:36:06.1937 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:36:06.3363 DEBUG plugins loaded
+2020-02-07 22:36:06.5448 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:36:06.5707 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:36:06.5707 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:36:06.5906 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:36:06.5906 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:36:06.6146 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:36:06.6146 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:36:06.6764 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:36:06.6764 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:36:07.3092 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:36:07.9906 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:36:07.9906 INFO sounds/steps/womanstep/1.ogg sound loaded
+2020-02-07 22:36:08.4803 INFO loading sounds/steps/womanstep/6.ogg sound
+2020-02-07 22:36:08.4803 INFO sounds/steps/womanstep/6.ogg sound loaded
+2020-02-07 22:36:41.6208 INFO logSystem started at 07/02/2020 22:36:41
+2020-02-07 22:36:41.6706 INFO starting exploud engine
+2020-02-07 22:36:41.9868 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:36:42.1753 DEBUG plugins loaded
+2020-02-07 22:36:42.4362 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:36:42.4542 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:36:42.4542 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:36:42.4711 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:36:42.4711 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:36:42.4931 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:36:42.7224 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:36:42.7633 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:36:42.7723 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:36:43.3917 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:36:44.1035 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:36:44.1164 INFO sounds/steps/womanstep/5.ogg sound loaded
+2020-02-07 22:36:54.4290 INFO loading sounds/steps/womanstep/11.ogg sound
+2020-02-07 22:36:54.4290 INFO sounds/steps/womanstep/11.ogg sound loaded
+2020-02-07 22:36:55.6295 INFO loading sounds/steps/womanstep/2.ogg sound
+2020-02-07 22:36:55.6295 INFO sounds/steps/womanstep/2.ogg sound loaded
+2020-02-07 22:42:51.4353 INFO logSystem started at 07/02/2020 22:42:51
+2020-02-07 22:42:51.4792 INFO starting exploud engine
+2020-02-07 22:42:51.6890 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-07 22:42:51.8269 DEBUG plugins loaded
+2020-02-07 22:42:51.9692 INFO loading sounds/doors/door1/wall.mp3 sound
+2020-02-07 22:42:51.9751 INFO sounds/doors/door1/wall.mp3 sound loaded
+2020-02-07 22:42:51.9751 INFO loading sounds/doors/door1/open.mp3 sound
+2020-02-07 22:42:51.9751 INFO sounds/doors/door1/open.mp3 sound loaded
+2020-02-07 22:42:51.9751 INFO loading sounds/doors/door1/close.mp3 sound
+2020-02-07 22:42:51.9751 INFO sounds/doors/door1/close.mp3 sound loaded
+2020-02-07 22:42:51.9891 INFO loading sounds/doors/door1/loop.mp3 sound
+2020-02-07 22:42:52.0160 INFO sounds/doors/door1/loop.mp3 sound loaded
+2020-02-07 22:42:52.0160 INFO loading sounds/window/loop.mp3 sound
+2020-02-07 22:42:52.6203 INFO sounds/window/loop.mp3 sound loaded
+2020-02-07 22:42:53.6985 INFO loading sounds/steps/womanstep/7.ogg sound
+2020-02-07 22:42:53.6985 INFO sounds/steps/womanstep/7.ogg sound loaded
+2020-02-07 22:42:53.7831 INFO loading sounds/steps/womanstep/1.ogg sound
+2020-02-07 22:42:53.7931 INFO sounds/steps/womanstep/1.ogg sound loaded
+2020-02-07 22:42:54.7445 INFO loading sounds/steps/womanstep/5.ogg sound
+2020-02-07 22:42:54.7445 INFO sounds/steps/womanstep/5.ogg sound loaded

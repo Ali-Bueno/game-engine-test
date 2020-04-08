@@ -79,6 +79,10 @@ if(Input.WasKeyPressed(Keys.L))
             {
                 Tolk.Speak("altura del jugador:"+map.Player.currentsice, true);
             }
+if(Input.WasKeyPressed(Keys.F))
+            {
+                Tolk.Speak("angulo actual: " + map.Player.angle, true);
+            }
                 base.Update(gameTime);
         }
 

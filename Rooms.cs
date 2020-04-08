@@ -4,15 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
-using IrrKlang;
+using tfj.exploudEngine;
 
 namespace Game3
 {
     public class Rooms
     {
-        public double cooldown;
-        ISoundEngine engine = new ISoundEngine();
-
         public Map Map
         {
             get { return map; }
@@ -21,6 +18,7 @@ namespace Game3
         public int minx, maxx, miny, maxy, minz, maxz;
         public string sound;
         public bool onRoom;
+        private eMusic RoomSound;
         public Rooms(Map map, int rminx, int rmaxx, int rminy, int rmaxy, int rminz, int rmaxz, string rsound)
         {
             this.map = map;
@@ -31,30 +29,29 @@ namespace Game3
             this.minz = rminz;
             this.maxz = rmaxz;
             this.sound = rsound;
-            //engine.Play2D("sounds/rooms/"+rsound+".mp3", true);
+            this.RoomSound=Game1.fmodengine.loadMusic("sounds/rooms/" + rsound + ".mp3");
+            RoomSound.play();
         }
 
         public void Update(GameTime gameTime)
         {
-/*
             if ((int)map.Player.me.X >= minx && (int)map.Player.me.X <= maxx && (int)map.Player.me.Y >= miny && (int)map.Player.me.Y <= maxy)
             {
                 onRoom = true;
-                if (engine.IsCurrentlyPlaying("sounds/rooms/"+sound+".mp3")==true)
+                if (RoomSound.playing)
                 {
                     return;
                 }
 else
                 {
-                    engine.Play2D("sounds/rooms/"+sound+".mp3", true);
+                    RoomSound.play();
                 }
 }
             else
             {
                 onRoom = false;
-                engine.RemoveAllSoundSources();
+                RoomSound.stop();
             }
-*/
         }
 
 

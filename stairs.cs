@@ -9,8 +9,8 @@ namespace Game3
 {
     public class Stairs
     {
-        public int minx, maxx, miny, maxy, z, heigth;
-        public Map.orientation o;
+        public int minx, maxx, minz, maxz, y, heigth;
+        public float angle;
         public string tile;
         public bool onstaircase;
         public Map Map
@@ -18,28 +18,29 @@ namespace Game3
         get{return map;}
 }
     Map map;
-    public Stairs(Map map, int minsx, int maxsx, int minsy, int maxsy, int sz, int sheigth, Map.orientation so, string ssound)
+    public Stairs(Map map, int minsx, int maxsx, int minsz, int maxsz, int sy, int sheigth, float Angle, string ssound)
 {
             this.map = map;
             this.minx = minsx;
     this.maxx = maxsx;
-    this.miny = minsy;
-    this.maxy = maxsy;
-    this.z = sz;
+    this.minz = minsz;
+    this.maxz = maxsz;
+    this.y = sy;
             this.heigth = sheigth;
-            this.o = so;
+            this.angle = Angle;
             this.tile = ssound;
 }
 
         public void Update(GameTime gameTime)
         {
-            if (map.Player.me.X >= minx && map.Player.me.X <= maxx && map.Player.me.Y >= miny && map.Player.me.Y <= maxy)
+            if (map.Player.me.X >= this.minx && map.Player.me.X <= this.maxx && map.Player.me.Z >= this.minz && map.Player.me.Z <= this.maxz)
             {
-                onstaircase = true;
+                this.onstaircase = true;
+                map.Player.angle = this.angle;
             }
             else
             {
-                onstaircase = false;
+                this.onstaircase = false;
             }
             }
 

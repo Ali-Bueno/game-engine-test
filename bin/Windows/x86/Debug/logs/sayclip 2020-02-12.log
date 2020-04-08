@@ -1,0 +1,1512 @@
+2020-02-12 10:38:49.9659 INFO logSystem started at 12/02/2020 10:38:49
+2020-02-12 10:38:49.9864 INFO starting exploud engine
+2020-02-12 10:38:50.6594 DEBUG loading oculus spatializer with 1024 buffer lenght, and 4 num of samples 
+2020-02-12 10:38:51.2602 DEBUG plugins loaded
+2020-02-12 10:38:51.9067 INFO loading sounds.doors.door1.wall.mp3 sound
+2020-02-12 10:38:51.9214 INFO sounds.doors.door1.wall.mp3 sound loaded
+2020-02-12 10:38:51.9214 INFO loading sounds.doors.door1.open.mp3 sound
+2020-02-12 10:38:51.9575 INFO sounds.doors.door1.open.mp3 sound loaded
+2020-02-12 10:38:51.9575 INFO loading sounds.doors.door1.close.mp3 sound
+2020-02-12 10:38:51.9711 INFO sounds.doors.door1.close.mp3 sound loaded
+2020-02-12 10:38:51.9711 INFO loading sounds.doors.door1.loop.mp3 sound
+2020-02-12 10:38:52.0160 INFO sounds.doors.door1.loop.mp3 sound loaded
+2020-02-12 10:38:52.0160 INFO loading sounds.window.loop.mp3 sound
+2020-02-12 10:38:52.5568 INFO sounds.window.loop.mp3 sound loaded
+2020-02-12 10:38:53.3688 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:38:53.3981 INFO sounds.steps.womanstep.10.ogg sound loaded
+2020-02-12 10:38:53.8604 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:38:53.8912 INFO sounds.steps.womanstep.8.ogg sound loaded
+2020-02-12 10:38:54.2608 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:38:54.3106 INFO sounds.steps.womanstep.2.ogg sound loaded
+2020-02-12 10:38:54.7606 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:38:54.8455 INFO sounds.steps.womanstep.9.ogg sound loaded
+2020-02-12 10:38:55.2603 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:38:55.2603 INFO sounds.steps.womanstep.3.ogg sound loaded
+2020-02-12 10:38:57.2772 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:38:57.2772 INFO sounds.steps.womanstep.12.ogg sound loaded
+2020-02-12 10:39:04.0437 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:39:04.1492 INFO sounds.steps.womanstep.13.ogg sound loaded
+2020-02-12 10:39:04.1540 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:39:04.1540 INFO sounds.steps.womanstep.4.ogg sound loaded
+2020-02-12 10:39:04.6436 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:39:04.6436 ERROR problems excecuting a fmod function at non detailed. step ERR_FILE_NOTFOUND
+2020-02-12 10:39:04.6436 INFO sounds.steps..1.ogg sound loaded
+2020-02-12 10:39:04.6436 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:04.6436 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:04.6436 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:04.6436 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:04.6436 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:04.6514 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:04.6514 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:04.6514 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:04.6514 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:05.1441 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:39:05.1441 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:05.1441 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.1441 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.1441 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.1441 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.1441 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:05.1441 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.1441 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.1509 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.1509 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:05.9612 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:39:05.9612 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:05.9612 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.9637 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.9637 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.9637 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.9637 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:05.9637 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.9637 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.9637 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:05.9637 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:06.4605 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:39:06.7068 INFO sounds.steps.womanstep.7.ogg sound loaded
+2020-02-12 10:39:06.7068 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:39:06.7068 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:07.0737 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:39:07.0737 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:08.7062 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:08.7062 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7062 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7062 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7062 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:08.7062 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7062 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:08.7062 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7062 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:08.7140 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:08.7296 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:09.0893 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:39:09.0893 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:09.1894 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:39:09.1894 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:09.6892 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:39:09.6892 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:09.6892 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:09.6892 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:09.6892 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:09.6892 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:09.6892 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:09.6892 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:09.6979 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:09.6979 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:09.6979 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:10.1893 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:39:10.1893 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:10.1893 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:10.1893 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:10.1893 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:10.1893 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:10.1893 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:10.1893 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:10.1893 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:10.1981 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:10.1981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:11.0052 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:39:11.0052 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:11.0052 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:11.0052 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:11.0052 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:11.0101 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:11.0101 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:11.0101 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:11.0101 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:11.0101 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:39:11.0101 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:11.5053 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:39:11.5161 INFO sounds.steps.womanstep.6.ogg sound loaded
+2020-02-12 10:39:11.6054 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:39:11.6054 INFO sounds.steps.womanstep.5.ogg sound loaded
+2020-02-12 10:39:12.1055 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:39:12.1055 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:12.6066 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:39:12.6066 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:13.1053 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:39:13.1053 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:13.6053 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:39:13.6053 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:14.1047 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:39:14.1047 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:14.6055 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:39:14.6055 INFO sounds.steps.womanstep.1.ogg sound loaded
+2020-02-12 10:39:15.1051 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:39:15.1051 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:15.6051 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:39:15.6051 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:17.4552 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:39:17.4552 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:17.9546 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:39:17.9546 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:18.4547 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:39:18.4547 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:18.9547 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:39:18.9547 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:19.4552 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:39:19.4552 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:19.9550 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:39:19.9550 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:20.5544 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:39:20.5544 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:22.7709 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:39:22.7709 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:23.2707 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:39:23.2707 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:23.7706 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:39:23.7706 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:24.2710 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:39:24.2710 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:24.7705 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:39:24.7705 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:25.2706 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:39:25.2706 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:25.7704 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:39:25.7704 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:26.2704 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:39:26.2704 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:26.7703 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:39:26.7703 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:27.2697 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:39:27.2697 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:27.7705 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:39:27.7705 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:28.2694 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:39:28.2694 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:28.7708 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:39:28.7708 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:29.2697 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:39:29.2697 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:29.7698 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:39:29.8005 INFO sounds.steps.womanstep.11.ogg sound loaded
+2020-02-12 10:39:30.2696 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:39:30.2696 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:30.7695 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:39:30.7695 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:32.1035 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1035 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1054 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1201 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1357 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:32.1513 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.2865 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:32.3526 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:38.3364 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:39:38.3364 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:38.8354 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:39:38.8354 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:39.3350 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:39:39.3350 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:39.8357 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:39:39.8357 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:40.3348 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:39:40.3348 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:40.8355 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:39:40.8355 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:41.3346 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:39:41.3346 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:41.8355 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:39:41.8355 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:42.3358 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:39:42.3358 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:45.4344 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:39:45.4344 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:45.9353 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:39:45.9353 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:46.4347 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:39:46.4347 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:46.9340 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:39:46.9340 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:47.4343 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:39:47.4343 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:47.9347 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:39:47.9347 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:48.4346 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:39:48.4346 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:53.0002 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:39:53.0002 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:53.5011 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:39:53.5011 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:54.0004 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:39:54.0004 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:54.4997 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:39:54.4997 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:55.0005 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:39:55.0005 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:56.5663 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:39:56.5663 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:57.0670 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:39:57.0670 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:57.5663 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:39:57.5663 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6352 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6508 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:39:57.6664 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:58.0660 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:39:58.0660 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:58.5662 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:39:58.5662 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:39:58.6496 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:39:59.7995 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:00.2993 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:02.5657 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:02.5657 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:03.0657 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:40:03.0657 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:03.1152 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:03.1152 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:03.5666 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:40:03.5666 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:03.6159 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:40:03.6159 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:04.0653 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:40:04.0653 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:04.1156 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:40:04.1156 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:04.5655 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:40:04.5655 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:04.6149 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:40:04.6149 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:05.0663 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:40:05.0663 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:05.1146 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:40:05.1146 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:05.5649 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:05.5649 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:05.6156 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:40:05.6156 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:06.0657 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:40:06.0657 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:06.1149 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:40:06.1149 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:06.5652 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:40:06.5652 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:06.6151 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:40:06.6151 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:07.0647 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:07.0647 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:07.1155 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:40:07.1155 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:07.5648 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:40:07.5648 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:07.6144 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:40:07.6144 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:08.0650 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:40:08.0650 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:08.1155 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:08.1155 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:08.5647 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:40:08.5647 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:08.6148 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:40:08.6148 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:09.0641 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:40:09.0641 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:09.1150 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:40:09.1150 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:09.5648 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:09.5648 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:09.6146 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:40:09.6146 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:10.0646 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:40:10.0646 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:10.1143 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:40:10.1143 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:10.5647 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:40:10.5647 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:10.6146 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:40:10.6146 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:11.0644 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:40:11.0644 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:11.1137 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:11.1137 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:11.5649 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:40:11.5649 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:11.6150 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:11.6150 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:12.0644 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:40:12.0644 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:12.1145 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:40:12.1145 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:12.5641 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:40:12.5641 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:12.6143 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:40:12.6143 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:13.0638 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:40:13.0638 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:13.1145 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:40:13.1145 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:13.5642 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:40:13.5642 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:13.6143 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:13.6143 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:14.0644 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:40:14.0644 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:14.1142 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:40:14.1142 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:14.5646 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:40:14.5646 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:14.6141 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:40:14.6141 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:18.4633 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:40:18.4633 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:18.5141 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:40:18.5141 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:18.6805 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6805 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.6981 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7137 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7303 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7449 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7605 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7605 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7605 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:18.7605 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:18.7605 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:20.0803 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:20.1799 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:21.0466 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:40:21.0466 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:21.0969 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:40:21.0969 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:21.5460 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:40:21.5460 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:21.5967 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:40:21.5967 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:22.0462 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:40:22.0462 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:22.0962 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:40:22.0962 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:22.5462 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:40:22.5462 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:22.5964 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:40:22.5964 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:23.0475 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:40:23.0475 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:23.0960 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:40:23.0960 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:33.1780 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:40:33.1780 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:36.0780 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:40:36.0780 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:36.5784 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:40:36.5784 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:37.0783 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:40:37.0783 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:37.5777 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:40:37.5777 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:38.0780 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:40:38.0780 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:38.5773 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:40:38.5773 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:39.0783 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:40:39.0783 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:39.5775 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:40:39.5775 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:39.6775 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:40:39.6775 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:40.1781 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:40:40.1781 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:40.1781 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.1781 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.1781 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.1820 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.1820 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:40:40.1820 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.1820 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.1820 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.1820 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:40:40.6773 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:40:40.6773 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:40.6773 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.6773 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.6773 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.6822 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.6822 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:40:40.6822 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.6822 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.6822 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:40.6822 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1606 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1606 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1606 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1606 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1606 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1606 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1665 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:40:41.1665 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1665 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1821 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1977 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1977 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1977 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:40:41.1977 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.1977 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.3107 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:40:41.6773 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:40:41.6773 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:40:41.6773 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.6773 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.6773 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.6821 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.6821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:40:41.6821 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.6821 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.6821 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:40:41.6821 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:01.6779 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:41:01.6779 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:01.6779 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:01.6779 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:01.6779 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:01.6779 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:01.6827 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:01.6827 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:01.6827 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:01.6827 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:01.6827 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:02.1779 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:41:02.1779 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:02.1779 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.1779 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.1779 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.1779 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.1828 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:02.1828 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.1828 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.1828 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.1828 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:02.6776 INFO loading sounds.steps..1.ogg sound
+2020-02-12 10:41:02.6776 INFO sounds.steps..1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:02.6776 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.6776 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.6776 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.6834 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:02.6834 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.6834 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.6834 ERROR problems excecuting a fmod function at non detailed. step ERR_INVALID_PARAM
+2020-02-12 10:41:02.6834 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:09.4444 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:41:09.4444 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:09.5445 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:41:09.5445 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_PARAM
+2020-02-12 10:41:09.8614 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:10.0443 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:41:10.0443 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:10.5447 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:41:10.5447 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:11.0446 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:41:11.0446 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:11.5438 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:41:11.5438 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:12.0439 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:41:12.0439 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:12.5440 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:41:12.5440 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:13.0443 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:41:13.0443 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:13.5446 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:13.5446 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:14.0440 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:41:14.0440 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:14.5445 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:14.5445 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:15.0445 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:15.0445 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:15.5441 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:41:15.5441 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:16.0445 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:41:16.0445 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:16.5444 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:16.5444 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:17.0441 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:41:17.0441 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:17.5439 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:17.5439 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:18.0437 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:41:18.0437 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:18.5446 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:41:18.5446 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:19.0445 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:19.0445 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:19.5440 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:41:19.5440 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:20.0444 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:20.0444 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:20.5443 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:41:20.5443 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:21.0438 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:41:21.0438 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:21.5441 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:41:21.5441 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:22.0438 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:22.0438 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:22.5444 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:41:22.5444 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:23.0441 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:41:23.0441 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:23.5441 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:41:23.5441 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:38.1773 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:41:38.1773 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:38.6771 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:38.6771 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0773 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.0891 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1047 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1203 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:39.1203 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:39.1780 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:41:39.1780 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:39.6774 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:39.6774 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:40.4110 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:40.8610 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:44.0104 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:44.0104 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:44.2109 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:44.2109 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:44.5114 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:41:44.5114 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:44.7114 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:41:44.7114 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:45.0107 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:41:45.0107 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:45.2111 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:41:45.2111 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:45.5109 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:45.5109 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:45.7114 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:41:45.7114 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:46.0105 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:46.0105 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:46.2107 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:41:46.2107 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:46.5105 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:46.5105 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:46.7112 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:46.7112 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:47.0109 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:41:47.0109 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:47.2109 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:47.2109 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:47.5108 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:41:47.5108 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:47.7109 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:47.7109 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:48.0106 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:41:48.0106 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:48.2109 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:48.2109 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:48.5113 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:41:48.5113 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:48.7108 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:41:48.7108 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:49.0112 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:41:49.0112 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:49.2108 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:41:49.2108 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:49.5109 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:41:49.5109 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:49.7106 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:41:49.7106 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:50.0110 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:50.0110 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:50.2108 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:41:50.2108 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:50.5110 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:41:50.5110 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:50.7108 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:41:50.7108 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:51.0111 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:41:51.0111 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:51.2105 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:41:51.2105 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:51.5105 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:41:51.5105 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:51.7113 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:41:51.7113 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:52.0106 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:52.0106 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:52.2109 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:41:52.2109 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:52.5112 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:52.5112 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:52.7105 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:41:52.7105 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:53.0111 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:53.0111 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:53.2113 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:53.2113 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:53.5107 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:41:53.5107 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:53.7107 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:53.7107 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:54.0108 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:41:54.0108 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:54.2109 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:41:54.2109 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:54.5112 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:41:54.5112 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:54.7114 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:41:54.7114 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:55.0111 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:41:55.0111 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:55.2105 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:41:55.2105 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:55.5108 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:55.5108 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:55.7112 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:41:55.7112 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:56.0110 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:56.0110 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:56.2114 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:41:56.2114 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:56.5111 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:41:56.5111 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:56.7111 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:41:56.7111 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:57.0110 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:57.0110 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:57.2112 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:57.2112 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:57.5113 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:57.5113 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:57.7113 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:41:57.7113 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:58.0111 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:41:58.0111 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0611 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0728 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.0884 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1041 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1197 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:41:58.1353 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.2114 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:58.2114 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:58.4270 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.5105 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:41:58.5105 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:58.5441 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.6942 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:58.7111 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:41:58.7111 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:59.0112 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:41:59.0112 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:59.0278 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:59.0610 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:41:59.2114 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:41:59.2114 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:59.5110 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:41:59.5110 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:59.7110 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:41:59.7110 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:41:59.7110 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:00.0115 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:00.0115 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:00.2111 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:00.2111 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:00.5105 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:00.5105 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:00.7113 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:42:00.7113 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:00.9778 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:01.0106 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:01.0106 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:01.2110 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:01.2110 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:01.5113 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:42:01.5113 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:01.7113 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:42:01.7113 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:02.0114 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:42:02.0114 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:02.2109 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:42:02.2109 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:02.5109 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:42:02.5109 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:02.7108 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:42:02.7108 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:09.1942 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:09.1942 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:09.9113 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:09.9113 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:10.4106 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:42:10.4106 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:10.6112 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:10.6723 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:10.9164 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:42:10.9164 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:11.1157 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:42:11.1157 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:11.4489 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:42:11.4489 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:11.8486 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:42:11.8486 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:11.9499 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:11.9499 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:12.3488 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:42:12.3488 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:12.4490 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:42:12.4490 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:12.8491 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:42:12.8491 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:12.9493 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:12.9493 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:13.3480 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:42:13.3480 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:13.4483 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:13.4483 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:13.8487 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:42:13.8487 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:13.9482 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:13.9482 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:14.3483 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:42:14.3483 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:14.4484 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:14.4484 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:14.8482 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:14.8482 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:14.9484 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:42:14.9484 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:15.3482 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:42:15.3482 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:15.4489 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:42:15.4489 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2319 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2446 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2602 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:16.2758 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.4148 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.5662 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:16.9988 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:17.0810 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:17.6313 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:23.3475 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:42:23.3475 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:24.9141 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:24.9141 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:25.4139 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:42:25.4139 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:25.9137 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:42:25.9137 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:26.4132 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:42:26.9605 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:26.9802 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:42:26.9802 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:27.4638 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:42:27.4638 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:27.9641 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:27.9641 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:28.4635 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:42:28.4635 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:28.9637 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:28.9637 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:29.4635 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:42:29.6058 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:29.9638 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:42:29.9638 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:30.4641 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:30.4641 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:30.9632 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:30.9632 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:31.4634 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:42:31.4634 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:31.9639 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:31.9639 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:32.4633 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:42:32.4633 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:32.9633 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:32.9633 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:33.4632 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:42:33.4632 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:33.9634 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:33.9634 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:34.4638 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:42:34.4638 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:34.9641 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:42:34.9641 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:35.4640 INFO loading sounds.steps.womanstep.7.ogg sound
+2020-02-12 10:42:35.4640 INFO sounds.steps.womanstep.7.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:35.9634 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:35.9634 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:36.4637 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:42:36.4637 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:36.9636 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:42:36.9636 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:37.4637 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:42:37.4637 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:37.9636 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:37.9636 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:38.4637 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:38.4637 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:38.9640 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:42:38.9640 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:39.4632 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:42:39.4632 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:39.9638 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:42:39.9638 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9638 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9796 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:42:39.9952 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:40.1467 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:40.4640 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:42:40.4640 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:40.9307 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:40.9640 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:40.9640 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:41.4470 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:41.4640 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:41.4640 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:41.4804 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:42:41.9638 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:42:41.9638 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:42.4639 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:42:42.4639 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:42.9637 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:42:42.9637 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:43.4637 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:42:43.4637 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:43.9635 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:42:43.9635 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:45.7309 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:42:45.7309 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:46.2305 INFO loading sounds.steps.womanstep.5.ogg sound
+2020-02-12 10:42:46.2305 INFO sounds.steps.womanstep.5.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:46.7302 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:46.7302 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:47.8801 INFO loading sounds.steps.womanstep.6.ogg sound
+2020-02-12 10:42:47.8801 INFO sounds.steps.womanstep.6.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:49.1804 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:42:49.1804 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:51.6467 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:51.6467 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:52.1471 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:42:52.1471 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:53.2974 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:42:53.2974 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:53.3966 INFO loading sounds.walls.woodwall.wav sound
+2020-02-12 10:42:53.4250 INFO sounds.walls.woodwall.wav sound loaded
+2020-02-12 10:42:53.4602 INFO loading sounds.walls.woodwall.wav sound
+2020-02-12 10:42:53.4602 INFO sounds.walls.woodwall.wav sound was loaded previously. returning kached data
+2020-02-12 10:42:54.2600 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:54.2610 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:55.6272 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:42:55.6272 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:56.1267 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:42:56.1267 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:56.6264 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:42:56.6264 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:57.1264 INFO loading sounds.steps.womanstep.2.ogg sound
+2020-02-12 10:42:57.1264 INFO sounds.steps.womanstep.2.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:57.8601 INFO loading sounds.steps.womanstep.9.ogg sound
+2020-02-12 10:42:57.8601 INFO sounds.steps.womanstep.9.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:58.3595 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:42:58.3595 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:58.8596 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:42:58.8596 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:59.3610 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:42:59.3610 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:42:59.8589 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:42:59.8589 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:00.4104 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:43:00.4104 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:00.9094 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:43:00.9094 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:01.7589 INFO loading sounds.steps.womanstep.3.ogg sound
+2020-02-12 10:43:02.3645 INFO sounds.steps.womanstep.3.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:02.7923 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:43:02.7923 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:03.2925 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:43:03.2925 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:03.4927 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:43:03.4927 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:03.7753 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7763 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.7919 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at disconnecting source DSP step ERR_CHANNEL_STOLEN
+2020-02-12 10:43:03.8075 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:03.9922 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:43:03.9922 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:04.0928 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:04.3592 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:04.4921 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:43:04.4921 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:04.9922 INFO loading sounds.steps.womanstep.8.ogg sound
+2020-02-12 10:43:04.9922 INFO sounds.steps.womanstep.8.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:05.0420 ERROR problems excecuting a fmod function at releasing source dsp step ERR_INVALID_HANDLE
+2020-02-12 10:43:05.4930 INFO loading sounds.steps.womanstep.12.ogg sound
+2020-02-12 10:43:05.4930 INFO sounds.steps.womanstep.12.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:05.8420 INFO loading sounds.steps.womanstep.1.ogg sound
+2020-02-12 10:43:05.8420 INFO sounds.steps.womanstep.1.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:06.4920 INFO loading sounds.steps.womanstep.13.ogg sound
+2020-02-12 10:43:06.4920 INFO sounds.steps.womanstep.13.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:08.1583 INFO loading sounds.steps.womanstep.4.ogg sound
+2020-02-12 10:43:08.1583 INFO sounds.steps.womanstep.4.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:08.2585 INFO loading sounds.steps.womanstep.10.ogg sound
+2020-02-12 10:43:08.2585 INFO sounds.steps.womanstep.10.ogg sound was loaded previously. returning kached data
+2020-02-12 10:43:09.0249 INFO loading sounds.steps.womanstep.11.ogg sound
+2020-02-12 10:43:09.0259 INFO sounds.steps.womanstep.11.ogg sound was loaded previously. returning kached data

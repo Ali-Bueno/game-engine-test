@@ -1,0 +1,28 @@
+2020-02-03 23:52:16.7456 INFO logSystem started at 03/02/2020 23:52:16
+2020-02-03 23:52:16.8774 DEBUG starting exploud engine
+2020-02-03 23:52:17.2585 DEBUG plugins loaded
+2020-02-03 23:52:17.2727 INFO loading sounds/windowloop.mp3 sound
+2020-02-03 23:52:17.2727 ERROR problems excecuting a fmod function ERR_FILE_NOTFOUND
+2020-02-03 23:52:17.2727 INFO sounds/windowloop.mp3 sound loaded
+2020-02-03 23:52:17.2727 ERROR problems excecuting a fmod function ERR_INVALID_PARAM
+2020-02-03 23:52:17.4397 ERROR problems excecuting a fmod function ERR_INVALID_PARAM
+2020-02-03 23:52:17.4397 ERROR problems excecuting a fmod function ERR_INVALID_PARAM
+2020-02-03 23:52:17.4475 ERROR problems excecuting a fmod function ERR_INVALID_PARAM
+2020-02-03 23:52:17.4475 ERROR problems excecuting a fmod function ERR_INVALID_PARAM
+2020-02-03 23:52:17.4475 ERROR problems excecuting a fmod function ERR_INVALID_PARAM
+2020-02-03 23:52:17.5189 ERROR problems excecuting a fmod function ERR_INVALID_PARAM
+2020-02-03 23:55:23.0497 INFO logSystem started at 03/02/2020 23:55:23
+2020-02-03 23:55:23.1615 DEBUG starting exploud engine
+2020-02-03 23:55:23.3687 DEBUG plugins loaded
+2020-02-03 23:55:23.3853 INFO loading sounds/window/loop.mp3 sound
+2020-02-03 23:55:23.9547 INFO sounds/window/loop.mp3 sound loaded
+2020-02-03 23:57:38.0690 INFO logSystem started at 03/02/2020 23:57:38
+2020-02-03 23:57:38.1457 DEBUG starting exploud engine
+2020-02-03 23:57:38.3909 DEBUG plugins loaded
+2020-02-03 23:57:38.4114 INFO loading sounds/window/loop.mp3 sound
+2020-02-03 23:57:38.8566 INFO sounds/window/loop.mp3 sound loaded
+2020-02-03 23:59:52.7197 INFO logSystem started at 03/02/2020 23:59:52
+2020-02-03 23:59:52.8340 DEBUG starting exploud engine
+2020-02-03 23:59:53.0280 DEBUG plugins loaded
+2020-02-03 23:59:53.0387 INFO loading sounds/window/loop.mp3 sound
+2020-02-03 23:59:53.6022 INFO sounds/window/loop.mp3 sound loaded
