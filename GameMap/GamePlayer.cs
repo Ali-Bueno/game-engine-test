@@ -20,6 +20,8 @@ namespace Game3.GameMap
         private const float MoveSpeed = 5f;
         private const float RotateSpeed = 120f;
         private const float PlayerRadius = 0.3f;
+        public const float PlayerHeight = 1.75f;  // Altura del jugador en metros
+        public const float EyeHeight = 1.65f;     // Altura de los ojos/oídos (para listener)
 
         // Pisadas
         private const int FootstepCount = 13;
@@ -308,7 +310,8 @@ namespace Game3.GameMap
         {
             foreach (var collider in map.Colliders)
             {
-                if (collider.Intersects(newPosition, PlayerRadius))
+                // Usar colisión 3D para considerar la altura del jugador
+                if (collider.Intersects3D(newPosition, PlayerRadius, PlayerHeight))
                 {
                     newPosition = collider.ResolveCollision(newPosition, PlayerRadius);
                 }

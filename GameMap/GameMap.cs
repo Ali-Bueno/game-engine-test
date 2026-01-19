@@ -370,7 +370,7 @@ namespace Game3.GameMap
             if (player != null)
             {
                 float yaw = player.Angle * MathF.PI / 180f;
-                float listenerZ = player.Position.Z + 1.7f;  // Altura del oído
+                float listenerZ = player.Position.Z + GamePlayer.EyeHeight;  // Altura de ojos/oídos
 
                 // Log cada 60 frames (~1 segundo)
                 listenerLogCounter++;

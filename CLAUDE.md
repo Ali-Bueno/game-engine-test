@@ -54,6 +54,7 @@ Game3/
 │   ├── GameDoor.cs        # Puerta con primitivas dinámicas
 │   ├── GameStair.cs       # Escalera con altura automática
 │   ├── GamePlayer.cs      # Jugador con movimiento, salto y colisiones
+│   ├── MapRenderer.cs     # Renderizado 3D con MonoGame
 │   └── ExampleMap.cs      # Ejemplo de uso del sistema
 ├── alisson_da_silva_bueno_raytraced_audio/
 │   ├── vaudio.dll         # Motor de raytracing (REQUERIDO)
@@ -65,6 +66,12 @@ Game3/
 ├── Game1.cs               # Clase principal del juego
 ├── Input.cs               # Gestión de entrada de teclado
 └── Program.cs             # Entry point y logging
+
+### Sistema de Visualización 3D
+```
+GameMap/
+└── MapRenderer.cs         # Renderizado 3D del mapa con MonoGame
+```
 ```
 
 ## Clases Principales
@@ -110,6 +117,28 @@ Jugador con física completa:
 - Gravedad y salto con física
 - Pisadas diferentes según superficie
 - Detección automática de escaleras y plataformas
+
+Constantes importantes:
+```csharp
+public const float PlayerHeight = 1.75f;  // Altura del jugador en metros
+public const float EyeHeight = 1.65f;     // Altura de ojos/oídos (para listener)
+```
+
+### MapRenderer (`GameMap/MapRenderer.cs`)
+Renderizador 3D para visualizar el mapa:
+- **Vista en tercera persona** con cámara que sigue al jugador
+- **Colisión de cámara** que evita atravesar paredes
+- **Jugador humanoid** con cuerpo, cabeza, brazos, piernas
+- **Puertas** con panel y pomo dorado (desaparecen al abrir)
+- **Escaleras** con peldaños individuales y barandillas
+- **Suelo con patrón** de baldosas ajedrezado
+- **Paredes con sombreado** según orientación
+
+Características visuales:
+- Jugador: camisa azul, pantalones grises, piel, pelo marrón
+- Flecha roja en el suelo indicando dirección
+- Colores diferenciados por tipo de superficie
+- Sin techo renderizado para mejor visibilidad
 
 ### Common (`GameMap/Common.cs`)
 Tipos compartidos:
@@ -254,10 +283,15 @@ reverbRayCount = 512,    // Era 1024
 occlusionRayCount = 256, // Era 512
 ```
 
-### Debug Window
+### Debug Window de vaudio
 Activar ventana de debug de vaudio:
 ```csharp
 new AudioManager(enableDebugWindow: true);
+```
+**IMPORTANTE**: La ventana de debug de vaudio interfiere con el renderizado de MonoGame.
+Si usas `MapRenderer` para visualización 3D, desactiva el debug:
+```csharp
+new AudioManager(enableDebugWindow: false);
 ```
 
 ## Problemas Conocidos
@@ -276,6 +310,14 @@ new AudioManager(enableDebugWindow: true);
 ### Reverb no funcionaba en balcones/plataformas
 **Causa**: El espacio no estaba cerrado (faltaban paredes).
 **Solución**: Crear balcones como GameRoom completas con paredes.
+
+### Pantalla negra con MapRenderer
+**Causa**: La ventana de debug de vaudio (`enableDebugWindow: true`) interfiere con el renderizado de MonoGame.
+**Solución**: Desactivar el debug de vaudio con `enableDebugWindow: false`.
+
+### Cámara dentro de paredes
+**Causa**: La cámara en tercera persona se posicionaba detrás del jugador sin verificar colisiones.
+**Solución**: Implementado `ApplyCameraCollision()` en MapRenderer que acerca la cámara al jugador si hay paredes en medio.
 
 ---
 

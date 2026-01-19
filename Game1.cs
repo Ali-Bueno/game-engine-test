@@ -13,11 +13,17 @@ namespace Game3
         private SpriteBatch spriteBatch;
         public GameMap.GameMap gameMap;
         public AudioManager audioManager;
+        private MapRenderer mapRenderer;
 
         public Game1()
         {
             Program.Log("Game1 constructor started");
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferMultiSampling = true;
+            graphics.PreferredDepthStencilFormat = DepthFormat.Depth24;
+            graphics.GraphicsProfile = GraphicsProfile.HiDef;
             Content.RootDirectory = "Content";
             Program.Log("Game1 constructor finished");
         }
@@ -40,7 +46,7 @@ namespace Game3
             try
             {
                 Program.Log("Creating AudioManager (without vaudio - will initialize after map bounds calculation)...");
-                audioManager = new AudioManager(enableDebugWindow: true);
+                audioManager = new AudioManager(enableDebugWindow: false);  // Desactivar debug de vaudio para ver gráficos
                 Program.Log("AudioManager created (OpenAL ready, vaudio pending)");
             }
             catch (System.Exception ex)
@@ -75,6 +81,11 @@ namespace Game3
                 gameMap.SetAudioManager(audioManager);
                 gameMap.Build();
                 Program.Log("GameMap built");
+
+                // Crear renderer 3D
+                mapRenderer = new MapRenderer(GraphicsDevice, gameMap);
+                mapRenderer.BuildGeometry();
+                Program.Log("MapRenderer created and geometry built");
 
                 // Log raytracing state after map is built
                 audioManager.LogRaytracingState();
@@ -117,7 +128,12 @@ namespace Game3
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            // Cielo azul claro
+            GraphicsDevice.Clear(new Color(135, 180, 220));
+
+            // Dibujar mapa 3D
+            mapRenderer?.Draw();
+
             base.Draw(gameTime);
         }
     }

@@ -43,12 +43,29 @@ namespace Game3.GameMap
         }
 
         /// <summary>
-        /// Verifica si un punto con radio está dentro del collider
+        /// Verifica si un punto con radio está dentro del collider (2D en XY, ignora Z)
         /// </summary>
         public bool Intersects(Vector3 point, float radius)
         {
             return point.X + radius > Min.X && point.X - radius < Max.X &&
                    point.Y + radius > Min.Y && point.Y - radius < Max.Y;
+        }
+
+        /// <summary>
+        /// Verifica si un punto con radio está dentro del collider (3D completo)
+        /// </summary>
+        public bool Intersects3D(Vector3 point, float radius, float playerHeight = 1.8f)
+        {
+            // Verificar XY
+            if (!(point.X + radius > Min.X && point.X - radius < Max.X &&
+                  point.Y + radius > Min.Y && point.Y - radius < Max.Y))
+                return false;
+
+            // Verificar Z (el jugador ocupa desde point.Z hasta point.Z + playerHeight)
+            float playerBottom = point.Z;
+            float playerTop = point.Z + playerHeight;
+
+            return playerTop > Min.Z && playerBottom < Max.Z;
         }
 
         /// <summary>
