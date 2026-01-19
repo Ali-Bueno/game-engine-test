@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using DavyKager;
 using Game3.Audio;
+using Game3.GameMap;
 
 namespace Game3
 {
@@ -10,7 +11,7 @@ namespace Game3
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
-        public Map map;
+        public GameMap.GameMap gameMap;
         public AudioManager audioManager;
 
         public Game1()
@@ -38,12 +39,9 @@ namespace Game3
 
             try
             {
-                Program.Log("Creating AudioManager...");
-                // World size must cover the entire map:
-                // X: -20 to 30 (50m), Y: 0 to 75 (75m), Z: 0 to 10 (10m for two floors)
-                // Add margin for safety: 60x80x12
-                audioManager = new AudioManager(new vaudio.Vector3F(60, 80, 12), enableDebugWindow: true);
-                Program.Log("AudioManager created");
+                Program.Log("Creating AudioManager (without vaudio - will initialize after map bounds calculation)...");
+                audioManager = new AudioManager(enableDebugWindow: true);
+                Program.Log("AudioManager created (OpenAL ready, vaudio pending)");
             }
             catch (System.Exception ex)
             {
@@ -61,18 +59,29 @@ namespace Game3
 
             try
             {
-                Program.Log("Creating Map...");
-                map = new Map(audioManager);
-                Program.Log("Map created, calling BuildMap...");
-                map.BuildMap();
-                Program.Log("BuildMap finished");
+                Program.Log("Creating GameMap elements...");
+                gameMap = ExampleMap.Create();
+
+                // Calcular bounds del mapa
+                var (min, max) = gameMap.CalculateBounds();
+                Program.Log($"Map bounds: min=({min.X:F1}, {min.Y:F1}, {min.Z:F1}), max=({max.X:F1}, {max.Y:F1}, {max.Z:F1})");
+
+                // Inicializar vaudio con los bounds calculados
+                audioManager.InitializeVaudioWithBounds(
+                    new vaudio.Vector3F(min.X, min.Y, min.Z),
+                    new vaudio.Vector3F(max.X, max.Y, max.Z));
+
+                // Asignar AudioManager al mapa y construir
+                gameMap.SetAudioManager(audioManager);
+                gameMap.Build();
+                Program.Log("GameMap built");
 
                 // Log raytracing state after map is built
                 audioManager.LogRaytracingState();
             }
             catch (System.Exception ex)
             {
-                Program.Log($"Map error: {ex}");
+                Program.Log($"GameMap error: {ex}");
             }
 
             Program.Log("LoadContent finished");
@@ -93,7 +102,7 @@ namespace Game3
 
             try
             {
-                map?.Update(Input.keystate, gameTime);
+                gameMap?.Update(Input.keystate, gameTime);
                 audioManager?.Update();
             }
             catch (System.Exception ex)
@@ -101,12 +110,7 @@ namespace Game3
                 Program.Log($"Update error: {ex}");
             }
 
-            // Press C to speak coordinates
-            if (Input.WasKeyPressed(Keys.C))
-            {
-                var pos = map.Player.Position;
-                Tolk.Speak($"{pos.X:F1}, {pos.Y:F1}, {pos.Z:F1}, angle {map.Player.Angle:F0}", true);
-            }
+            // Press C to speak coordinates (handled by GamePlayer now)
 
             base.Update(gameTime);
         }

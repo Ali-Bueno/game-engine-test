@@ -1,24 +1,27 @@
 using System;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Game3.Audio;
 
-namespace Game3
+namespace Game3.GameMap
 {
-    public class Player
+    /// <summary>
+    /// Jugador para el sistema GameMap.
+    /// Maneja movimiento, colisiones, pisadas e interacción con puertas.
+    /// </summary>
+    public class GamePlayer
     {
-        private Map map;
+        private GameMap map;
         private Random random = new Random();
 
         public Vector3 Position;
-        public float Angle; // Degrees, 0 = North (+Y), 90 = East (+X)
+        public float Angle; // Grados, 0 = Norte (+Y), 90 = Este (+X)
 
         private const float MoveSpeed = 5f;
         private const float RotateSpeed = 120f;
         private const float PlayerRadius = 0.3f;
 
-        // Footstep sounds
+        // Pisadas
         private const int FootstepCount = 13;
         private const int WoodFootstepCount = 4;
         private const float FootstepInterval = 0.4f;
@@ -26,19 +29,23 @@ namespace Game3
         private bool isMoving = false;
         private bool isOnStair = false;
 
-        // Collision sound
+        // Sonido de colisión
         private float collisionCooldown = 0f;
         private const float CollisionCooldownTime = 0.3f;
 
-        // Floor height tracking
+        // Altura del suelo
         private float currentFloorHeight = 0f;
-        private float targetFloorHeight = 0f;
-        private const float FallSpeed = 10f;  // Speed of falling/descending
 
-        // Door interaction
+        // Salto y gravedad
+        private float verticalVelocity = 0f;
+        private bool isGrounded = true;
+        private const float JumpForce = 6f;
+        private const float Gravity = 15f;
+
+        // Interacción
         private KeyboardState previousKeyState;
 
-        public Player(Map map)
+        public GamePlayer(GameMap map)
         {
             this.map = map;
             Position = Vector3.Zero;
@@ -52,7 +59,7 @@ namespace Game3
             if (collisionCooldown > 0)
                 collisionCooldown -= deltaTime;
 
-            // Rotation with arrow keys
+            // Rotación con flechas
             if (keystate.IsKeyDown(Keys.Left))
             {
                 Angle -= RotateSpeed * deltaTime;
@@ -64,12 +71,12 @@ namespace Game3
                 if (Angle >= 360) Angle -= 360;
             }
 
-            // Calculate movement direction based on angle
+            // Calcular dirección basada en ángulo
             float angleRad = Angle * MathF.PI / 180f;
             Vector3 forward = new Vector3(MathF.Sin(angleRad), MathF.Cos(angleRad), 0);
             Vector3 right = new Vector3(MathF.Cos(angleRad), -MathF.Sin(angleRad), 0);
 
-            // Movement with WASD
+            // Movimiento con WASD
             Vector3 moveDir = Vector3.Zero;
 
             if (keystate.IsKeyDown(Keys.W))
@@ -87,10 +94,10 @@ namespace Game3
                 moveDir.Normalize();
                 Vector3 newPosition = Position + moveDir * MoveSpeed * deltaTime;
 
-                // Apply collision detection (XY only)
+                // Aplicar colisiones (solo en XY)
                 Vector3 resolvedPosition = ApplyCollisions(newPosition);
 
-                // Check if we hit a wall
+                // Verificar si chocamos
                 float collisionDistance = (resolvedPosition - newPosition).Length();
                 if (collisionDistance > 0.01f && collisionCooldown <= 0)
                 {
@@ -98,67 +105,56 @@ namespace Game3
                     collisionCooldown = CollisionCooldownTime;
                 }
 
-                // Check for stairs and update Z position
-                isOnStair = false;
-                float stairHeight = GetStairHeight(resolvedPosition);
-                if (stairHeight >= 0)
-                {
-                    isOnStair = true;
-                    targetFloorHeight = stairHeight;
-                    currentFloorHeight = stairHeight;  // Instant on stairs
-                }
-                else
-                {
-                    // Check if we're on an upper floor platform
-                    float platformHeight = GetPlatformHeight(resolvedPosition);
-                    if (platformHeight >= 0 && currentFloorHeight >= platformHeight - 0.5f)
-                    {
-                        // Stay on platform
-                        targetFloorHeight = platformHeight;
-                        currentFloorHeight = platformHeight;
-                    }
-                    else
-                    {
-                        // Fall towards ground
-                        targetFloorHeight = 0f;
-                    }
-                }
+                // Verificar escaleras para el flag isOnStair (para sonido de pisadas)
+                isOnStair = GetStairHeight(resolvedPosition) >= 0;
 
-                // Smoothly adjust height when falling
-                if (currentFloorHeight > targetFloorHeight)
-                {
-                    currentFloorHeight -= FallSpeed * deltaTime;
-                    if (currentFloorHeight < targetFloorHeight)
-                        currentFloorHeight = targetFloorHeight;
-                }
-                else if (currentFloorHeight < targetFloorHeight)
-                {
-                    currentFloorHeight = targetFloorHeight;  // Instant rise (stairs)
-                }
-
-                resolvedPosition.Z = currentFloorHeight;
+                // Mantener la Z actual (la gravedad/salto se maneja en UpdateVerticalMovement)
+                resolvedPosition.Z = Position.Z;
                 Position = resolvedPosition;
             }
 
-            // Door interaction with E key
+            // Interacción con puertas (tecla E)
             if (keystate.IsKeyDown(Keys.E) && !previousKeyState.IsKeyDown(Keys.E))
             {
                 TryInteractWithDoor();
             }
+
+            // Decir coordenadas (tecla C)
+            if (keystate.IsKeyDown(Keys.C) && !previousKeyState.IsKeyDown(Keys.C))
+            {
+                SpeakCoordinates();
+            }
+
+            // Salto (tecla Espacio)
+            if (keystate.IsKeyDown(Keys.Space) && !previousKeyState.IsKeyDown(Keys.Space) && isGrounded)
+            {
+                Jump();
+            }
+
+            // Aplicar gravedad y actualizar posición vertical
+            UpdateVerticalMovement(deltaTime);
+
             previousKeyState = keystate;
 
             UpdateFootsteps(deltaTime);
         }
 
+        private int stairLogCounter = 0;
+
         private float GetStairHeight(Vector3 pos)
         {
-            if (map.Stairs == null) return -1f;
-
             foreach (var stair in map.Stairs)
             {
                 float height = stair.GetHeightAtPosition(pos);
                 if (height >= 0)
                 {
+                    // Log periódico cuando está en la escalera
+                    stairLogCounter++;
+                    if (stairLogCounter >= 60)
+                    {
+                        stairLogCounter = 0;
+                        Program.Log($"OnStair: height={height:F2}, playerZ will be {height:F2}");
+                    }
                     return height;
                 }
             }
@@ -167,7 +163,6 @@ namespace Game3
 
         private float GetPlatformHeight(Vector3 pos)
         {
-            // Check if player is on any upper floor platform
             foreach (var platform in map.Platforms)
             {
                 if (pos.X >= platform.Min.X && pos.X <= platform.Max.X &&
@@ -181,21 +176,35 @@ namespace Game3
 
         private void TryInteractWithDoor()
         {
-            if (map.Doors == null) return;
-
-            foreach (var door in map.Doors)
+            var nearestDoor = map.GetNearestDoor(Position, 2f);
+            if (nearestDoor != null)
             {
-                if (door.IsPlayerNear(Position))
-                {
-                    door.Toggle();
-                    break;
-                }
+                nearestDoor.Toggle();
+            }
+        }
+
+        private void SpeakCoordinates()
+        {
+            var room = map.GetRoomAt(Position);
+            string roomName = room != null ? room.Name : "Exterior";
+            string msg = $"X {Position.X:F0}, Y {Position.Y:F0}, Z {Position.Z:F0}. {roomName}";
+            Program.Log($"Player coordinates: {msg}");
+
+            // Si Tolk está disponible, hablar
+            try
+            {
+                DavyKager.Tolk.Speak(msg, true);
+            }
+            catch
+            {
+                // Tolk no disponible
             }
         }
 
         private void UpdateFootsteps(float deltaTime)
         {
-            if (isMoving)
+            // Solo reproducir pisadas si está en el suelo y moviéndose
+            if (isMoving && isGrounded)
             {
                 footstepTimer += deltaTime;
                 if (footstepTimer >= FootstepInterval)
@@ -212,22 +221,18 @@ namespace Game3
 
         private void PlayFootstep()
         {
-            // Play footsteps at player's feet position (Z = floor level)
-            // This allows reverb/raytracing to affect the sound
             float footX = Position.X;
             float footY = Position.Y;
-            float footZ = Position.Z + 0.1f;  // Slightly above floor
+            float footZ = Position.Z + 0.1f;
 
             if (isOnStair)
             {
-                // Wood footsteps on stairs
                 int stepNumber = random.Next(1, WoodFootstepCount + 1);
                 string soundPath = $"sounds/steps/wood/{stepNumber}.wav";
                 map.AudioManager.Play3D(soundPath, footX, footY, footZ, false, 0.6f);
             }
             else
             {
-                // Normal footsteps
                 int stepNumber = random.Next(1, FootstepCount + 1);
                 string soundPath = $"sounds/steps/womanstep/{stepNumber}.ogg";
                 map.AudioManager.Play3D(soundPath, footX, footY, footZ, false, 0.5f);
@@ -236,8 +241,67 @@ namespace Game3
 
         private void PlayCollisionSound()
         {
-            // Play collision sound at player position with reverb
             map.AudioManager.Play3D("sounds/walls/wall.mp3", Position.X, Position.Y, Position.Z + 1.0f, false, 0.7f);
+        }
+
+        private void Jump()
+        {
+            verticalVelocity = JumpForce;
+            isGrounded = false;
+            PlayJumpSound();
+        }
+
+        private void PlayJumpSound()
+        {
+            map.AudioManager.Play3D("sounds/player/jump.wav", Position.X, Position.Y, Position.Z + 0.5f, false, 0.7f);
+        }
+
+        private void UpdateVerticalMovement(float deltaTime)
+        {
+            // Calcular altura del suelo en la posición actual
+            float floorHeight = 0f;
+
+            // Verificar escaleras
+            float stairHeight = GetStairHeight(Position);
+            if (stairHeight >= 0)
+            {
+                floorHeight = stairHeight;
+            }
+            else
+            {
+                // Verificar plataformas
+                float platformHeight = GetPlatformHeight(Position);
+                if (platformHeight >= 0)
+                {
+                    floorHeight = platformHeight;
+                }
+                else
+                {
+                    floorHeight = map.GetFloorHeight(Position);
+                }
+            }
+
+            if (!isGrounded)
+            {
+                // Aplicar gravedad
+                verticalVelocity -= Gravity * deltaTime;
+                Position.Z += verticalVelocity * deltaTime;
+
+                // Verificar si tocamos el suelo
+                if (Position.Z <= floorHeight)
+                {
+                    Position.Z = floorHeight;
+                    verticalVelocity = 0f;
+                    isGrounded = true;
+                    currentFloorHeight = floorHeight;
+                }
+            }
+            else
+            {
+                // En el suelo, seguir la altura del terreno
+                currentFloorHeight = floorHeight;
+                Position.Z = currentFloorHeight;
+            }
         }
 
         private Vector3 ApplyCollisions(Vector3 newPosition)

@@ -121,16 +121,58 @@ namespace Game3.Audio
         public RaytracingContext RaytracingContext => raytracingContext;
         public bool HasEfx => hasEfx;
         public uint EffectSlot => effectSlot;
+        public bool IsVaudioInitialized => vaudioInitialized;
 
+        private bool vaudioInitialized = false;
+        private bool debugWindowEnabled = false;
+
+        /// <summary>
+        /// Crea un AudioManager con bounds específicos para vaudio.
+        /// </summary>
         public AudioManager(Vector3F worldSize, bool enableDebugWindow = false)
         {
             audioBuffers = new Dictionary<string, uint>();
             monoAudioBuffers = new Dictionary<string, uint>();
             activeSources = new List<AudioSource>();
+            debugWindowEnabled = enableDebugWindow;
 
             InitializeOpenAL();
             InitializeEFX();
-            InitializeVaudio(worldSize, enableDebugWindow);
+            InitializeVaudio(new Vector3F(-25, -5, -1), worldSize, enableDebugWindow);
+        }
+
+        /// <summary>
+        /// Crea un AudioManager sin inicializar vaudio (llamar InitializeVaudioWithBounds después).
+        /// </summary>
+        public AudioManager(bool enableDebugWindow = false)
+        {
+            audioBuffers = new Dictionary<string, uint>();
+            monoAudioBuffers = new Dictionary<string, uint>();
+            activeSources = new List<AudioSource>();
+            debugWindowEnabled = enableDebugWindow;
+
+            InitializeOpenAL();
+            InitializeEFX();
+            // vaudio se inicializa después con InitializeVaudioWithBounds
+        }
+
+        /// <summary>
+        /// Inicializa vaudio con los bounds calculados del mapa.
+        /// Llamar después de crear todas las habitaciones/elementos del mapa.
+        /// </summary>
+        public void InitializeVaudioWithBounds(Vector3F min, Vector3F max)
+        {
+            if (vaudioInitialized)
+            {
+                Program.Log("Warning: vaudio already initialized, skipping");
+                return;
+            }
+
+            Vector3F worldPosition = min;
+            Vector3F worldSize = new Vector3F(max.X - min.X, max.Y - min.Y, max.Z - min.Z);
+
+            InitializeVaudio(worldPosition, worldSize, debugWindowEnabled);
+            Program.Log($"Vaudio initialized with dynamic bounds: pos=({min.X:F1}, {min.Y:F1}, {min.Z:F1}), size=({worldSize.X:F1}, {worldSize.Y:F1}, {worldSize.Z:F1})");
         }
 
         // HRTF constants
@@ -264,14 +306,11 @@ namespace Game3.Audio
             }
         }
 
-        private void InitializeVaudio(Vector3F worldSize, bool enableDebugWindow)
+        private void InitializeVaudio(Vector3F worldPosition, Vector3F worldSize, bool enableDebugWindow)
         {
-            // worldPosition is the corner of the volume, worldSize extends from there
-            // Map goes from X=-20 to X=30, Y=0 to Y=75, Z=0 to Z=10
-            // Position at (-25, -5, -1) with size (60, 80, 12) covers everything with margin
             var settings = new RaytracingContextSettings()
             {
-                worldPosition = new Vector3F(-25, -5, -1),
+                worldPosition = worldPosition,
                 worldSize = worldSize,
                 renderingEnabled = enableDebugWindow,
                 reverbRayCount = 1024,
@@ -283,63 +322,77 @@ namespace Game3.Audio
             };
 
             raytracingContext = new RaytracingContext(settings);
+            vaudioInitialized = true;
 
             // Configure materials with proper acoustic properties
             ConfigureMaterials();
 
-            Program.Log("Vaudio raytracing context initialized with materials configured");
+            Program.Log($"Vaudio initialized: pos=({worldPosition.X:F1}, {worldPosition.Y:F1}, {worldPosition.Z:F1}), size=({worldSize.X:F1}, {worldSize.Y:F1}, {worldSize.Z:F1})");
         }
 
         private void ConfigureMaterials()
         {
             // =============================================
-            // MATERIALES PARA RAYTRACING DE AUDIO
+            // MATERIALES PARA RAYTRACING DE AUDIO (vaudio)
             // =============================================
-            // Absorción: cuánto sonido absorbe (0=refleja todo, 1=absorbe todo)
-            // Scattering: cuánto dispersa el sonido (difusión)
-            // Transmisión: cuánto sonido pasa A TRAVÉS del material (0=bloquea, 1=pasa todo)
-            //   - LF = Low Frequency (graves)
-            //   - HF = High Frequency (agudos)
-            // Nota: Las altas frecuencias se absorben/bloquean más fácilmente que las bajas
+            // Absorción: cuánto sonido absorbe en cada rebote (0=refleja todo, 1=absorbe todo)
+            // Scattering: cuánto dispersa el sonido (difusión) (0-1)
+            // Transmisión: dB perdidos por METRO de material (valores altos = más bloqueo)
+            //   - LF = Low Frequency (graves) - típicamente 20-150 dB/m
+            //   - HF = High Frequency (agudos) - típicamente 40-250 dB/m
+            // Valores de referencia de la documentación de vaudio:
+            //   Brick: 80/120, Concrete: 100/150, Metal: 150/250
 
             // Concrete - Hormigón grueso, muy denso, bloquea casi todo
             var concrete = raytracingContext.GetMaterial(MaterialType.Concrete);
-            concrete.AbsorptionLF = 0.01f;   // Muy reflectivo en graves
-            concrete.AbsorptionHF = 0.02f;   // Muy reflectivo en agudos
-            concrete.ScatteringLF = 0.10f;
-            concrete.ScatteringHF = 0.20f;
-            concrete.TransmissionLF = 0.02f; // Casi nada pasa (graves pasan un poco más)
-            concrete.TransmissionHF = 0.01f; // Agudos bloqueados casi completamente
+            concrete.AbsorptionLF = 0.02f;
+            concrete.AbsorptionHF = 0.10f;
+            concrete.ScatteringLF = 0.30f;
+            concrete.ScatteringHF = 0.50f;
+            concrete.TransmissionLF = 100f;  // dB/m - bloquea mucho
+            concrete.TransmissionHF = 150f;  // dB/m - agudos bloqueados más
 
-            // Brick - Ladrillo, denso pero permite algo de transmisión
+            // Brick - Ladrillo
             var brick = raytracingContext.GetMaterial(MaterialType.Brick);
-            brick.AbsorptionLF = 0.03f;
-            brick.AbsorptionHF = 0.06f;
-            brick.ScatteringLF = 0.20f;
-            brick.ScatteringHF = 0.40f;
-            brick.TransmissionLF = 0.05f;  // Algo de graves pasan (se escucha amortiguado)
-            brick.TransmissionHF = 0.02f;  // Agudos muy bloqueados
+            brick.AbsorptionLF = 0.02f;
+            brick.AbsorptionHF = 0.05f;
+            brick.ScatteringLF = 0.30f;
+            brick.ScatteringHF = 0.50f;
+            brick.TransmissionLF = 80f;   // dB/m
+            brick.TransmissionHF = 120f;  // dB/m
 
-            // Metal - Puerta metálica, muy reflectivo, bloquea bien
+            // Metal - Puerta metálica, muy reflectivo, bloquea mucho
             var metal = raytracingContext.GetMaterial(MaterialType.Metal);
-            metal.AbsorptionLF = 0.01f;
+            metal.AbsorptionLF = 0.05f;
             metal.AbsorptionHF = 0.02f;
-            metal.ScatteringLF = 0.05f;
-            metal.ScatteringHF = 0.10f;
-            metal.TransmissionLF = 0.03f;  // Metal deja pasar un poco de graves (vibra)
-            metal.TransmissionHF = 0.01f;  // Agudos bloqueados
+            metal.ScatteringLF = 0.02f;
+            metal.ScatteringHF = 0.05f;
+            metal.TransmissionLF = 150f;  // dB/m - metal bloquea mucho
+            metal.TransmissionHF = 250f;  // dB/m
 
-            // Wood - Madera (para escaleras, puertas de madera)
-            var wood = raytracingContext.GetMaterial(MaterialType.Brick); // Usamos Brick como base
-            // Nota: Si vaudio tiene MaterialType.Wood, usarlo en su lugar
+            // Wood Indoor - Madera interior (para escaleras)
+            var woodIndoor = raytracingContext.GetMaterial(MaterialType.WoodIndoor);
+            woodIndoor.AbsorptionLF = 0.06f;
+            woodIndoor.AbsorptionHF = 0.21f;
+            woodIndoor.ScatteringLF = 0.10f;
+            woodIndoor.ScatteringHF = 0.20f;
+            woodIndoor.TransmissionLF = 30f;   // dB/m - madera deja pasar algo
+            woodIndoor.TransmissionHF = 60f;   // dB/m
 
-            // Fabric/Carpet - Tela/alfombra (absorbe mucho, no transmite)
-            // Se puede usar para áreas que absorben sonido
+            // Cloth - Tela/cortinas (absorbe mucho)
+            var cloth = raytracingContext.GetMaterial(MaterialType.Cloth);
+            cloth.AbsorptionLF = 0.31f;
+            cloth.AbsorptionHF = 0.54f;
+            cloth.ScatteringLF = 0.60f;
+            cloth.ScatteringHF = 0.80f;
+            cloth.TransmissionLF = 15f;   // dB/m - tela no bloquea mucho
+            cloth.TransmissionHF = 30f;   // dB/m
 
-            Program.Log("Materials configured with realistic transmission values:");
-            Program.Log($"  Concrete: Trans LF={concrete.TransmissionLF}, HF={concrete.TransmissionHF}");
-            Program.Log($"  Brick: Trans LF={brick.TransmissionLF}, HF={brick.TransmissionHF}");
-            Program.Log($"  Metal: Trans LF={metal.TransmissionLF}, HF={metal.TransmissionHF}");
+            Program.Log("Materials configured with vaudio dB/m transmission values:");
+            Program.Log($"  Concrete: Trans LF={concrete.TransmissionLF} dB/m, HF={concrete.TransmissionHF} dB/m");
+            Program.Log($"  Brick: Trans LF={brick.TransmissionLF} dB/m, HF={brick.TransmissionHF} dB/m");
+            Program.Log($"  Metal: Trans LF={metal.TransmissionLF} dB/m, HF={metal.TransmissionHF} dB/m");
+            Program.Log($"  WoodIndoor: Trans LF={woodIndoor.TransmissionLF} dB/m, HF={woodIndoor.TransmissionHF} dB/m");
         }
 
         public void UpdateListener(float x, float y, float z, float yaw = 0, float pitch = 0)
@@ -754,8 +807,11 @@ namespace Game3.Audio
 
         public void Update()
         {
-            raytracingContext.Update();
-            UpdateReverb();
+            if (raytracingContext != null)
+            {
+                raytracingContext.Update();
+                UpdateReverb();
+            }
 
             for (int i = activeSources.Count - 1; i >= 0; i--)
             {
