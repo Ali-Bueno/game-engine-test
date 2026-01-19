@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Arch.Core;
+using Game3.ECS;
+using Game3.ECS.Components;
 
 namespace Game3.GameMap
 {
@@ -14,6 +17,10 @@ namespace Game3.GameMap
         private GraphicsDevice graphicsDevice;
         private BasicEffect effect;
         private GameMap map;
+
+        // Optional ECS World for direct queries
+        private World ecsWorld;
+        private QueryDescription playerQuery;
 
         // Geometría estática del mapa
         private VertexBuffer mapVertexBuffer;
@@ -70,6 +77,40 @@ namespace Game3.GameMap
             };
 
             smoothCameraPosition = Vector3.Zero;
+        }
+
+        /// <summary>
+        /// Sets the ECS World for direct player queries.
+        /// When set, the renderer will query ECS for player position/rotation.
+        /// </summary>
+        public void SetEcsWorld(World world)
+        {
+            this.ecsWorld = world;
+            this.playerQuery = new QueryDescription()
+                .WithAll<PlayerControlled, Position, Rotation>();
+            Program.Log("MapRenderer: ECS World set for direct queries");
+        }
+
+        /// <summary>
+        /// Gets the player position and angle from ECS.
+        /// </summary>
+        private (Vector3 position, float angle) GetPlayerPositionAndAngle()
+        {
+            if (ecsWorld != null)
+            {
+                Vector3 pos = Vector3.Zero;
+                float angle = 0f;
+
+                ecsWorld.Query(in playerQuery, (ref Position p, ref Rotation r) =>
+                {
+                    pos = new Vector3(p.X, p.Y, p.Z);
+                    angle = r.Yaw;
+                });
+
+                return (pos, angle);
+            }
+
+            return (Vector3.Zero, 0f);
         }
 
         public void BuildGeometry()
@@ -353,19 +394,21 @@ namespace Game3.GameMap
 
         public void Draw()
         {
-            if (!geometryBuilt || map.Player == null) return;
+            if (!geometryBuilt) return;
 
-            var player = map.Player;
+            // Get player position from ECS
+            var (playerPosition, playerAngle) = GetPlayerPositionAndAngle();
+            if (ecsWorld == null) return;
 
             // Calcular posición de cámara (tercera persona con colisión)
-            float angleRad = player.Angle * MathF.PI / 180f;
+            float angleRad = playerAngle * MathF.PI / 180f;
             Vector3 forward = new Vector3(MathF.Sin(angleRad), MathF.Cos(angleRad), 0);
 
             // Posición ideal de la cámara: detrás y arriba del jugador
             float idealDistance = 5f;
             float cameraHeight = 2f;
 
-            Vector3 playerHead = player.Position + new Vector3(0, 0, GamePlayer.EyeHeight);
+            Vector3 playerHead = playerPosition + new Vector3(0, 0, WorldBuilder.EyeHeight);
             Vector3 targetCameraPos = playerHead - forward * idealDistance + new Vector3(0, 0, cameraHeight);
 
             // Colisión de cámara: acercar si hay pared en medio
@@ -382,7 +425,7 @@ namespace Game3.GameMap
             }
 
             // Mirar hacia la cabeza del jugador
-            Vector3 lookAt = player.Position + new Vector3(0, 0, GamePlayer.EyeHeight * 0.8f);
+            Vector3 lookAt = playerPosition + new Vector3(0, 0, WorldBuilder.EyeHeight * 0.8f);
 
             // Configurar matrices
             effect.View = Matrix.CreateLookAt(smoothCameraPosition, lookAt, Vector3.UnitZ);
@@ -426,7 +469,7 @@ namespace Game3.GameMap
             DrawDoors();
 
             // Dibujar jugador humanoid
-            DrawHumanoidPlayer(player);
+            DrawHumanoidPlayer(playerPosition, playerAngle);
         }
 
         private void DrawDoors()
@@ -465,13 +508,13 @@ namespace Game3.GameMap
             }
         }
 
-        private void DrawHumanoidPlayer(GamePlayer player)
+        private void DrawHumanoidPlayer(Vector3 playerPosition, float playerAngle)
         {
             var verts = new List<VertexPositionColor>();
             var inds = new List<int>();
 
-            Vector3 basePos = player.Position;
-            float angleRad = player.Angle * MathF.PI / 180f;
+            Vector3 basePos = playerPosition;
+            float angleRad = playerAngle * MathF.PI / 180f;
 
             // Dimensiones del cuerpo
             float bodyHeight = 0.6f;

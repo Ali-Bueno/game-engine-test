@@ -2,8 +2,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using DavyKager;
+using Arch.Core;
 using Game3.Audio;
 using Game3.GameMap;
+using Game3.ECS;
+using Game3.ECS.Components;
+using Game3.ECS.Systems;
 
 namespace Game3
 {
@@ -14,6 +18,22 @@ namespace Game3
         public GameMap.GameMap gameMap;
         public AudioManager audioManager;
         private MapRenderer mapRenderer;
+
+        // ECS
+        private World ecsWorld;
+        private SharedResources sharedResources;
+        private Entity playerEntity;
+
+        // ECS Systems
+        private PlayerInputSystem playerInputSystem;
+        private MovementSystem movementSystem;
+        private GravitySystem gravitySystem;
+        private CollisionSystem collisionSystem;
+        private FootstepSystem footstepSystem;
+        private AudioListenerSystem audioListenerSystem;
+        private DoorInteractionSystem doorInteractionSystem;
+        private DoorSystem doorSystem;
+        private AmbientSoundSystem ambientSoundSystem;
 
         public Game1()
         {
@@ -54,6 +74,12 @@ namespace Game3
                 Program.Log($"AudioManager error: {ex}");
             }
 
+            // Initialize ECS World
+            Program.Log("Creating ECS World...");
+            ecsWorld = World.Create();
+            sharedResources = new SharedResources(audioManager);
+            Program.Log("ECS World created");
+
             base.Initialize();
             Program.Log("Initialize finished");
         }
@@ -85,7 +111,35 @@ namespace Game3
                 // Crear renderer 3D
                 mapRenderer = new MapRenderer(GraphicsDevice, gameMap);
                 mapRenderer.BuildGeometry();
+                mapRenderer.SetEcsWorld(ecsWorld);  // Enable direct ECS queries
                 Program.Log("MapRenderer created and geometry built");
+
+                // Setup SharedResources with ECS World
+                sharedResources.EcsWorld = ecsWorld;
+                sharedResources.StaticColliders.AddRange(gameMap.Colliders);
+                sharedResources.Rooms.AddRange(gameMap.Rooms);
+                Program.Log($"SharedResources synced: {sharedResources.StaticColliders.Count} colliders, {sharedResources.Rooms.Count} rooms");
+
+                // Create ECS entities from GameMap (pure data extraction)
+                var worldBuilder = new WorldBuilder(ecsWorld, sharedResources);
+                var (player, doors, soundSources, stairs, platforms) = worldBuilder.BuildFromGameMap(gameMap);
+                playerEntity = player;
+                Program.Log($"ECS entities created: 1 player, {doors.Count} doors, {soundSources.Count} sound sources, {stairs.Count} stairs, {platforms.Count} platforms");
+
+                // Initialize ECS queries in SharedResources (must be after entities are created)
+                sharedResources.InitializeQueries();
+
+                // Initialize ECS systems
+                playerInputSystem = new PlayerInputSystem(ecsWorld, sharedResources);
+                movementSystem = new MovementSystem(ecsWorld);
+                gravitySystem = new GravitySystem(ecsWorld, sharedResources);
+                collisionSystem = new CollisionSystem(ecsWorld, sharedResources);
+                footstepSystem = new FootstepSystem(ecsWorld, sharedResources);
+                audioListenerSystem = new AudioListenerSystem(ecsWorld, sharedResources);
+                doorInteractionSystem = new DoorInteractionSystem(ecsWorld, sharedResources);
+                doorSystem = new DoorSystem(ecsWorld, sharedResources);
+                ambientSoundSystem = new AmbientSoundSystem(ecsWorld, sharedResources);
+                Program.Log("ECS systems initialized");
 
                 // Log raytracing state after map is built
                 audioManager.LogRaytracingState();
@@ -102,6 +156,7 @@ namespace Game3
         {
             Program.Log("UnloadContent");
             audioManager?.Dispose();
+            World.Destroy(ecsWorld);
         }
 
         protected override void Update(GameTime gameTime)
@@ -113,15 +168,24 @@ namespace Game3
 
             try
             {
-                gameMap?.Update(Input.keystate, gameTime);
+                // Run ECS systems in order
+                playerInputSystem?.Update(gameTime);
+                movementSystem?.Update(gameTime);
+                gravitySystem?.Update(gameTime);
+                collisionSystem?.Update(gameTime);
+                footstepSystem?.Update(gameTime);
+                audioListenerSystem?.Update(gameTime);
+                doorInteractionSystem?.Update(gameTime);
+                doorSystem?.Update(gameTime);
+                ambientSoundSystem?.Update(gameTime);
+
+                // Update AudioManager (raytracing, etc.)
                 audioManager?.Update();
             }
             catch (System.Exception ex)
             {
                 Program.Log($"Update error: {ex}");
             }
-
-            // Press C to speak coordinates (handled by GamePlayer now)
 
             base.Update(gameTime);
         }

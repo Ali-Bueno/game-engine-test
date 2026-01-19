@@ -132,9 +132,9 @@ namespace Game3.GameMap
             map.AddSoundSource(new Vector3(5f, 60f, 0.5f), "sounds/UI/menumove.mp3", true, 0.4f);
 
             // ============================================
-            // CREAR JUGADOR (posición inicial)
+            // SPAWN POINT (posición inicial del jugador)
             // ============================================
-            map.CreatePlayer(new Vector3(5f, 5f, 0f), angle: 0f);
+            map.SetSpawnPoint(new Vector3(5f, 5f, 0f), angle: 0f);
 
             Program.Log("ExampleMap elements created (call Build() after initializing vaudio)");
             Program.Log($"  Rooms: {map.Rooms.Count}");

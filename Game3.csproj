@@ -48,6 +48,11 @@
         <PackageReference Include="SkiaSharp.HarfBuzz" Version="2.88.8" />
     </ItemGroup>
 
+    <!-- Arch ECS -->
+    <ItemGroup>
+        <PackageReference Include="Arch" Version="2.0.0" />
+    </ItemGroup>
+
     <!-- vaudio.dll reference -->
     <ItemGroup>
         <Reference Include="vaudio">

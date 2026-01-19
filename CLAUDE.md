@@ -34,44 +34,104 @@ El objetivo es proporcionar un framework completo para desarrollar juegos de aud
 ## Stack Tecnológico
 - **.NET 8.0** (x64)
 - **MonoGame 3.8.4.1** - Framework de juego
+- **Arch ECS 2.0.0** - Entity Component System
 - **vaudio.dll** - Motor de raytracing de audio (SDK propietario)
 - **Silk.NET.OpenAL** - Reproducción de audio con HRTF
 - **OpenAL Soft** - DLL Win64 para HRTF (`OpenAL32.dll` en output)
 - **NAudio/NVorbis** - Decodificación MP3/OGG
 - **Tolk** - Soporte para lectores de pantalla
 
+## Arquitectura ECS
+
+El engine usa **Arch ECS** para separar datos de lógica. Toda la lógica de gameplay está en sistemas ECS.
+
+### Componentes (`ECS/Components/`)
+- **TransformComponents.cs**: `Position`, `Rotation`, `Scale`
+- **PhysicsComponents.cs**: `Velocity`, `Gravity`, `CollisionShape`
+- **AudioComponents.cs**: `AudioSourceRef`, `FootstepSounds`, `AudioListener`, `AmbientSound`
+- **GameplayComponents.cs**: `PlayerControlled`, `PlayerMovement`, `DoorState`, `DoorAudio`, `Interactable`, `StairData`, `PlatformData`
+
+### Sistemas (`ECS/Systems/`)
+| Sistema | Responsabilidad |
+|---------|-----------------|
+| `PlayerInputSystem` | Procesa WASD, flechas, Espacio, E, C |
+| `MovementSystem` | Aplica velocidad a posición |
+| `GravitySystem` | Salto, caída, detección de suelo |
+| `CollisionSystem` | Colisiones con paredes |
+| `FootstepSystem` | Sonidos de pisadas |
+| `AudioListenerSystem` | Actualiza posición del listener |
+| `DoorInteractionSystem` | Detecta puertas cercanas, solicita toggle |
+| `DoorSystem` | Abre/cierra puertas, gestiona primitivas vaudio |
+| `AmbientSoundSystem` | Inicializa fuentes de sonido ambiental |
+
+### Game Loop
+```csharp
+PlayerInputSystem → MovementSystem → GravitySystem → CollisionSystem
+→ FootstepSystem → AudioListenerSystem → DoorInteractionSystem
+→ DoorSystem → AmbientSoundSystem → AudioManager.Update()
+```
+
+### Recursos Compartidos (`ECS/SharedResources.cs`)
+- `AudioManager` - Singleton para audio
+- `StaticColliders` - Lista de colliders del mapa
+- `Rooms` - Lista de habitaciones (para queries espaciales)
+- `GetFloorHeight(pos)` - Consulta ECS para altura del suelo
+- `IsOnStair(pos)` - Consulta ECS para detección de escaleras
+
+### WorldBuilder (`ECS/WorldBuilder.cs`)
+Crea entidades ECS puras:
+```csharp
+worldBuilder.CreatePlayer(position, angle);
+worldBuilder.CreateDoor(position, size, side, roomName, soundFolder);
+worldBuilder.CreateStair(startPos, length, width, height, direction);
+worldBuilder.CreatePlatform(minX, minY, maxX, maxY, height);
+worldBuilder.CreateAmbientSound(position, soundPath, looping, volume);
+```
+
 ## Estructura de Carpetas
 ```
 Game3/
 ├── Audio/
-│   ├── AudioManager.cs    # Gestión de OpenAL, EFX reverb, vaudio
-│   └── AudioSource.cs     # Fuente de audio 3D con raytracing
+│   ├── AudioManager.cs      # Gestión de OpenAL, EFX reverb, vaudio (SINGLETON)
+│   └── AudioSource.cs       # Fuente de audio 3D con raytracing
+├── ECS/
+│   ├── Components/
+│   │   ├── TransformComponents.cs   # Position, Rotation, Scale
+│   │   ├── PhysicsComponents.cs     # Velocity, Gravity, CollisionShape
+│   │   ├── AudioComponents.cs       # AudioSourceRef, FootstepSounds, etc.
+│   │   └── GameplayComponents.cs    # PlayerControlled, DoorState, StairData, etc.
+│   ├── Systems/
+│   │   ├── PlayerInputSystem.cs     # Input WASD/flechas/espacio
+│   │   ├── MovementSystem.cs        # Aplica velocidad
+│   │   ├── GravitySystem.cs         # Salto y caída
+│   │   ├── CollisionSystem.cs       # Colisiones con paredes
+│   │   ├── FootstepSystem.cs        # Sonidos de pisadas
+│   │   ├── AudioListenerSystem.cs   # Actualiza listener
+│   │   ├── DoorInteractionSystem.cs # Interacción con puertas (E)
+│   │   ├── DoorSystem.cs            # Lógica de puertas
+│   │   └── AmbientSoundSystem.cs    # Sonidos ambientales
+│   ├── SharedResources.cs   # Recursos compartidos (AudioManager, colliders)
+│   └── WorldBuilder.cs      # Crea entidades ECS desde datos
 ├── GameMap/
-│   ├── Common.cs          # Tipos comunes (BoxCollider, Platform, enums)
-│   ├── GameMap.cs         # Clase principal del mapa
-│   ├── GameRoom.cs        # Habitación con auto-construcción
-│   ├── Corridor.cs        # Pasillo conector entre habitaciones
-│   ├── GameDoor.cs        # Puerta con primitivas dinámicas
-│   ├── GameStair.cs       # Escalera con altura automática
-│   ├── GamePlayer.cs      # Jugador con movimiento, salto y colisiones
-│   ├── MapRenderer.cs     # Renderizado 3D con MonoGame
-│   └── ExampleMap.cs      # Ejemplo de uso del sistema
+│   ├── Common.cs            # BoxCollider, Platform, enums
+│   ├── GameMap.cs           # Construcción del mapa (geometría vaudio)
+│   ├── MapDefinition.cs     # Datos puros del mapa (serializable)
+│   ├── GameRoom.cs          # Habitación con auto-construcción
+│   ├── Corridor.cs          # Pasillo conector
+│   ├── GameDoor.cs          # Datos de puertas para Build()
+│   ├── GameStair.cs         # Datos de escaleras para Build()
+│   ├── MapRenderer.cs       # Renderizado 3D (usa ECS para queries)
+│   └── ExampleMap.cs        # Ejemplo
 ├── alisson_da_silva_bueno_raytraced_audio/
-│   ├── vaudio.dll         # Motor de raytracing (REQUERIDO)
-│   ├── vaudio.license     # Licencia binaria (REQUERIDO)
-│   ├── guides/            # Documentación del SDK de vaudio
-│   └── resource/          # Recursos de vaudio (shaders, fonts)
-├── references/tolk/       # DLLs de Tolk para screen readers
+│   ├── vaudio.dll           # Motor de raytracing (REQUERIDO)
+│   ├── vaudio.license       # Licencia binaria (REQUERIDO)
+│   ├── guides/              # Documentación del SDK
+│   └── resource/            # Recursos de vaudio
+├── references/tolk/         # DLLs de Tolk
 ├── bin/x86/Debug/net8.0/sounds/  # Archivos de sonido
-├── Game1.cs               # Clase principal del juego
-├── Input.cs               # Gestión de entrada de teclado
-└── Program.cs             # Entry point y logging
-
-### Sistema de Visualización 3D
-```
-GameMap/
-└── MapRenderer.cs         # Renderizado 3D del mapa con MonoGame
-```
+├── Game1.cs                 # Clase principal (orquesta ECS)
+├── Input.cs                 # Gestión de entrada
+└── Program.cs               # Entry point y logging
 ```
 
 ## Clases Principales
@@ -102,26 +162,15 @@ Clase principal que coordina todo el mapa:
 - `CreateRoom(name, center, size)` - Crea una habitación
 - `CreateDoor(room, openingId, soundFolder)` - Crea una puerta
 - `CreateStair(start, length, width, height, direction)` - Crea escalera
-- `AddSoundSource(position, path, loop, volume)` - Fuente de sonido
-- `CreatePlayer(position, angle)` - Crea el jugador
+- `AddSoundSource(position, path, loop, volume)` - Fuente de sonido (datos para ECS)
+- `SetSpawnPoint(position, angle)` - Define posición inicial del jugador
 - `CalculateBounds()` - Calcula world bounds automáticamente
-- `Build()` - Construye todo el mapa
+- `Build()` - Construye geometría vaudio del mapa
 
-### GamePlayer (`GameMap/GamePlayer.cs`)
-Jugador con física completa:
-- **WASD** - Movimiento
-- **Flechas** - Rotación
-- **Espacio** - Saltar
-- **E** - Interactuar con puertas
-- **C** - Hablar coordenadas (Tolk)
-- Gravedad y salto con física
-- Pisadas diferentes según superficie
-- Detección automática de escaleras y plataformas
-
-Constantes importantes:
+### Constantes del Jugador (`WorldBuilder`)
 ```csharp
 public const float PlayerHeight = 1.75f;  // Altura del jugador en metros
-public const float EyeHeight = 1.65f;     // Altura de ojos/oídos (para listener)
+public const float EyeHeight = 1.65f;     // Altura de ojos/oídos
 ```
 
 ### MapRenderer (`GameMap/MapRenderer.cs`)
@@ -209,8 +258,8 @@ map.CreateStair(
 // Añadir fuente de sonido
 map.AddSoundSource(new Vector3(5f, 5f, 1.5f), "sounds/ambient.mp3", true, 0.5f);
 
-// Crear jugador
-map.CreatePlayer(new Vector3(5f, 5f, 0f), angle: 0f);
+// Definir spawn point (la entidad jugador se crea con WorldBuilder)
+map.SetSpawnPoint(new Vector3(5f, 5f, 0f), angle: 0f);
 ```
 
 ## Sistema de Raytracing (vaudio)

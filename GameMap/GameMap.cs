@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using Game3.Audio;
 using vaudio;
 
@@ -14,7 +13,10 @@ namespace Game3.GameMap
     public class GameMap
     {
         private AudioManager audioManager;
-        private GamePlayer player;
+
+        // Spawn data (replaces GamePlayer)
+        private Vector3 spawnPosition;
+        private float spawnAngle;
 
         // Colecciones principales
         private List<GameRoom> rooms = new List<GameRoom>();
@@ -47,13 +49,15 @@ namespace Game3.GameMap
 
         // Propiedades públicas
         public AudioManager AudioManager => audioManager;
-        public GamePlayer Player => player;
+        public Vector3 SpawnPosition => spawnPosition;
+        public float SpawnAngle => spawnAngle;
         public List<GameRoom> Rooms => rooms;
         public List<Corridor> Corridors => corridors;
         public List<GameDoor> Doors => doors;
         public List<GameStair> Stairs => stairs;
         public List<BoxCollider> Colliders => colliders;
         public List<Platform> Platforms => platforms;
+        public List<SoundSource> SoundSources => soundSources;
 
         public float DefaultWallHeight { get => defaultWallHeight; set => defaultWallHeight = value; }
         public float DefaultWallThickness { get => defaultWallThickness; set => defaultWallThickness = value; }
@@ -181,14 +185,14 @@ namespace Game3.GameMap
         }
 
         /// <summary>
-        /// Crea el jugador en una posición inicial
+        /// Sets the player spawn position and angle.
+        /// The actual player entity is created by WorldBuilder.
         /// </summary>
-        public GamePlayer CreatePlayer(Vector3 position, float angle = 0f)
+        public void SetSpawnPoint(Vector3 position, float angle = 0f)
         {
-            player = new GamePlayer(this);
-            player.Position = position;
-            player.Angle = angle;
-            return player;
+            spawnPosition = position;
+            spawnAngle = angle;
+            Program.Log($"GameMap: Spawn point set at ({position.X:F1}, {position.Y:F1}, {position.Z:F1}), angle {angle:F0}°");
         }
 
         #endregion
@@ -248,11 +252,7 @@ namespace Game3.GameMap
                 stair.Build();
             }
 
-            // 5. Iniciar fuentes de sonido
-            foreach (var source in soundSources)
-            {
-                source.Build();
-            }
+            // Note: Sound sources are now handled by ECS AmbientSoundSystem
 
             // Calcular límites del mundo
             CalculateWorldBounds();
@@ -357,52 +357,6 @@ namespace Game3.GameMap
 
         #endregion
 
-        #region Update
-
-        private int listenerLogCounter = 0;
-
-        public void Update(KeyboardState keystate, GameTime gameTime)
-        {
-            // Actualizar jugador
-            player?.Update(keystate, gameTime);
-
-            // Actualizar listener de audio
-            if (player != null)
-            {
-                float yaw = player.Angle * MathF.PI / 180f;
-                float listenerZ = player.Position.Z + GamePlayer.EyeHeight;  // Altura de ojos/oídos
-
-                // Log cada 60 frames (~1 segundo)
-                listenerLogCounter++;
-                if (listenerLogCounter >= 60)
-                {
-                    listenerLogCounter = 0;
-                    Program.Log($"Listener: X={player.Position.X:F1}, Y={player.Position.Y:F1}, Z={listenerZ:F1} (playerZ={player.Position.Z:F1})");
-                }
-
-                audioManager.UpdateListener(
-                    player.Position.X,
-                    player.Position.Y,
-                    listenerZ,
-                    yaw
-                );
-            }
-
-            // Actualizar puertas
-            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            foreach (var door in doors)
-            {
-                door.Update(deltaTime);
-            }
-
-            // Actualizar fuentes de sonido
-            foreach (var source in soundSources)
-            {
-                source.Update(deltaTime);
-            }
-        }
-
-        #endregion
 
         #region Queries
 
@@ -471,7 +425,8 @@ namespace Game3.GameMap
     }
 
     /// <summary>
-    /// Fuente de sonido ambiental
+    /// Sound source data for map building.
+    /// Actual sound playback is handled by ECS AmbientSoundSystem.
     /// </summary>
     public class SoundSource
     {
@@ -480,10 +435,11 @@ namespace Game3.GameMap
         private string soundPath;
         private bool looping;
         private float volume;
-        private AudioSource audioSource;
 
         public Vector3 Position => position;
-        public AudioSource AudioSource => audioSource;
+        public string SoundPath => soundPath;
+        public bool Looping => looping;
+        public float Volume => volume;
 
         public SoundSource(GameMap map, Vector3 position, string soundPath, bool looping, float volume)
         {
@@ -492,28 +448,6 @@ namespace Game3.GameMap
             this.soundPath = soundPath;
             this.looping = looping;
             this.volume = volume;
-        }
-
-        public void Build()
-        {
-            audioSource = map.AudioManager.Play3D(soundPath, position.X, position.Y, position.Z, looping, volume);
-            if (audioSource != null)
-            {
-                Program.Log($"SoundSource: {soundPath} at ({position.X:F1}, {position.Y:F1}, {position.Z:F1})");
-            }
-        }
-
-        public void Update(float deltaTime) { }
-
-        public void SetVolume(float vol)
-        {
-            volume = vol;
-            audioSource?.SetVolume(vol);
-        }
-
-        public void Stop()
-        {
-            audioSource?.Stop();
         }
     }
 }
