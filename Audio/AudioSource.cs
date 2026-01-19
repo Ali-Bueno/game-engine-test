@@ -239,27 +239,30 @@ namespace Game3.Audio
             gainHF = Math.Clamp(gainHF, 0.0f, 1.0f);
             reverbWetness = Math.Clamp(reverbWetness, 0.0f, 1.0f);
 
+            // Apply aggressive curve to make small occlusion changes more noticeable
+            // If gainHF is 0.98, after power of 8 it becomes 0.85 (more noticeable)
+            // If gainHF is 0.90, after power of 8 it becomes 0.43 (very muffled)
+            float amplifiedGainLF = MathF.Pow(gainLF, 8f);
+            float amplifiedGainHF = MathF.Pow(gainHF, 12f);  // HF more aggressive (muffling effect)
+
             if (audioManager != null && audioManager.HasEfx)
             {
-                // Apply occlusion to direct path
+                // Apply occlusion to direct path with amplified values
                 if (directFilter != 0)
                 {
-                    audioManager.UpdateFilter(directFilter, gainLF, gainHF);
+                    audioManager.UpdateFilter(directFilter, amplifiedGainLF, amplifiedGainHF);
                 }
 
                 // Apply reverb wetness to the reverb send
-                // Higher wetness = more reverb, lower wetness = less reverb
                 if (reverbSendFilter != 0)
                 {
-                    // Use reverbWetness to control how much signal goes to reverb
-                    // When wetness is 1.0 = full reverb, when 0.0 = no reverb
                     audioManager.UpdateFilter(reverbSendFilter, reverbWetness, reverbWetness);
                 }
             }
             else
             {
                 // Fallback without EFX
-                float occlusionFactor = (gainLF * 0.3f + gainHF * 0.7f);
+                float occlusionFactor = (amplifiedGainLF * 0.3f + amplifiedGainHF * 0.7f);
                 float effectiveVolume = baseVolume * Math.Max(0.05f, occlusionFactor);
                 al.SetSourceProperty(sourceId, SourceFloat.Gain, effectiveVolume);
             }

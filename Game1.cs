@@ -66,6 +66,9 @@ namespace Game3
                 Program.Log("Map created, calling BuildMap...");
                 map.BuildMap();
                 Program.Log("BuildMap finished");
+
+                // Log raytracing state after map is built
+                audioManager.LogRaytracingState();
             }
             catch (System.Exception ex)
             {

@@ -292,34 +292,54 @@ namespace Game3.Audio
 
         private void ConfigureMaterials()
         {
-            // Concrete - hard, reflective surface
+            // =============================================
+            // MATERIALES PARA RAYTRACING DE AUDIO
+            // =============================================
+            // Absorción: cuánto sonido absorbe (0=refleja todo, 1=absorbe todo)
+            // Scattering: cuánto dispersa el sonido (difusión)
+            // Transmisión: cuánto sonido pasa A TRAVÉS del material (0=bloquea, 1=pasa todo)
+            //   - LF = Low Frequency (graves)
+            //   - HF = High Frequency (agudos)
+            // Nota: Las altas frecuencias se absorben/bloquean más fácilmente que las bajas
+
+            // Concrete - Hormigón grueso, muy denso, bloquea casi todo
             var concrete = raytracingContext.GetMaterial(MaterialType.Concrete);
-            concrete.AbsorptionLF = 0.01f;
-            concrete.AbsorptionHF = 0.02f;
+            concrete.AbsorptionLF = 0.01f;   // Muy reflectivo en graves
+            concrete.AbsorptionHF = 0.02f;   // Muy reflectivo en agudos
             concrete.ScatteringLF = 0.10f;
             concrete.ScatteringHF = 0.20f;
-            concrete.TransmissionLF = 0.0f;
-            concrete.TransmissionHF = 0.0f;
+            concrete.TransmissionLF = 0.02f; // Casi nada pasa (graves pasan un poco más)
+            concrete.TransmissionHF = 0.01f; // Agudos bloqueados casi completamente
 
-            // Brick - slightly more absorbent
+            // Brick - Ladrillo, denso pero permite algo de transmisión
             var brick = raytracingContext.GetMaterial(MaterialType.Brick);
-            brick.AbsorptionLF = 0.02f;
-            brick.AbsorptionHF = 0.05f;
+            brick.AbsorptionLF = 0.03f;
+            brick.AbsorptionHF = 0.06f;
             brick.ScatteringLF = 0.20f;
             brick.ScatteringHF = 0.40f;
-            brick.TransmissionLF = 0.0f;
-            brick.TransmissionHF = 0.0f;
+            brick.TransmissionLF = 0.05f;  // Algo de graves pasan (se escucha amortiguado)
+            brick.TransmissionHF = 0.02f;  // Agudos muy bloqueados
 
-            // Metal - highly reflective
+            // Metal - Puerta metálica, muy reflectivo, bloquea bien
             var metal = raytracingContext.GetMaterial(MaterialType.Metal);
             metal.AbsorptionLF = 0.01f;
-            metal.AbsorptionHF = 0.01f;
+            metal.AbsorptionHF = 0.02f;
             metal.ScatteringLF = 0.05f;
             metal.ScatteringHF = 0.10f;
-            metal.TransmissionLF = 0.0f;
-            metal.TransmissionHF = 0.0f;
+            metal.TransmissionLF = 0.03f;  // Metal deja pasar un poco de graves (vibra)
+            metal.TransmissionHF = 0.01f;  // Agudos bloqueados
 
-            Program.Log("Materials configured: Concrete, Brick, Metal");
+            // Wood - Madera (para escaleras, puertas de madera)
+            var wood = raytracingContext.GetMaterial(MaterialType.Brick); // Usamos Brick como base
+            // Nota: Si vaudio tiene MaterialType.Wood, usarlo en su lugar
+
+            // Fabric/Carpet - Tela/alfombra (absorbe mucho, no transmite)
+            // Se puede usar para áreas que absorben sonido
+
+            Program.Log("Materials configured with realistic transmission values:");
+            Program.Log($"  Concrete: Trans LF={concrete.TransmissionLF}, HF={concrete.TransmissionHF}");
+            Program.Log($"  Brick: Trans LF={brick.TransmissionLF}, HF={brick.TransmissionHF}");
+            Program.Log($"  Metal: Trans LF={metal.TransmissionLF}, HF={metal.TransmissionHF}");
         }
 
         public void UpdateListener(float x, float y, float z, float yaw = 0, float pitch = 0)
@@ -693,9 +713,38 @@ namespace Game3.Audio
             return source;
         }
 
+        private int primitiveCount = 0;
+
         public void AddPrimitive(Primitive primitive)
         {
             raytracingContext.AddPrimitive(primitive);
+            primitiveCount++;
+
+            // Log every 10th primitive to avoid spam
+            if (primitiveCount <= 5 || primitiveCount % 10 == 0)
+            {
+                if (primitive is PrismPrimitive prism)
+                {
+                    // Extract translation from matrix (M41, M42, M43)
+                    var t = prism.transform;
+                    Program.Log($"Primitive #{primitiveCount}: Prism at ({t.M41:F1}, {t.M42:F1}, {t.M43:F1}), size=({prism.size.X:F1}, {prism.size.Y:F1}, {prism.size.Z:F1}), material={prism.material}");
+                }
+            }
+        }
+
+        public void LogRaytracingState()
+        {
+            Program.Log($"=== Raytracing State ===");
+            Program.Log($"  Primitives added: {primitiveCount}");
+            Program.Log($"  World Position: {raytracingContext.WorldPosition}");
+            Program.Log($"  World Size: {raytracingContext.WorldSize}");
+            Program.Log($"  World Max: {raytracingContext.WorldMax}");
+            Program.Log($"  Active Voices: {raytracingContext.ActiveVoiceCount}");
+            Program.Log($"  Reverb Calculated: {raytracingContext.ReverbCalculated}");
+            Program.Log($"  Rays Cast This Frame: {raytracingContext.RaysCastThisFrame}");
+            Program.Log($"  Occlusion Ray Count: {raytracingContext.GetOcclusionRayCount()}");
+            Program.Log($"  Permeation Ray Count: {raytracingContext.GetPermeationRayCount()}");
+            Program.Log($"  Trail Bounce Count: {raytracingContext.GetTrailBounceCount()}");
         }
 
         public void RemovePrimitive(Primitive primitive)

@@ -30,6 +30,8 @@ namespace Game3
         private List<Door> doors = new List<Door>();
         private List<Stair> stairs = new List<Stair>();
         private List<Platform> platforms = new List<Platform>();
+        private List<Room> rooms = new List<Room>();
+        private List<MapObject> mapObjects = new List<MapObject>();
 
         public Player Player => player;
         public AudioManager AudioManager => audioManager;
@@ -37,6 +39,31 @@ namespace Game3
         public List<Door> Doors => doors;
         public List<Stair> Stairs => stairs;
         public List<Platform> Platforms => platforms;
+        public List<Room> Rooms => rooms;
+        public List<MapObject> MapObjects => mapObjects;
+
+        /// <summary>
+        /// Añade un objeto al mapa y lo construye
+        /// </summary>
+        public T AddObject<T>(T obj) where T : MapObject
+        {
+            obj.Build();
+            mapObjects.Add(obj);
+            return obj;
+        }
+
+        /// <summary>
+        /// Encuentra la habitación en la que está el jugador
+        /// </summary>
+        public Room GetCurrentRoom(Vector3 position)
+        {
+            foreach (var room in rooms)
+            {
+                if (room.Contains(position))
+                    return room;
+            }
+            return null;
+        }
 
         public Map(AudioManager audioManager)
         {
@@ -86,11 +113,23 @@ namespace Game3
             AddWall(new Vector3(0f, 5f, wallHeight / 2), new Vector3(wallThickness, 10f, wallHeight)); // West
             AddWall(new Vector3(10f, 5f, wallHeight / 2), new Vector3(wallThickness, 10f, wallHeight)); // East
             // North wall with door opening
-            AddWall(new Vector3(2f, 10f, wallHeight / 2), new Vector3(4f - doorWidth / 2, wallThickness, wallHeight));
-            AddWall(new Vector3(8f, 10f, wallHeight / 2), new Vector3(4f - doorWidth / 2, wallThickness, wallHeight));
+            float doorHeight = 2.2f;  // Same as door height
+            float aboveDoorHeight = wallHeight - doorHeight;  // Height of wall above door
+            float aboveDoorZ = doorHeight + aboveDoorHeight / 2;  // Center Z of wall above door
+
+            // Room 1 is 10m wide (X=0 to X=10), door at X=5
+            // Left wall: X=0 to X=4 (4m wide, center at X=2)
+            // Right wall: X=6 to X=10 (4m wide, center at X=8)
+            float room1HalfWidth = 5f;
+            float room1WallSegmentWidth = room1HalfWidth - doorWidth / 2;  // 5 - 1 = 4
+            AddWall(new Vector3(room1WallSegmentWidth / 2, 10f, wallHeight / 2), new Vector3(room1WallSegmentWidth, wallThickness, wallHeight));
+            AddWall(new Vector3(10f - room1WallSegmentWidth / 2, 10f, wallHeight / 2), new Vector3(room1WallSegmentWidth, wallThickness, wallHeight));
+            // Wall segment above door opening
+            AddWall(new Vector3(5f, 10f, aboveDoorZ), new Vector3(doorWidth, wallThickness, aboveDoorHeight));
 
             // Door 1 between Room 1 and Room 2
             var door1 = new Door(this, new Vector3(5f, 10f, 1.1f), 0);
+            door1.Build();
             doors.Add(door1);
 
             // ============================================
@@ -99,15 +138,27 @@ namespace Game3
             // ============================================
             AddWall(new Vector3(-5f, 17.5f, wallHeight / 2), new Vector3(wallThickness, 15f, wallHeight)); // West
             AddWall(new Vector3(15f, 17.5f, wallHeight / 2), new Vector3(wallThickness, 15f, wallHeight)); // East
-            // South wall segments (door at 5)
-            AddWall(new Vector3(-2.5f, 10f, wallHeight / 2), new Vector3(5f, wallThickness, wallHeight));
-            AddWall(new Vector3(12.5f, 10f, wallHeight / 2), new Vector3(5f, wallThickness, wallHeight));
+            // South wall segments (door at X=5)
+            // Room 2 is 20m wide (X=-5 to X=15), door opening at X=4 to X=6
+            // Left wall: X=-5 to X=4 (9m wide, center at X=-0.5)
+            // Right wall: X=6 to X=15 (9m wide, center at X=10.5)
+            // Note: Room 1's north wall only covers X=0 to X=10, so we need to extend
+            AddWall(new Vector3(-5f + 4.5f, 10f, wallHeight / 2), new Vector3(9f, wallThickness, wallHeight));  // X=-5 to X=4
+            AddWall(new Vector3(15f - 4.5f, 10f, wallHeight / 2), new Vector3(9f, wallThickness, wallHeight));  // X=6 to X=15
             // North wall with door opening
-            AddWall(new Vector3(-0.5f, 25f, wallHeight / 2), new Vector3(9f - doorWidth / 2, wallThickness, wallHeight));
-            AddWall(new Vector3(10.5f, 25f, wallHeight / 2), new Vector3(9f - doorWidth / 2, wallThickness, wallHeight));
+            // Room 2 is 20m wide (X=-5 to X=15), door at X=5
+            // Left wall: X=-5 to X=4 (9m wide, center at X=-0.5)
+            // Right wall: X=6 to X=15 (9m wide, center at X=10.5)
+            float room2LeftWidth = 5f - (-5f) - doorWidth / 2;  // doorCenter - roomLeft - doorHalfWidth = 5 - (-5) - 1 = 9
+            float room2RightWidth = 15f - (5f + doorWidth / 2); // roomRight - doorCenter - doorHalfWidth = 15 - 6 = 9
+            AddWall(new Vector3(-5f + room2LeftWidth / 2, 25f, wallHeight / 2), new Vector3(room2LeftWidth, wallThickness, wallHeight));
+            AddWall(new Vector3(15f - room2RightWidth / 2, 25f, wallHeight / 2), new Vector3(room2RightWidth, wallThickness, wallHeight));
+            // Wall segment above door opening
+            AddWall(new Vector3(5f, 25f, aboveDoorZ), new Vector3(doorWidth, wallThickness, aboveDoorHeight));
 
             // Door 2 between Room 2 and Room 3
             var door2 = new Door(this, new Vector3(5f, 25f, 1.1f), 0);
+            door2.Build();
             doors.Add(door2);
 
             // ============================================
@@ -116,15 +167,26 @@ namespace Game3
             // ============================================
             AddWall(new Vector3(-10f, 35f, wallHeight / 2), new Vector3(wallThickness, 20f, wallHeight)); // West
             AddWall(new Vector3(20f, 35f, wallHeight / 2), new Vector3(wallThickness, 20f, wallHeight)); // East
-            // South wall segments
-            AddWall(new Vector3(-5f, 25f, wallHeight / 2), new Vector3(10f, wallThickness, wallHeight));
-            AddWall(new Vector3(15f, 25f, wallHeight / 2), new Vector3(10f, wallThickness, wallHeight));
+            // South wall segments (door at X=5)
+            // Room 3 is 30m wide (X=-10 to X=20), door opening at X=4 to X=6
+            // Left wall: X=-10 to X=4 (14m wide, center at X=-3)
+            // Right wall: X=6 to X=20 (14m wide, center at X=13)
+            AddWall(new Vector3(-10f + 7f, 25f, wallHeight / 2), new Vector3(14f, wallThickness, wallHeight));  // X=-10 to X=4
+            AddWall(new Vector3(20f - 7f, 25f, wallHeight / 2), new Vector3(14f, wallThickness, wallHeight));   // X=6 to X=20
             // North wall with door opening
-            AddWall(new Vector3(-3f, 45f, wallHeight / 2), new Vector3(14f - doorWidth / 2, wallThickness, wallHeight));
-            AddWall(new Vector3(13f, 45f, wallHeight / 2), new Vector3(14f - doorWidth / 2, wallThickness, wallHeight));
+            // Room 3 is 30m wide (X=-10 to X=20), door at X=5
+            // Left wall: X=-10 to X=4 (14m wide, center at X=-3)
+            // Right wall: X=6 to X=20 (14m wide, center at X=13)
+            float room3LeftWidth = 5f - (-10f) - doorWidth / 2;  // 5 - (-10) - 1 = 14
+            float room3RightWidth = 20f - (5f + doorWidth / 2);  // 20 - 6 = 14
+            AddWall(new Vector3(-10f + room3LeftWidth / 2, 45f, wallHeight / 2), new Vector3(room3LeftWidth, wallThickness, wallHeight));
+            AddWall(new Vector3(20f - room3RightWidth / 2, 45f, wallHeight / 2), new Vector3(room3RightWidth, wallThickness, wallHeight));
+            // Wall segment above door opening
+            AddWall(new Vector3(5f, 45f, aboveDoorZ), new Vector3(doorWidth, wallThickness, aboveDoorHeight));
 
             // Door 3 between Room 3 and Hall
             var door3 = new Door(this, new Vector3(5f, 45f, 1.1f), 0);
+            door3.Build();
             doors.Add(door3);
 
             // ============================================
@@ -135,8 +197,13 @@ namespace Game3
             AddWall(new Vector3(-20f, 60f, wallHeight / 2), new Vector3(wallThickness, 30f, wallHeight)); // West
             AddWall(new Vector3(30f, 60f, wallHeight / 2), new Vector3(wallThickness, 30f, wallHeight)); // East
             // South wall segments
-            AddWall(new Vector3(-10f, 45f, wallHeight / 2), new Vector3(20f, wallThickness, wallHeight));
-            AddWall(new Vector3(20f, 45f, wallHeight / 2), new Vector3(20f, wallThickness, wallHeight));
+            // Hall is 50m wide (X=-20 to X=30), door at X=5
+            // Left wall: X=-20 to X=4 (24m wide, center at X=-8)
+            // Right wall: X=6 to X=30 (24m wide, center at X=18)
+            float hallLeftWidth = 5f - (-20f) - doorWidth / 2;  // 5 - (-20) - 1 = 24
+            float hallRightWidth = 30f - (5f + doorWidth / 2);  // 30 - 6 = 24
+            AddWall(new Vector3(-20f + hallLeftWidth / 2, 45f, wallHeight / 2), new Vector3(hallLeftWidth, wallThickness, wallHeight));
+            AddWall(new Vector3(30f - hallRightWidth / 2, 45f, wallHeight / 2), new Vector3(hallRightWidth, wallThickness, wallHeight));
             // North wall
             AddWall(new Vector3(5f, 75f, wallHeight / 2), new Vector3(50f, wallThickness, wallHeight));
 
@@ -199,6 +266,29 @@ namespace Game3
             // East part of south railing (from stair right edge to X=-6)
             float eastRailWidth = -6f - stairRightEdge;  // 2m
             AddWall(new Vector3(stairRightEdge + eastRailWidth / 2f, balconyStartY, upperFloorHeight + railHeight / 2), new Vector3(eastRailWidth, wallThickness, railHeight));
+
+            // Balcony ceiling (so vaudio can calculate reverb properly)
+            float balconyCeilingHeight = upperFloorHeight + 3f;  // 3m ceiling height on balcony
+            AddPrimitive(
+                new Vector3(-13f, (balconyStartY + 75f) / 2f, balconyCeilingHeight),
+                new Vector3(14f, 75f - balconyStartY, 0.3f),
+                MaterialType.Concrete,
+                false
+            );
+
+            // Balcony back wall (west side, against hall wall)
+            AddPrimitive(
+                new Vector3(-20f + wallThickness / 2, (balconyStartY + 75f) / 2f, upperFloorHeight + 1.5f),
+                new Vector3(wallThickness, 75f - balconyStartY, 3f),
+                MaterialType.Brick,
+                false  // No collision, it's the same as hall wall
+            );
+
+            // Balcony north wall
+            AddWall(
+                new Vector3(-13f, 75f - wallThickness / 2, upperFloorHeight + 1.5f),
+                new Vector3(14f, wallThickness, 3f)
+            );
 
             // ============================================
             // FLOORS & CEILINGS
@@ -279,9 +369,10 @@ namespace Game3
             );
 
             // Update doors
+            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             foreach (var door in doors)
             {
-                door.Update();
+                door.Update(deltaTime);
             }
 
             // Update sound objects

@@ -5,6 +5,8 @@
 - **Vercidium Audio (sitio oficial)**: https://vercidium.com/audio
 - **Vercidium Blog**: https://vercidium.com/blog/
 - **OpenAL Soft (HRTF)**: https://openal-soft.org/
+- **Godot Raytraced Audio (referencia)**: https://github.com/vercidium-patreon/godot_raytraced_audio
+- **Godot OpenAL Plugin**: https://github.com/vercidium-patreon/godot_openal
 
 ### vaudio SDK - Documentación Detallada
 - **Full Code Example**: https://docs.vercidium.com/raytraced-audio/Full+Code+Example
@@ -224,12 +226,55 @@ Activar ventana de debug de vaudio:
 new AudioManager(worldSize, enableDebugWindow: true);
 ```
 
+### MapObject (`MapObject.cs`)
+Sistema base para objetos del mapa con geometría de raytracing:
+- `MapObject` - Clase base abstracta
+- `Window` - Ventana con cristal (sonido exterior)
+- `Pillar` - Columna/pilar
+- `Furniture` - Mueble genérico
+- `SoundEmitter` - Emisor de sonido sin geometría
+- `PlatformObject` - Plataforma elevada
+- `WallSegment` - Segmento de pared independiente
+- `Railing` - Barandilla
+
+```csharp
+// Los objetos gestionan sus propias primitivas y colliders
+var furniture = new Furniture(map, position, size, MaterialType.Brick);
+furniture.Build();
+furniture.Deactivate();  // Quita primitivas y colliders
+furniture.Activate();    // Los añade de vuelta
+```
+
+### Door (hereda de MapObject)
+Las puertas ahora heredan de `MapObject` y gestionan dinámicamente sus primitivas:
+- Al abrir: `RemoveAllPrimitives()` + `RemoveAllColliders()` → sonido pasa libremente
+- Al cerrar: `AddAllPrimitives()` + `AddAllColliders()` → sonido bloqueado
+
 ## Problemas Conocidos
 
 1. **HRTF no funciona**: Verificar que `OpenAL32.dll` sea la versión Win64 de OpenAL Soft
 2. **Jugador atrapado**: Verificar colliders, reducir `PlayerRadius` si es necesario
 3. **Sin reverb**: El mapa debe tener techo y paredes cerradas
 4. **Sonido cortado**: Verificar que los archivos de sonido existen en la ruta correcta
+
+## Problemas Resueltos
+
+### Oclusión de sonido no funcionaba (raytracing)
+**Síntoma**: Los sonidos no se "camuflaban" a través de paredes. `gainLF/gainHF ≈ 1.0` en el log.
+
+**Causa**: Huecos en la geometría de las paredes. Los segmentos de pared a cada lado de las puertas no cubrían completamente hasta el borde de las habitaciones, dejando espacios de 0.5m a 4m donde los rayos pasaban libremente.
+
+**Solución**: Recalcular el ancho de cada segmento de pared correctamente:
+```csharp
+// Antes (incorrecto - dejaba huecos)
+AddWall(center, new Vector3(4f - doorWidth/2, ...));  // = 3m, dejaba hueco
+
+// Ahora (correcto - sin huecos)
+float wallWidth = (doorCenter - roomLeftEdge) - doorWidth/2;  // Cálculo preciso
+AddWall(new Vector3(roomLeft + wallWidth/2, ...), new Vector3(wallWidth, ...));
+```
+
+**Importante para futuros mapas**: Siempre verificar que los segmentos de pared cubran desde el borde de la habitación hasta el borde de la abertura de la puerta, sin dejar huecos.
 
 ---
 

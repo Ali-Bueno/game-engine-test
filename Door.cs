@@ -1,55 +1,55 @@
 using System;
 using Microsoft.Xna.Framework;
 using Game3.Audio;
+using vaudio;
 
 namespace Game3
 {
-    public class Door
+    public class Door : MapObject
     {
-        private Map map;
-        private Vector3 position;
         private Vector3 closedSize;
         private float rotation; // 0 = faces Y axis (north-south door), 90 = faces X axis (east-west door)
         private bool isOpen;
-        private BoxCollider collider;
         private AudioSource loopSound;
 
         private string openSoundPath;
         private string closeSoundPath;
         private string loopSoundPath;
 
-        public Vector3 Position => position;
+        // Referencia al collider principal para añadir/quitar
+        private BoxCollider doorCollider;
+
         public bool IsOpen => isOpen;
-        public BoxCollider Collider => collider;
 
         public Door(Map map, Vector3 position, float rotation, string soundFolder = "sounds/doors/door1")
+            : base(map, position)
         {
-            this.map = map;
-            this.position = position;
             this.rotation = rotation;
             this.isOpen = false;
 
-            // Door size: 1.2m wide, 0.1m thick, 2.2m tall
+            // Door size: 2.0m wide (matches wall openings), 0.1m thick, 2.2m tall
             if (rotation == 0) // North-south door (blocks Y movement)
             {
-                closedSize = new Vector3(1.2f, 0.1f, 2.2f);
+                closedSize = new Vector3(2.0f, 0.1f, 2.2f);
             }
             else // East-west door (blocks X movement)
             {
-                closedSize = new Vector3(0.1f, 1.2f, 2.2f);
+                closedSize = new Vector3(0.1f, 2.0f, 2.2f);
             }
 
             // Sound paths
             openSoundPath = $"{soundFolder}/open.mp3";
             closeSoundPath = $"{soundFolder}/close.mp3";
             loopSoundPath = $"{soundFolder}/loop.mp3";
+        }
 
-            // Create collider (only when closed)
-            collider = new BoxCollider(position, closedSize);
-            map.Colliders.Add(collider);
+        public override void Build()
+        {
+            // Añadir primitiva para raytracing (metal door)
+            AddPrimitive(position, closedSize, MaterialType.Metal);
 
-            // Add door as primitive for raytracing
-            AddDoorPrimitive();
+            // Añadir collider
+            doorCollider = AddCollider(position, closedSize);
 
             // Start loop sound (audible when door is closed)
             loopSound = map.AudioManager.Play3D(loopSoundPath, position.X, position.Y, position.Z, true);
@@ -59,17 +59,6 @@ namespace Game3
             }
 
             Program.Log($"Door created at ({position.X}, {position.Y}, {position.Z}), rotation={rotation}");
-        }
-
-        private void AddDoorPrimitive()
-        {
-            var primitive = new vaudio.PrismPrimitive()
-            {
-                material = vaudio.MaterialType.Metal,
-                size = new vaudio.Vector3F(closedSize.X, closedSize.Y, closedSize.Z),
-                transform = vaudio.Matrix4F.CreateTranslation(position.X, position.Y, position.Z)
-            };
-            map.AudioManager.AddPrimitive(primitive);
         }
 
         public void Toggle()
@@ -86,8 +75,9 @@ namespace Game3
 
             isOpen = true;
 
-            // Remove collider from map
-            map.Colliders.Remove(collider);
+            // Remove collider and primitive from raytracing
+            RemoveAllColliders();
+            RemoveAllPrimitives();
 
             // Play open sound
             map.AudioManager.Play3D(openSoundPath, position.X, position.Y, position.Z, false);
@@ -107,8 +97,9 @@ namespace Game3
 
             isOpen = false;
 
-            // Add collider back to map
-            map.Colliders.Add(collider);
+            // Add collider and primitive back
+            AddAllColliders();
+            AddAllPrimitives();
 
             // Play close sound
             map.AudioManager.Play3D(closeSoundPath, position.X, position.Y, position.Z, false);
@@ -130,7 +121,7 @@ namespace Game3
             return distance <= interactionDistance;
         }
 
-        public void Update()
+        public override void Update(float deltaTime)
         {
             // Could add animation logic here in the future
         }
