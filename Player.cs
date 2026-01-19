@@ -1,253 +1,259 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using IrrKlang;
-using DavyKager;
+using Game3.Audio;
 
 namespace Game3
 {
     public class Player
     {
-        public enum playerOrientation
-        {
-            Front,
-            Back,
-            Left,
-            Right,
-            Up,
-            Down,
-        }
-        public playerOrientation orientation;
-        public enum state
-        {
-            IsWalking,
-            IsOnStairs,
-        }
-        public state playerState;
-        private Rotation rotation = new Rotation();
-        public bool isMoving;
-        public bool canMove=true;
-        public bool canInteract = true;
-        public int angle;
-        public bool interaction;
-        int maxx = 100;
-        public int facing;
-        int runtime;
-        int run = 12;
-        int speedtime;
-        int speed = 30;
-        int movetime = 60;
-        public Vector3 me;
-        public Random random = new Random();
-        public double CoolDown = 0;
-        ISoundEngine engine = new ISoundEngine();
-        public Map Map
-        {
-            get { return map; }
-        }
-        Map map;
+        private Map map;
+        private Random random = new Random();
+
+        public Vector3 Position;
+        public float Angle; // Degrees, 0 = North (+Y), 90 = East (+X)
+
+        private const float MoveSpeed = 5f;
+        private const float RotateSpeed = 120f;
+        private const float PlayerRadius = 0.3f;
+
+        // Footstep sounds
+        private const int FootstepCount = 13;
+        private const int WoodFootstepCount = 4;
+        private const float FootstepInterval = 0.4f;
+        private float footstepTimer = 0f;
+        private bool isMoving = false;
+        private bool isOnStair = false;
+
+        // Collision sound
+        private float collisionCooldown = 0f;
+        private const float CollisionCooldownTime = 0.3f;
+
+        // Floor height tracking
+        private float currentFloorHeight = 0f;
+        private float targetFloorHeight = 0f;
+        private const float FallSpeed = 10f;  // Speed of falling/descending
+
+        // Door interaction
+        private KeyboardState previousKeyState;
+
         public Player(Map map)
         {
             this.map = map;
+            Position = Vector3.Zero;
+            Angle = 0;
         }
+
         public void Update(KeyboardState keystate, GameTime gameTime)
         {
-            moveUpdate(keystate);
-            IsInteracting(keystate);
-            CoolDown += gameTime.ElapsedGameTime.TotalMilliseconds;
-        }
+            float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-        public void moveUpdate(KeyboardState keystate)
-        {
-            checktiles();
-            if (playerState==state.IsWalking)
-            {
-                MoveOnGround(keystate);
-            }
-else
-            {
-                moveOnStairs();
-            }
-}
+            if (collisionCooldown > 0)
+                collisionCooldown -= deltaTime;
 
-        public void tryToInteract()
-        {
-            for (int i = 0; i < map.door.Count; i++)
+            // Rotation with arrow keys
+            if (keystate.IsKeyDown(Keys.Left))
             {
-                if (checkDistance(me, map.door[i].x, map.door[i].y, map.door[i].z) <= 1.8f)
+                Angle -= RotateSpeed * deltaTime;
+                if (Angle < 0) Angle += 360;
+            }
+            if (keystate.IsKeyDown(Keys.Right))
+            {
+                Angle += RotateSpeed * deltaTime;
+                if (Angle >= 360) Angle -= 360;
+            }
+
+            // Calculate movement direction based on angle
+            float angleRad = Angle * MathF.PI / 180f;
+            Vector3 forward = new Vector3(MathF.Sin(angleRad), MathF.Cos(angleRad), 0);
+            Vector3 right = new Vector3(MathF.Cos(angleRad), -MathF.Sin(angleRad), 0);
+
+            // Movement with WASD
+            Vector3 moveDir = Vector3.Zero;
+
+            if (keystate.IsKeyDown(Keys.W))
+                moveDir += forward;
+            if (keystate.IsKeyDown(Keys.S))
+                moveDir -= forward;
+            if (keystate.IsKeyDown(Keys.A))
+                moveDir -= right;
+            if (keystate.IsKeyDown(Keys.D))
+                moveDir += right;
+
+            isMoving = moveDir.LengthSquared() > 0;
+            if (isMoving)
+            {
+                moveDir.Normalize();
+                Vector3 newPosition = Position + moveDir * MoveSpeed * deltaTime;
+
+                // Apply collision detection (XY only)
+                Vector3 resolvedPosition = ApplyCollisions(newPosition);
+
+                // Check if we hit a wall
+                float collisionDistance = (resolvedPosition - newPosition).Length();
+                if (collisionDistance > 0.01f && collisionCooldown <= 0)
                 {
-                    map.door[i].interact();
+                    PlayCollisionSound();
+                    collisionCooldown = CollisionCooldownTime;
                 }
-            }
-for(int j=0; j<map.obj.Count(); j++)
-            {
-                if(checkDistance(me, map.obj[j].x, map.obj[j].y, map.obj[j].z) <= 1.8f)
-{
-                    map.obj[j].interact();
-                }
-            }
-        }
 
-        public void IsInteracting(KeyboardState keystate)
-        {
-            if (Input.WasKeyPressed(Keys.E))
-            {
-                tryToInteract();
-                }
-        }
-
-        public void checktiles()
-        {
-            playerState = state.IsWalking;
-            for (int i=0; i<map.staircases.Count(); i++)
-            {
-                if (map.staircases[i].onstaircase == true)
+                // Check for stairs and update Z position
+                isOnStair = false;
+                float stairHeight = GetStairHeight(resolvedPosition);
+                if (stairHeight >= 0)
                 {
-                    playerState = state.IsOnStairs;
+                    isOnStair = true;
+                    targetFloorHeight = stairHeight;
+                    currentFloorHeight = stairHeight;  // Instant on stairs
+                }
+                else
+                {
+                    // Check if we're on an upper floor platform
+                    float platformHeight = GetPlatformHeight(resolvedPosition);
+                    if (platformHeight >= 0 && currentFloorHeight >= platformHeight - 0.5f)
+                    {
+                        // Stay on platform
+                        targetFloorHeight = platformHeight;
+                        currentFloorHeight = platformHeight;
+                    }
+                    else
+                    {
+                        // Fall towards ground
+                        targetFloorHeight = 0f;
+                    }
+                }
+
+                // Smoothly adjust height when falling
+                if (currentFloorHeight > targetFloorHeight)
+                {
+                    currentFloorHeight -= FallSpeed * deltaTime;
+                    if (currentFloorHeight < targetFloorHeight)
+                        currentFloorHeight = targetFloorHeight;
+                }
+                else if (currentFloorHeight < targetFloorHeight)
+                {
+                    currentFloorHeight = targetFloorHeight;  // Instant rise (stairs)
+                }
+
+                resolvedPosition.Z = currentFloorHeight;
+                Position = resolvedPosition;
+            }
+
+            // Door interaction with E key
+            if (keystate.IsKeyDown(Keys.E) && !previousKeyState.IsKeyDown(Keys.E))
+            {
+                TryInteractWithDoor();
+            }
+            previousKeyState = keystate;
+
+            UpdateFootsteps(deltaTime);
+        }
+
+        private float GetStairHeight(Vector3 pos)
+        {
+            if (map.Stairs == null) return -1f;
+
+            foreach (var stair in map.Stairs)
+            {
+                float height = stair.GetHeightAtPosition(pos);
+                if (height >= 0)
+                {
+                    return height;
+                }
+            }
+            return -1f;
+        }
+
+        private float GetPlatformHeight(Vector3 pos)
+        {
+            // Check if player is on any upper floor platform
+            foreach (var platform in map.Platforms)
+            {
+                if (pos.X >= platform.Min.X && pos.X <= platform.Max.X &&
+                    pos.Y >= platform.Min.Y && pos.Y <= platform.Max.Y)
+                {
+                    return platform.Height;
+                }
+            }
+            return -1f;
+        }
+
+        private void TryInteractWithDoor()
+        {
+            if (map.Doors == null) return;
+
+            foreach (var door in map.Doors)
+            {
+                if (door.IsPlayerNear(Position))
+                {
+                    door.Toggle();
                     break;
                 }
             }
         }
 
-        public void MoveOnGround(KeyboardState keystate)
+        private void UpdateFootsteps(float deltaTime)
         {
-            if (keystate.IsKeyDown(Keys.W) && me.Y < 100)
+            if (isMoving)
             {
-                if (CoolDown >= 35)
+                footstepTimer += deltaTime;
+                if (footstepTimer >= FootstepInterval)
                 {
-                    isMoving = true;
-                     me=rotation.move(me.X, me.Y, me.Z, angle=0, facing);
-                    map.playstep();
-                    CoolDown = 0;
+                    footstepTimer = 0f;
+                    PlayFootstep();
                 }
             }
-            if (keystate.IsKeyDown(Keys.S) && me.Y > 0)
+            else
             {
-                if (CoolDown >= 35)
-                {
-                    isMoving = true;
-                    me = rotation.move(me.X, me.Y, me.Z, angle=180, facing);
-                    map.playstep();
-                    CoolDown = 0;
-                }
-            }
-            if (keystate.IsKeyDown(Keys.A) && me.X > 0)
-            {
-                if (CoolDown >= 35)
-                {
-                    isMoving = true;
-                    me = rotation.move(me.X, me.Y, me.Z, angle=270, facing);
-                    map.playstep();
-                    CoolDown = 0;
-                }
-            }
-            if (keystate.IsKeyDown(Keys.D) && me.X < maxx)
-            {
-                if (CoolDown >= 35)
-                {
-                    isMoving = true;
-                    me = rotation.move(me.X, me.Y, me.Z, angle=90, facing);
-                    map.playstep();
-                    CoolDown = 0;
-                }
+                footstepTimer = FootstepInterval;
             }
         }
 
-        public void moveOnStairs()
+        private void PlayFootstep()
         {
-            for (int i = 0; i < map.staircases.Count(); i++)
+            // Play footsteps at player's feet position (Z = floor level)
+            // This allows reverb/raytracing to affect the sound
+            float footX = Position.X;
+            float footY = Position.Y;
+            float footZ = Position.Z + 0.1f;  // Slightly above floor
+
+            if (isOnStair)
             {
-                if (map.staircases[i].o == Map.orientation.front)
+                // Wood footsteps on stairs
+                int stepNumber = random.Next(1, WoodFootstepCount + 1);
+                string soundPath = $"sounds/steps/wood/{stepNumber}.wav";
+                map.AudioManager.Play3D(soundPath, footX, footY, footZ, false, 0.6f);
+            }
+            else
+            {
+                // Normal footsteps
+                int stepNumber = random.Next(1, FootstepCount + 1);
+                string soundPath = $"sounds/steps/womanstep/{stepNumber}.ogg";
+                map.AudioManager.Play3D(soundPath, footX, footY, footZ, false, 0.5f);
+            }
+        }
+
+        private void PlayCollisionSound()
+        {
+            // Play collision sound at player position with reverb
+            map.AudioManager.Play3D("sounds/walls/wall.mp3", Position.X, Position.Y, Position.Z + 1.0f, false, 0.7f);
+        }
+
+        private Vector3 ApplyCollisions(Vector3 newPosition)
+        {
+            foreach (var collider in map.Colliders)
+            {
+                if (collider.Intersects(newPosition, PlayerRadius))
                 {
-                    if (Input.keystate.IsKeyDown(Keys.W) &&map.staircases[i].onstaircase==true&&CoolDown>=500&& me.Y <= map.staircases[i].maxy)
-                    {
-                            if (me.Y == map.staircases[i].maxy)
-                                {
-                            move(4);
-                            CoolDown = 0;
-                        }
-                            else
-                            {
-                                me.Z += map.staircases[i].heigth;
-                                move(4);
-                                CoolDown = 0;
-                            }
-                        }
-                     else if (Input.keystate.IsKeyDown(Keys.S) &&map.staircases[i].onstaircase==true&&CoolDown>=500&& me.Y >= map.staircases[i].miny)
-                    {
-                        if (me.Y == map.staircases[i].miny)
-                        {
-                            move(3);
-                            CoolDown = 0;
-                            map.staircases[i].onstaircase = false;
-                        }
-                        else
-                        {
-                            me.Z += -map.staircases[i].heigth;
-                            move(3);
-                            CoolDown = 0;
-                        }
-                        }
-else if(Input.keystate.IsKeyDown(Keys.A)&&CoolDown>=500)
-{
-                            move(1);
-                            CoolDown = 0;
-                    }
-else if(Input.keystate.IsKeyDown(Keys.D)&&CoolDown>=500)
-                    {
-                        move(2);
-                        CoolDown = 0;
-                    }
+                    newPosition = collider.ResolveCollision(newPosition, PlayerRadius);
                 }
             }
+
+            if (newPosition.Z < 0)
+                newPosition.Z = 0;
+
+            return newPosition;
         }
-
-        public bool move(float dir)
-{
-            if (dir == 1)
-    {
-                orientation = playerOrientation.Left;
-        me.X += -1;
-                map.playstep();
-                return (true);
-            }
-            else if(dir==2)
-    {
-                orientation = playerOrientation.Right;
-        me.X += 1;
-                map.playstep();
-                return (true);
-            }
-            else if(dir==3)
-            {
-                orientation = playerOrientation.Back;
-                me.Y += -1;
-                map.playstep();
-                return (true);
-            }
-            else if(dir==4)
-            {
-                orientation = playerOrientation.Front;
-                me.Y += 1;
-                map.playstep();
-                return (true);
-            }
-            return (false);
-        }
-
-
-        public float checkDistance(Vector3 vec, float x, float y, float z)
-        {
-            float a = x - vec.X;
-            float b = y - vec.Y;
-            float c = z - vec.Z;
-            return (float)Math.Sqrt(a * a + b * b + c * c);
-        }
-
     }
-    }
-
+}

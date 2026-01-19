@@ -1,89 +1,116 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using DavyKager;
+using Game3.Audio;
 
 namespace Game3
 {
-    /// <summary>
-    /// This is the main type for your game.
-    /// </summary>
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
         public Map map;
+        public AudioManager audioManager;
+
         public Game1()
         {
+            Program.Log("Game1 constructor started");
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            Program.Log("Game1 constructor finished");
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-            Tolk.Load();
+            Program.Log("Initialize started");
+
+            try
+            {
+                Program.Log("Loading Tolk...");
+                Tolk.Load();
+                Program.Log("Tolk loaded");
+            }
+            catch (System.Exception ex)
+            {
+                Program.Log($"Tolk error: {ex.Message}");
+            }
+
+            try
+            {
+                Program.Log("Creating AudioManager...");
+                // World size must cover the entire map:
+                // X: -20 to 30 (50m), Y: 0 to 75 (75m), Z: 0 to 10 (10m for two floors)
+                // Add margin for safety: 60x80x12
+                audioManager = new AudioManager(new vaudio.Vector3F(60, 80, 12), enableDebugWindow: true);
+                Program.Log("AudioManager created");
+            }
+            catch (System.Exception ex)
+            {
+                Program.Log($"AudioManager error: {ex}");
+            }
+
             base.Initialize();
+            Program.Log("Initialize finished");
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
+            Program.Log("LoadContent started");
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
-            map = new Map(1);
-            map.Drawmap();
+            try
+            {
+                Program.Log("Creating Map...");
+                map = new Map(audioManager);
+                Program.Log("Map created, calling BuildMap...");
+                map.BuildMap();
+                Program.Log("BuildMap finished");
+            }
+            catch (System.Exception ex)
+            {
+                Program.Log($"Map error: {ex}");
+            }
+
+            Program.Log("LoadContent finished");
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// game-specific content.
-        /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            Program.Log("UnloadContent");
+            audioManager?.Dispose();
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            // TODO: Add your update logic here
+
             Input.Update();
-           map.Update(Input.keystate, gameTime);
-            if(Input.WasKeyPressed(Keys.C))
+
+            try
             {
-                Tolk.Speak(map.Player.me.X+","+map.Player.me.Y+","+map.Player.me.Z, true);
+                map?.Update(Input.keystate, gameTime);
+                audioManager?.Update();
             }
-                base.Update(gameTime);
+            catch (System.Exception ex)
+            {
+                Program.Log($"Update error: {ex}");
+            }
+
+            // Press C to speak coordinates
+            if (Input.WasKeyPressed(Keys.C))
+            {
+                var pos = map.Player.Position;
+                Tolk.Speak($"{pos.X:F1}, {pos.Y:F1}, {pos.Z:F1}, angle {map.Player.Angle:F0}", true);
+            }
+
+            base.Update(gameTime);
         }
 
-   /// <summary>
-    /// This is called when the game should draw itself.
-    /// </summary>
-    /// <param name="gameTime">Provides a snapshot of timing values.</param>
-    protected override void Draw(GameTime gameTime)
+        protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
             base.Draw(gameTime);
         }
     }

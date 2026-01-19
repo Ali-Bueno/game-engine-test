@@ -1,88 +1,108 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E0294CAF-607D-4B3E-B1C6-888140F465D0}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Game3</RootNamespace>
-    <AssemblyName>Game3</AssemblyName>
-    <FileAlignment>512</FileAlignment>
-    <MonoGamePlatform>Windows</MonoGamePlatform>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
-    <DefineConstants>TRACE;WINDOWS</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>Icon.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="DialogBox.cs" />
-    <Compile Include="Doors.cs" />
-    <Compile Include="Game1.cs" />
-    <Compile Include="Input.cs" />
-    <Compile Include="iOverWindow.cs" />
-    <Compile Include="Map.cs" />
-    <Compile Include="Object.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rooms.cs" />
-    <Compile Include="Rotation.cs" />
-    <Compile Include="Stairs.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="irrKlang.NET4">
-      <HintPath>..\..\irrKlang-1.6.0 32 bits\bin\dotnet-4\irrKlang.NET4.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoGame.Framework">
-      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Xml" />
-    <Reference Include="TolkDotNet">
-      <HintPath>..\Game2\Game2\TolkDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="WindowsFormsIntegration" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <MonoGameContentReference Include="Content\Content.mgcb" />
-    <None Include="app.manifest" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>Game3</RootNamespace>
+        <AssemblyName>Game3</AssemblyName>
+        <ApplicationIcon>Icon.ico</ApplicationIcon>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <PlatformTarget>x64</PlatformTarget>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <!-- MonoGame -->
+    <ItemGroup>
+        <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.4.1" />
+        <!-- Disabled temporarily - uncomment when mgcb is in PATH -->
+        <!-- <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.4.1" /> -->
+    </ItemGroup>
+
+    <!-- OpenAL for audio playback -->
+    <ItemGroup>
+        <PackageReference Include="Silk.NET.OpenAL" Version="2.21.0" />
+        <PackageReference Include="Silk.NET.OpenAL.Extensions.Creative" Version="2.21.0" />
+    </ItemGroup>
+
+    <!-- Audio format decoders -->
+    <ItemGroup>
+        <PackageReference Include="NVorbis" Version="0.10.5" />
+        <PackageReference Include="NAudio" Version="2.2.1" />
+    </ItemGroup>
+
+    <!-- Silk.NET dependencies for vaudio debug window -->
+    <ItemGroup>
+        <PackageReference Include="Silk.NET.Core" Version="2.21.0" />
+        <PackageReference Include="Silk.NET.Input" Version="2.21.0" />
+        <PackageReference Include="Silk.NET.OpenGL" Version="2.21.0" />
+        <PackageReference Include="Silk.NET.Windowing" Version="2.21.0" />
+        <PackageReference Include="Silk.NET.Input.Glfw" Version="2.21.0" />
+        <PackageReference Include="Silk.NET.Windowing.Glfw" Version="2.21.0" />
+        <PackageReference Include="Silk.NET.Windowing.Sdl" Version="2.21.0" />
+    </ItemGroup>
+
+    <!-- SkiaSharp for vaudio debug window -->
+    <ItemGroup>
+        <PackageReference Include="SkiaSharp" Version="2.88.8" />
+        <PackageReference Include="SkiaSharp.HarfBuzz" Version="2.88.8" />
+    </ItemGroup>
+
+    <!-- vaudio.dll reference -->
+    <ItemGroup>
+        <Reference Include="vaudio">
+            <HintPath>alisson_da_silva_bueno_raytraced_audio\vaudio.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <!-- Tolk for screen reader support -->
+    <ItemGroup>
+        <Reference Include="TolkDotNet">
+            <HintPath>references\tolk\TolkDotNet.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <!-- Content (disabled temporarily - uncomment when mgcb is in PATH) -->
+    <!--
+    <ItemGroup>
+        <MonoGameContentReference Include="Content\Content.mgcb" />
+    </ItemGroup>
+    -->
+
+    <!-- Icon -->
+    <ItemGroup>
+        <Content Include="Icon.ico" />
+    </ItemGroup>
+
+    <!-- Copy vaudio dependencies to output -->
+    <Target Name="CopyVaudioDependencies" AfterTargets="Build">
+        <!-- Copy license file -->
+        <Copy SourceFiles="alisson_da_silva_bueno_raytraced_audio\vaudio.license" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+
+        <!-- Copy DLL dependencies -->
+        <Copy SourceFiles="alisson_da_silva_bueno_raytraced_audio\SDL2.dll" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+        <Copy SourceFiles="alisson_da_silva_bueno_raytraced_audio\glfw3.dll" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+        <Copy SourceFiles="alisson_da_silva_bueno_raytraced_audio\libSkiaSharp.dll" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+        <Copy SourceFiles="alisson_da_silva_bueno_raytraced_audio\libHarfBuzzSharp.dll" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+
+        <!-- Copy resource folder -->
+        <ItemGroup>
+            <VaudioResources Include="alisson_da_silva_bueno_raytraced_audio\resource\**\*.*" />
+        </ItemGroup>
+        <Copy SourceFiles="@(VaudioResources)" DestinationFolder="$(OutDir)resource\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    </Target>
+
+    <!-- Copy Tolk dependencies -->
+    <Target Name="CopyTolkDependencies" AfterTargets="Build">
+        <Copy SourceFiles="references\tolk\Tolk.dll" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+        <Copy SourceFiles="references\tolk\nvdaControllerClient64.dll" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+    </Target>
+
+    <!-- Copy sounds folder -->
+    <Target Name="CopySounds" AfterTargets="Build">
+        <ItemGroup>
+            <SoundFiles Include="bin\Windows\x86\Debug\sounds\**\*.*" />
+        </ItemGroup>
+        <Copy SourceFiles="@(SoundFiles)" DestinationFolder="$(OutDir)sounds\%(RecursiveDir)" SkipUnchangedFiles="true" />
+    </Target>
 </Project>

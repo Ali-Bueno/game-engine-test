@@ -1,2 +1,21 @@
 *.vs/
+.vs/
 obj/
+bin/
+
+# Vaudio SDK - Código propietario (no incluir en repo público)
+alisson_da_silva_bueno_raytraced_audio/
+
+# Claude Code
+.claude/
+
+# Logs
+*.log
+game_log.txt
+
+# User-specific files
+*.user
+*.suo
+
+# Windows temp files
+nul
