@@ -123,14 +123,5 @@ namespace Game3.GameMap
             MaxY = maxY;
             Height = height;
         }
-
-        /// <summary>
-        /// Verifica si un punto está dentro de la plataforma
-        /// </summary>
-        public bool Contains(Vector3 point)
-        {
-            return point.X >= MinX && point.X <= MaxX &&
-                   point.Y >= MinY && point.Y <= MaxY;
-        }
     }
 }

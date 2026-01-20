@@ -175,17 +175,16 @@ namespace Game3.ECS
             // Create player entity from spawn data
             Entity playerEntity = CreatePlayer(gameMap.SpawnPosition, gameMap.SpawnAngle);
 
-            // Create door entities from legacy doors (extract pure data)
+            // Create door entities from door data
             var doorEntities = new List<Entity>();
-            foreach (var legacyDoor in gameMap.Doors)
+            foreach (var door in gameMap.Doors)
             {
-                // Extract door data from legacy object
                 var doorEntity = CreateDoor(
-                    legacyDoor.Position,
-                    GetDoorSize(legacyDoor, gameMap),
-                    GetDoorSide(legacyDoor, gameMap),
-                    legacyDoor.Room?.Name ?? "Unknown",
-                    GetDoorSoundFolder(legacyDoor)
+                    door.Position,
+                    door.Size,
+                    door.Side,
+                    door.RoomName,
+                    door.SoundFolder
                 );
                 doorEntities.Add(doorEntity);
             }
@@ -232,58 +231,6 @@ namespace Game3.ECS
             }
 
             return (playerEntity, doorEntities, soundEntities, stairEntities, platformEntities);
-        }
-
-        // Helper methods to extract data from legacy objects
-        private Vector3 GetDoorSize(GameDoor door, GameMap.GameMap gameMap)
-        {
-            // Try to find the opening to get correct size
-            foreach (var room in gameMap.Rooms)
-            {
-                foreach (var openingId in new[] { "door1", "door2", "door3", "door1_south", "door2_south", "door3_south" })
-                {
-                    var opening = room.GetOpening(openingId);
-                    if (opening != null)
-                    {
-                        var worldPos = room.GetOpeningWorldPosition(openingId);
-                        if (Vector3.Distance(worldPos, door.Position) < 1f)
-                        {
-                            bool isNorthSouth = opening.Side == WallSide.North || opening.Side == WallSide.South;
-                            return isNorthSouth
-                                ? new Vector3(opening.Width, 0.1f, opening.Height)
-                                : new Vector3(0.1f, opening.Width, opening.Height);
-                        }
-                    }
-                }
-            }
-            // Default size if not found
-            return new Vector3(1.5f, 0.1f, 2.2f);
-        }
-
-        private WallSide GetDoorSide(GameDoor door, GameMap.GameMap gameMap)
-        {
-            foreach (var room in gameMap.Rooms)
-            {
-                foreach (var openingId in new[] { "door1", "door2", "door3", "door1_south", "door2_south", "door3_south" })
-                {
-                    var opening = room.GetOpening(openingId);
-                    if (opening != null)
-                    {
-                        var worldPos = room.GetOpeningWorldPosition(openingId);
-                        if (Vector3.Distance(worldPos, door.Position) < 1f)
-                        {
-                            return opening.Side;
-                        }
-                    }
-                }
-            }
-            return WallSide.North;
-        }
-
-        private string GetDoorSoundFolder(GameDoor door)
-        {
-            // Default sound folder - in a full refactor this would be stored differently
-            return "sounds/doors/door1";
         }
     }
 }

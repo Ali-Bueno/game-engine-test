@@ -114,11 +114,8 @@ Game3/
 │   └── WorldBuilder.cs      # Crea entidades ECS desde datos
 ├── GameMap/
 │   ├── Common.cs            # BoxCollider, Platform, enums
-│   ├── GameMap.cs           # Construcción del mapa (geometría vaudio)
-│   ├── MapDefinition.cs     # Datos puros del mapa (serializable)
+│   ├── GameMap.cs           # Mapa + DoorData/SoundSourceData structs
 │   ├── GameRoom.cs          # Habitación con auto-construcción
-│   ├── Corridor.cs          # Pasillo conector
-│   ├── GameDoor.cs          # Datos de puertas para Build()
 │   ├── GameStair.cs         # Datos de escaleras para Build()
 │   ├── MapRenderer.cs       # Renderizado 3D (usa ECS para queries)
 │   └── ExampleMap.cs        # Ejemplo

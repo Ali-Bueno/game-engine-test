@@ -7,27 +7,49 @@ using vaudio;
 namespace Game3.GameMap
 {
     /// <summary>
-    /// Sistema de mapas para audiojuegos con vaudio raytracing.
-    /// Gestiona habitaciones, pasillos, puertas, escaleras y objetos.
+    /// Pure data for a door (calculated from room opening).
+    /// </summary>
+    public struct DoorData
+    {
+        public Vector3 Position;
+        public Vector3 Size;
+        public WallSide Side;
+        public string RoomName;
+        public string SoundFolder;
+    }
+
+    /// <summary>
+    /// Pure data for a sound source.
+    /// </summary>
+    public struct SoundSourceData
+    {
+        public Vector3 Position;
+        public string SoundPath;
+        public bool Looping;
+        public float Volume;
+    }
+
+    /// <summary>
+    /// Map building system for audio games with vaudio raytracing.
+    /// Manages rooms, doors, stairs, and sound sources.
     /// </summary>
     public class GameMap
     {
         private AudioManager audioManager;
 
-        // Spawn data (replaces GamePlayer)
+        // Spawn data
         private Vector3 spawnPosition;
         private float spawnAngle;
 
-        // Colecciones principales
+        // Main collections
         private List<GameRoom> rooms = new List<GameRoom>();
-        private List<Corridor> corridors = new List<Corridor>();
-        private List<GameDoor> doors = new List<GameDoor>();
+        private List<DoorData> doors = new List<DoorData>();
         private List<GameStair> stairs = new List<GameStair>();
         private List<BoxCollider> colliders = new List<BoxCollider>();
         private List<Platform> platforms = new List<Platform>();
-        private List<SoundSource> soundSources = new List<SoundSource>();
+        private List<SoundSourceData> soundSources = new List<SoundSourceData>();
 
-        // Primitivas pendientes (para añadir durante Build cuando vaudio esté listo)
+        // Pending primitives (for adding during Build when vaudio is ready)
         private List<PendingPrimitive> pendingPrimitives = new List<PendingPrimitive>();
 
         private struct PendingPrimitive
@@ -38,7 +60,7 @@ namespace Game3.GameMap
             public bool HasCollision;
         }
 
-        // Configuración del mundo
+        // World configuration
         private Vector3 worldMin;
         private Vector3 worldMax;
         private float defaultWallHeight = 5f;
@@ -47,17 +69,16 @@ namespace Game3.GameMap
         private MaterialType defaultFloorMaterial = MaterialType.Concrete;
         private MaterialType defaultCeilingMaterial = MaterialType.Concrete;
 
-        // Propiedades públicas
+        // Public properties
         public AudioManager AudioManager => audioManager;
         public Vector3 SpawnPosition => spawnPosition;
         public float SpawnAngle => spawnAngle;
         public List<GameRoom> Rooms => rooms;
-        public List<Corridor> Corridors => corridors;
-        public List<GameDoor> Doors => doors;
+        public List<DoorData> Doors => doors;
         public List<GameStair> Stairs => stairs;
         public List<BoxCollider> Colliders => colliders;
         public List<Platform> Platforms => platforms;
-        public List<SoundSource> SoundSources => soundSources;
+        public List<SoundSourceData> SoundSources => soundSources;
 
         public float DefaultWallHeight { get => defaultWallHeight; set => defaultWallHeight = value; }
         public float DefaultWallThickness { get => defaultWallThickness; set => defaultWallThickness = value; }
@@ -70,56 +91,46 @@ namespace Game3.GameMap
             this.audioManager = audioManager;
         }
 
-        /// <summary>
-        /// Asigna el AudioManager (necesario antes de Build si no se pasó en constructor)
-        /// </summary>
         public void SetAudioManager(AudioManager manager)
         {
             this.audioManager = manager;
         }
 
         /// <summary>
-        /// Calcula los bounds del mapa basándose en las habitaciones, escaleras y plataformas.
-        /// Llamar después de crear todos los elementos pero antes de Build().
+        /// Calculates map bounds based on rooms, stairs, and platforms.
+        /// Call after creating all elements but before Build().
         /// </summary>
         public (Vector3 min, Vector3 max) CalculateBounds()
         {
             Vector3 min = new Vector3(float.MaxValue);
             Vector3 max = new Vector3(float.MinValue);
 
-            // Incluir habitaciones
             foreach (var room in rooms)
             {
                 min = Vector3.Min(min, room.Min);
                 max = Vector3.Max(max, room.Max);
             }
 
-            // Incluir escaleras
             foreach (var stair in stairs)
             {
                 min = Vector3.Min(min, stair.Min);
                 max = Vector3.Max(max, stair.Max);
             }
 
-            // Incluir plataformas
             foreach (var platform in platforms)
             {
                 min = Vector3.Min(min, new Vector3(platform.Min.X, platform.Min.Y, 0));
                 max = Vector3.Max(max, new Vector3(platform.Max.X, platform.Max.Y, platform.Height + 5f));
             }
 
-            // Añadir margen de seguridad
             min -= new Vector3(5f);
             max += new Vector3(5f);
 
             return (min, max);
         }
 
-        #region Creación de Elementos
+        #region Element Creation
 
-        /// <summary>
-        /// Crea una habitación rectangular
-        /// </summary>
         public GameRoom CreateRoom(string name, Vector3 center, Vector3 size)
         {
             var room = new GameRoom(this, name, center, size);
@@ -128,45 +139,78 @@ namespace Game3.GameMap
         }
 
         /// <summary>
-        /// Crea una habitación rectangular con posición especificada por esquina
+        /// Creates a door at a room opening. Calculates position and size automatically.
         /// </summary>
-        public GameRoom CreateRoomFromCorner(string name, Vector3 corner, Vector3 size)
-        {
-            Vector3 center = corner + size / 2f;
-            center.Z = corner.Z; // La Z es la altura del suelo, no del centro
-            return CreateRoom(name, center, size);
-        }
-
-        /// <summary>
-        /// Crea un pasillo que conecta dos habitaciones
-        /// </summary>
-        public Corridor CreateCorridor(GameRoom from, WallSide fromSide, GameRoom to, WallSide toSide, float width)
-        {
-            var corridor = new Corridor(this, from, fromSide, to, toSide, width);
-            corridors.Add(corridor);
-            return corridor;
-        }
-
-        /// <summary>
-        /// Crea una puerta en una apertura de habitación
-        /// </summary>
-        public GameDoor CreateDoor(GameRoom room, string openingId, string soundFolder = "sounds/doors/door1")
+        public DoorData CreateDoor(GameRoom room, string openingId, string soundFolder = "sounds/doors/door1")
         {
             var opening = room.GetOpening(openingId);
             if (opening == null)
             {
                 Program.Log($"GameMap: Opening '{openingId}' not found in room '{room.Name}'");
-                return null;
+                return default;
             }
 
-            var door = new GameDoor(this, room, opening, soundFolder);
-            doors.Add(door);
-            return door;
+            var doorData = CalculateDoorData(room, opening, soundFolder);
+            doors.Add(doorData);
+            return doorData;
         }
 
         /// <summary>
-        /// Crea una escalera
+        /// Calculates door position and size from room opening data.
         /// </summary>
+        private DoorData CalculateDoorData(GameRoom room, RoomOpening opening, string soundFolder)
+        {
+            float thickness = 0.1f;
+            float doorHeight = opening.Height;
+            float doorWidth = opening.Width;
+
+            float x, y;
+            Vector3 size;
+            bool isNorthSouth = (opening.Side == WallSide.North || opening.Side == WallSide.South);
+            float wallLength = isNorthSouth ? room.Size.X : room.Size.Y;
+            float offset = (opening.PositionAlongWall - 0.5f) * wallLength;
+
+            switch (opening.Side)
+            {
+                case WallSide.North:
+                    x = room.Center.X + offset;
+                    y = room.Top;
+                    size = new Vector3(doorWidth, thickness, doorHeight);
+                    break;
+                case WallSide.South:
+                    x = room.Center.X + offset;
+                    y = room.Bottom;
+                    size = new Vector3(doorWidth, thickness, doorHeight);
+                    break;
+                case WallSide.East:
+                    x = room.Right;
+                    y = room.Center.Y + offset;
+                    size = new Vector3(thickness, doorWidth, doorHeight);
+                    break;
+                case WallSide.West:
+                    x = room.Left;
+                    y = room.Center.Y + offset;
+                    size = new Vector3(thickness, doorWidth, doorHeight);
+                    break;
+                default:
+                    x = room.Center.X;
+                    y = room.Center.Y;
+                    size = new Vector3(doorWidth, thickness, doorHeight);
+                    break;
+            }
+
+            float z = room.FloorZ + opening.BottomOffset + doorHeight / 2;
+
+            return new DoorData
+            {
+                Position = new Vector3(x, y, z),
+                Size = size,
+                Side = opening.Side,
+                RoomName = room.Name,
+                SoundFolder = soundFolder
+            };
+        }
+
         public GameStair CreateStair(Vector3 startPosition, float length, float width, float heightChange, StairDirection direction)
         {
             var stair = new GameStair(this, startPosition, length, width, heightChange, direction);
@@ -174,20 +218,17 @@ namespace Game3.GameMap
             return stair;
         }
 
-        /// <summary>
-        /// Añade una fuente de sonido ambiental
-        /// </summary>
-        public SoundSource AddSoundSource(Vector3 position, string soundPath, bool looping = true, float volume = 1f)
+        public void AddSoundSource(Vector3 position, string soundPath, bool looping = true, float volume = 1f)
         {
-            var source = new SoundSource(this, position, soundPath, looping, volume);
-            soundSources.Add(source);
-            return source;
+            soundSources.Add(new SoundSourceData
+            {
+                Position = position,
+                SoundPath = soundPath,
+                Looping = looping,
+                Volume = volume
+            });
         }
 
-        /// <summary>
-        /// Sets the player spawn position and angle.
-        /// The actual player entity is created by WorldBuilder.
-        /// </summary>
         public void SetSpawnPoint(Vector3 position, float angle = 0f)
         {
             spawnPosition = position;
@@ -197,16 +238,16 @@ namespace Game3.GameMap
 
         #endregion
 
-        #region Construcción
+        #region Build
 
         /// <summary>
-        /// Construye todo el mapa (llamar después de crear todos los elementos)
+        /// Builds the entire map (call after creating all elements).
         /// </summary>
         public void Build()
         {
             Program.Log("=== Building GameMap ===");
 
-            // 0. Añadir primitivas pendientes (creadas antes de que vaudio estuviera listo)
+            // Add pending primitives
             if (pendingPrimitives.Count > 0)
             {
                 Program.Log($"Adding {pendingPrimitives.Count} pending primitives...");
@@ -228,36 +269,23 @@ namespace Game3.GameMap
                 pendingPrimitives.Clear();
             }
 
-            // 1. Construir habitaciones (paredes, suelo, techo)
+            // Build rooms (walls, floor, ceiling)
             foreach (var room in rooms)
             {
                 room.Build();
             }
 
-            // 2. Construir pasillos
-            foreach (var corridor in corridors)
-            {
-                corridor.Build();
-            }
-
-            // 3. Construir puertas
-            foreach (var door in doors)
-            {
-                door.Build();
-            }
-
-            // 4. Construir escaleras
+            // Build stairs
             foreach (var stair in stairs)
             {
                 stair.Build();
             }
 
-            // Note: Sound sources are now handled by ECS AmbientSoundSystem
+            // Note: Doors and sound sources are handled by ECS systems
 
-            // Calcular límites del mundo
             CalculateWorldBounds();
 
-            Program.Log($"GameMap built: {rooms.Count} rooms, {corridors.Count} corridors, {doors.Count} doors, {stairs.Count} stairs");
+            Program.Log($"GameMap built: {rooms.Count} rooms, {doors.Count} doors, {stairs.Count} stairs");
             Program.Log($"World bounds: ({worldMin.X}, {worldMin.Y}, {worldMin.Z}) to ({worldMax.X}, {worldMax.Y}, {worldMax.Z})");
         }
 
@@ -272,22 +300,16 @@ namespace Game3.GameMap
                 worldMax = Vector3.Max(worldMax, room.Max);
             }
 
-            // Añadir margen
             worldMin -= new Vector3(5f);
             worldMax += new Vector3(5f);
         }
 
         #endregion
 
-        #region Primitivas (helpers internos)
+        #region Internal Helpers
 
-        /// <summary>
-        /// Añade una primitiva de prisma al raytracing.
-        /// Si vaudio no está inicializado, la guarda para añadirla durante Build().
-        /// </summary>
         internal void AddPrimitive(Vector3 position, Vector3 size, MaterialType material, bool hasCollision = true)
         {
-            // Si vaudio no está listo, guardar para después
             if (audioManager == null || !audioManager.IsVaudioInitialized)
             {
                 pendingPrimitives.Add(new PendingPrimitive
@@ -314,140 +336,6 @@ namespace Game3.GameMap
             }
         }
 
-        /// <summary>
-        /// Añade una primitiva y devuelve la referencia (para poder quitarla después)
-        /// </summary>
-        internal PrismPrimitive AddPrimitiveTracked(Vector3 position, Vector3 size, MaterialType material)
-        {
-            var primitive = new PrismPrimitive()
-            {
-                material = material,
-                size = new Vector3F(size.X, size.Y, size.Z),
-                transform = Matrix4F.CreateTranslation(position.X, position.Y, position.Z)
-            };
-            audioManager.AddPrimitive(primitive);
-            return primitive;
-        }
-
-        /// <summary>
-        /// Quita una primitiva del raytracing
-        /// </summary>
-        internal void RemovePrimitive(Primitive primitive)
-        {
-            audioManager.RemovePrimitive(primitive);
-        }
-
-        /// <summary>
-        /// Añade un collider
-        /// </summary>
-        internal BoxCollider AddCollider(Vector3 position, Vector3 size)
-        {
-            var collider = new BoxCollider(position, size);
-            colliders.Add(collider);
-            return collider;
-        }
-
-        /// <summary>
-        /// Quita un collider
-        /// </summary>
-        internal void RemoveCollider(BoxCollider collider)
-        {
-            colliders.Remove(collider);
-        }
-
         #endregion
-
-
-        #region Queries
-
-        /// <summary>
-        /// Encuentra la habitación en la que está un punto
-        /// </summary>
-        public GameRoom GetRoomAt(Vector3 position)
-        {
-            foreach (var room in rooms)
-            {
-                if (room.Contains(position))
-                    return room;
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Obtiene la altura del suelo en una posición (considerando escaleras y plataformas)
-        /// </summary>
-        public float GetFloorHeight(Vector3 position)
-        {
-            // Primero verificar escaleras
-            foreach (var stair in stairs)
-            {
-                float height = stair.GetHeightAtPosition(position);
-                if (height >= 0)
-                    return height;
-            }
-
-            // Luego verificar plataformas
-            foreach (var platform in platforms)
-            {
-                if (position.X >= platform.Min.X && position.X <= platform.Max.X &&
-                    position.Y >= platform.Min.Y && position.Y <= platform.Max.Y)
-                {
-                    return platform.Height;
-                }
-            }
-
-            // Altura base
-            return 0f;
-        }
-
-        /// <summary>
-        /// Encuentra la puerta más cercana al jugador
-        /// </summary>
-        public GameDoor GetNearestDoor(Vector3 position, float maxDistance = 2f)
-        {
-            GameDoor nearest = null;
-            float nearestDist = maxDistance;
-
-            foreach (var door in doors)
-            {
-                float dist = Vector3.Distance(position, door.Position);
-                if (dist < nearestDist)
-                {
-                    nearestDist = dist;
-                    nearest = door;
-                }
-            }
-
-            return nearest;
-        }
-
-        #endregion
-    }
-
-    /// <summary>
-    /// Sound source data for map building.
-    /// Actual sound playback is handled by ECS AmbientSoundSystem.
-    /// </summary>
-    public class SoundSource
-    {
-        private GameMap map;
-        private Vector3 position;
-        private string soundPath;
-        private bool looping;
-        private float volume;
-
-        public Vector3 Position => position;
-        public string SoundPath => soundPath;
-        public bool Looping => looping;
-        public float Volume => volume;
-
-        public SoundSource(GameMap map, Vector3 position, string soundPath, bool looping, float volume)
-        {
-            this.map = map;
-            this.position = position;
-            this.soundPath = soundPath;
-            this.looping = looping;
-            this.volume = volume;
-        }
     }
 }

@@ -21,6 +21,7 @@ namespace Game3.GameMap
         // Optional ECS World for direct queries
         private World ecsWorld;
         private QueryDescription playerQuery;
+        private QueryDescription doorQuery;
 
         // Geometría estática del mapa
         private VertexBuffer mapVertexBuffer;
@@ -58,7 +59,6 @@ namespace Game3.GameMap
 
         private class DoorGeometry
         {
-            public GameDoor Door;
             public Vector3 Position;
             public Vector3 Size;
             public bool IsNorthSouth;  // Orientación
@@ -80,14 +80,16 @@ namespace Game3.GameMap
         }
 
         /// <summary>
-        /// Sets the ECS World for direct player queries.
-        /// When set, the renderer will query ECS for player position/rotation.
+        /// Sets the ECS World for direct queries.
+        /// When set, the renderer will query ECS for player and door state.
         /// </summary>
         public void SetEcsWorld(World world)
         {
             this.ecsWorld = world;
             this.playerQuery = new QueryDescription()
                 .WithAll<PlayerControlled, Position, Rotation>();
+            this.doorQuery = new QueryDescription()
+                .WithAll<Position, DoorState>();
             Program.Log("MapRenderer: ECS World set for direct queries");
         }
 
@@ -130,20 +132,16 @@ namespace Game3.GameMap
                 AddStairGeometry(stair, vertices, indices);
             }
 
-            // Preparar geometría de puertas (se actualiza dinámicamente)
+            // Preparar geometría de puertas (se actualiza dinámicamente desde ECS)
             foreach (var door in map.Doors)
             {
-                var opening = GetDoorOpening(door);
-                if (opening != null)
+                bool isNorthSouth = door.Side == WallSide.North || door.Side == WallSide.South;
+                doorGeometries.Add(new DoorGeometry
                 {
-                    doorGeometries.Add(new DoorGeometry
-                    {
-                        Door = door,
-                        Position = door.Position,
-                        Size = new Vector3(opening.Width, 0.1f, opening.Height),
-                        IsNorthSouth = opening.Side == WallSide.North || opening.Side == WallSide.South
-                    });
-                }
+                    Position = door.Position,
+                    Size = door.Size,
+                    IsNorthSouth = isNorthSouth
+                });
             }
 
             // Crear buffers del mapa
@@ -164,25 +162,6 @@ namespace Game3.GameMap
 
             geometryBuilt = true;
             Program.Log($"MapRenderer: Built geometry with {vertices.Count} vertices, {mapTriangleCount} triangles");
-        }
-
-        private RoomOpening GetDoorOpening(GameDoor door)
-        {
-            // Buscar el opening asociado a esta puerta
-            foreach (var room in map.Rooms)
-            {
-                foreach (var openingId in new[] { "door1", "door2", "door3", "door1_south", "door2_south", "door3_south" })
-                {
-                    var opening = room.GetOpening(openingId);
-                    if (opening != null)
-                    {
-                        var worldPos = room.GetOpeningWorldPosition(openingId);
-                        if (Vector3.Distance(worldPos, door.Position) < 1f)
-                            return opening;
-                    }
-                }
-            }
-            return null;
         }
 
         private void AddRoomGeometry(GameRoom room, List<VertexPositionColor> vertices, List<int> indices)
@@ -474,26 +453,45 @@ namespace Game3.GameMap
 
         private void DrawDoors()
         {
+            if (ecsWorld == null) return;
+
+            // Get door states from ECS
+            var doorStates = new List<(Vector3 pos, bool isOpen)>();
+            ecsWorld.Query(in doorQuery, (ref Position pos, ref DoorState door) =>
+            {
+                doorStates.Add((new Vector3(pos.X, pos.Y, pos.Z), door.IsOpen));
+            });
+
+            // Match door geometries with ECS states by position
             foreach (var dg in doorGeometries)
             {
-                if (!dg.Door.IsOpen)
+                // Find matching door state from ECS
+                bool isOpen = false;
+                foreach (var (pos, open) in doorStates)
                 {
-                    // Puerta cerrada - dibujar panel
+                    if (Vector3.Distance(pos, dg.Position) < 0.5f)
+                    {
+                        isOpen = open;
+                        break;
+                    }
+                }
+
+                if (!isOpen)
+                {
+                    // Closed door - draw panel
                     var doorVerts = new List<VertexPositionColor>();
                     var doorIndices = new List<int>();
 
-                    // Dimensiones de la puerta
                     float doorHeight = dg.Size.Z;
                     float doorWidth = dg.Size.X > dg.Size.Y ? dg.Size.X : dg.Size.Y;
 
-                    // Panel de la puerta
                     Vector3 panelSize = dg.IsNorthSouth
                         ? new Vector3(doorWidth - 0.1f, 0.08f, doorHeight - 0.1f)
                         : new Vector3(0.08f, doorWidth - 0.1f, doorHeight - 0.1f);
 
                     AddBox(doorVerts, doorIndices, dg.Position, panelSize, DoorPanelColor, DoorFrameColor);
 
-                    // Pomo de la puerta
+                    // Door knob
                     Vector3 knobOffset = dg.IsNorthSouth
                         ? new Vector3(doorWidth * 0.35f, 0.1f, 0)
                         : new Vector3(0.1f, doorWidth * 0.35f, 0);
