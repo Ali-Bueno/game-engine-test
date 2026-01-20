@@ -48,8 +48,11 @@ El engine usa **Arch ECS** para separar datos de lógica. Toda la lógica de gam
 ### Componentes (`ECS/Components/`)
 - **TransformComponents.cs**: `Position`, `Rotation`, `Scale`
 - **PhysicsComponents.cs**: `Velocity`, `Gravity`, `CollisionShape`
-- **AudioComponents.cs**: `AudioSourceRef`, `FootstepSounds`, `AudioListener`, `AmbientSound`
-- **GameplayComponents.cs**: `PlayerControlled`, `PlayerMovement`, `DoorState`, `DoorAudio`, `Interactable`, `StairData`, `PlatformData`
+- **AudioComponents.cs**: `AudioSourceRef`, `FootstepSounds`, `AudioListener`, `AmbientSound`, `SurfaceMaterial`
+- **GameplayComponents.cs**: `PlayerControlled`, `PlayerMovement`, `DoorState`, `DoorAudio`, `Interactable`, `ItemPickup`, `Switch`, `StairData`, `PlatformData`
+- **HealthComponents.cs**: `Health`, `Destructible`, `ToBeDestroyed`, `DamageEvent`
+- **PlatformComponents.cs**: `MovingPlatform`, `DisappearingPlatform`, `FallingPlatform`, `BouncyPlatform`
+- **AIComponents.cs**: `Enemy`, `AIAgent`, `AIMovement`, `Pathfinder`, `PatrolRoute`
 
 ### Sistemas (`ECS/Systems/`)
 | Sistema | Responsabilidad |
@@ -58,11 +61,21 @@ El engine usa **Arch ECS** para separar datos de lógica. Toda la lógica de gam
 | `MovementSystem` | Aplica velocidad a posición |
 | `GravitySystem` | Salto, caída, detección de suelo |
 | `CollisionSystem` | Colisiones con paredes |
-| `FootstepSystem` | Sonidos de pisadas |
+| `FootstepSystem` | Sonidos de pisadas por material |
+| `SurfaceInitSystem` | Crea SurfaceMaterial desde GameMap |
 | `AudioListenerSystem` | Actualiza posición del listener |
 | `DoorInteractionSystem` | Detecta puertas cercanas, solicita toggle |
 | `DoorSystem` | Abre/cierra puertas, gestiona primitivas vaudio |
 | `AmbientSoundSystem` | Inicializa fuentes de sonido ambiental |
+| `InteractionSystem` | Detecta interactuables cercanos, dispara eventos |
+| `PickupSystem` | Procesa recolección de items |
+| `SwitchSystem` | Activa/desactiva switches y targets |
+| `HealthSystem` | Procesa daño, muerte y destrucción |
+| `RemovalSystem` | Elimina entidades marcadas (al final del loop) |
+| `MovingPlatformSystem` | Mueve plataformas entre puntos |
+| `DisappearingPlatformSystem` | Aparece/desaparece plataformas |
+| `AIDetectionSystem` | Vista y oído de enemigos |
+| `AIMovementSystem` | Movimiento y patrulla de enemigos |
 
 ### Game Loop
 ```csharp
@@ -81,35 +94,224 @@ PlayerInputSystem → MovementSystem → GravitySystem → CollisionSystem
 ### WorldBuilder (`ECS/WorldBuilder.cs`)
 Crea entidades ECS puras:
 ```csharp
+// Entidades básicas
 worldBuilder.CreatePlayer(position, angle);
 worldBuilder.CreateDoor(position, size, side, roomName, soundFolder);
 worldBuilder.CreateStair(startPos, length, width, height, direction);
 worldBuilder.CreatePlatform(minX, minY, maxX, maxY, height);
 worldBuilder.CreateAmbientSound(position, soundPath, looping, volume);
+
+// Objetos rompibles e items
+worldBuilder.CreateDestructible(position, health, material);
+worldBuilder.CreatePickup(position, itemType, quantity, pickupSound);
+worldBuilder.CreateSwitch(position, targetEntity, action, isToggle);
+
+// Plataformas dinámicas
+worldBuilder.CreateMovingPlatform(start, end, width, length, speed, pingPong);
+worldBuilder.CreateDisappearingPlatform(position, width, length, visibleTime, invisibleTime);
+
+// Enemigos con IA
+worldBuilder.CreateEnemy(position, enemyType, health, sightRange, hearingRange);
+worldBuilder.CreatePatrollingEnemy(position, enemyType, patrolPoints, health);
 ```
+
+## Sistema de Sonidos por Material
+
+El engine usa un sistema dinámico de sonidos basado en materiales. Los sonidos de pisadas se seleccionan automáticamente según el material del suelo.
+
+### MaterialSoundRegistry (`Audio/MaterialSoundRegistry.cs`)
+Singleton que gestiona los sonidos por material:
+- **Auto-descubrimiento**: Escanea `sounds/materials/` al iniciar
+- **Fallback chain**: Si no hay sonidos para un material, usa el siguiente en la cadena
+- **Aliases**: Permite nombres alternativos (ej: "tile" → Concrete)
+
+### Estructura de Carpetas de Sonidos
+```
+sounds/materials/
+├── concrete/
+│   ├── steps/      # 1.wav, 2.wav, etc.
+│   ├── impact/     # (opcional)
+│   └── break/      # (opcional)
+├── brick/
+│   └── steps/
+├── metal/
+│   └── steps/
+├── woodindoor/
+│   └── steps/
+├── cloth/
+│   └── steps/
+└── material_sounds.json  # Configuración de fallbacks y aliases
+```
+
+### Configuración JSON (`material_sounds.json`)
+```json
+{
+  "fallbacks": {
+    "Cloth": "WoodIndoor",
+    "WoodIndoor": "Concrete"
+  },
+  "aliases": {
+    "tile": "Concrete",
+    "carpet": "Cloth"
+  }
+}
+```
+
+### SurfaceMaterial Component
+Define áreas con materiales específicos. Se crean automáticamente desde GameMap:
+- Habitaciones: Usan el material de suelo (`room.FloorMaterial`)
+- Escaleras: Usan su material con prioridad más alta
+
+### Uso Programático
+```csharp
+// Obtener sonido aleatorio
+string sound = MaterialSoundRegistry.Instance.GetRandomSound(MaterialType.Concrete, SoundCategory.Steps);
+
+// Crear superficie manualmente
+SurfaceInitSystem.CreateSurface(world, MaterialType.Metal, minX, minY, maxX, maxY, minZ, maxZ, priority: 5);
+```
+
+## Sistema de Entidades Dinámicas
+
+### Objetos Rompibles (HealthSystem)
+Entidades con `Health` y `Destructible` pueden ser dañadas y destruidas:
+```csharp
+// Crear objeto rompible
+var crate = worldBuilder.CreateDestructible(position, health: 50f, MaterialType.WoodIndoor);
+
+// Aplicar daño (añadir DamageEvent)
+entity.Add(new DamageEvent(25f, impactPosition));
+```
+- Reproduce sonidos de impacto (`SoundCategory.Impact`) al recibir daño
+- Reproduce sonidos de ruptura (`SoundCategory.Break`) al morir
+- Entidades con `ToBeDestroyed` se eliminan automáticamente
+
+### Items y Pickups (PickupSystem)
+```csharp
+var key = worldBuilder.CreatePickup(
+    position: new Vector3(5, 5, 1),
+    itemType: "key_red",
+    quantity: 1,
+    pickupSound: "sounds/items/pickup.wav"
+);
+
+// Verificar inventario
+if (pickupSystem.HasItem("key_red"))
+    pickupSystem.UseItem("key_red");
+```
+
+### Switches (SwitchSystem)
+Activan acciones en otras entidades:
+```csharp
+var door = worldBuilder.CreateDoor(...);
+var button = worldBuilder.CreateSwitch(
+    position,
+    target: door,
+    action: SwitchAction.ToggleDoor,
+    isToggle: true
+);
+```
+Acciones disponibles: `ToggleDoor`, `MovePlatform`, `EnableEntity`, `DisableEntity`, `TriggerEvent`
+
+### Plataformas Dinámicas
+
+**MovingPlatform**: Se mueve entre dos puntos
+```csharp
+var platform = worldBuilder.CreateMovingPlatform(
+    start: new Vector3(0, 0, 5),
+    end: new Vector3(10, 0, 5),
+    width: 3f, length: 3f,
+    speed: 2f,
+    pingPong: true
+);
+```
+
+**DisappearingPlatform**: Aparece/desaparece con timer
+```csharp
+var platform = worldBuilder.CreateDisappearingPlatform(
+    position, width: 2f, length: 2f,
+    visibleTime: 3f,
+    invisibleTime: 2f,
+    collapseDelay: 0.5f  // Desaparece 0.5s después de pisar
+);
+```
+
+### Sistema de IA (Enemigos)
+
+**Estados del AI**: `Idle`, `Patrolling`, `Alerted`, `Pursuing`, `Attacking`, `Fleeing`, `Returning`
+
+```csharp
+// Enemigo simple
+var zombie = worldBuilder.CreateEnemy(
+    position,
+    enemyType: "zombie",
+    health: 100f,
+    sightRange: 15f,
+    hearingRange: 20f
+);
+
+// Enemigo con patrulla
+var guard = worldBuilder.CreatePatrollingEnemy(
+    position,
+    enemyType: "guard",
+    patrolPoints: new List<Vector3> {
+        new Vector3(0, 0, 0),
+        new Vector3(10, 0, 0),
+        new Vector3(10, 10, 0),
+        new Vector3(0, 10, 0)
+    }
+);
+```
+
+**Detección**:
+- **Vista**: Cono de visión configurable (`SightRange`, `FieldOfView`)
+- **Oído**: Radio de detección de sonidos (`HearingRange`)
+
+**Comportamiento**:
+- `Idle`: Quieto, detecta jugador
+- `Patrolling`: Sigue ruta de patrulla
+- `Alerted`: Investiga último sonido/posición conocida
+- `Pursuing`: Persigue al jugador (corre)
+- `Attacking`: Ataca cuando está en rango
+- `Returning`: Vuelve a ruta de patrulla
 
 ## Estructura de Carpetas
 ```
 Game3/
 ├── Audio/
 │   ├── AudioManager.cs      # Gestión de OpenAL, EFX reverb, vaudio (SINGLETON)
-│   └── AudioSource.cs       # Fuente de audio 3D con raytracing
+│   ├── AudioSource.cs       # Fuente de audio 3D con raytracing
+│   ├── MaterialSoundRegistry.cs  # Gestión de sonidos por material
+│   └── MaterialSoundConfig.cs    # Modelo JSON de configuración
 ├── ECS/
 │   ├── Components/
 │   │   ├── TransformComponents.cs   # Position, Rotation, Scale
 │   │   ├── PhysicsComponents.cs     # Velocity, Gravity, CollisionShape
-│   │   ├── AudioComponents.cs       # AudioSourceRef, FootstepSounds, etc.
-│   │   └── GameplayComponents.cs    # PlayerControlled, DoorState, StairData, etc.
+│   │   ├── AudioComponents.cs       # AudioSourceRef, FootstepSounds, SurfaceMaterial
+│   │   ├── GameplayComponents.cs    # PlayerControlled, DoorState, ItemPickup, Switch
+│   │   ├── HealthComponents.cs      # Health, Destructible, ToBeDestroyed, DamageEvent
+│   │   ├── PlatformComponents.cs    # MovingPlatform, DisappearingPlatform, etc.
+│   │   └── AIComponents.cs          # Enemy, AIAgent, Pathfinder, PatrolRoute
 │   ├── Systems/
 │   │   ├── PlayerInputSystem.cs     # Input WASD/flechas/espacio
 │   │   ├── MovementSystem.cs        # Aplica velocidad
 │   │   ├── GravitySystem.cs         # Salto y caída
 │   │   ├── CollisionSystem.cs       # Colisiones con paredes
-│   │   ├── FootstepSystem.cs        # Sonidos de pisadas
+│   │   ├── FootstepSystem.cs        # Sonidos de pisadas por material
+│   │   ├── SurfaceInitSystem.cs     # Inicializa superficies desde GameMap
 │   │   ├── AudioListenerSystem.cs   # Actualiza listener
 │   │   ├── DoorInteractionSystem.cs # Interacción con puertas (E)
 │   │   ├── DoorSystem.cs            # Lógica de puertas
-│   │   └── AmbientSoundSystem.cs    # Sonidos ambientales
+│   │   ├── AmbientSoundSystem.cs    # Sonidos ambientales
+│   │   ├── InteractionSystem.cs     # Detección de interactuables
+│   │   ├── PickupSystem.cs          # Recolección de items
+│   │   ├── SwitchSystem.cs          # Activación de switches
+│   │   ├── HealthSystem.cs          # Daño y destrucción
+│   │   ├── RemovalSystem.cs         # Eliminación de entidades
+│   │   ├── MovingPlatformSystem.cs  # Plataformas móviles
+│   │   ├── DisappearingPlatformSystem.cs # Plataformas que aparecen/desaparecen
+│   │   ├── AIDetectionSystem.cs     # Vista/oído de enemigos
+│   │   └── AIMovementSystem.cs      # Movimiento de enemigos
 │   ├── SharedResources.cs   # Recursos compartidos (AudioManager, colliders)
 │   └── WorldBuilder.cs      # Crea entidades ECS desde datos
 ├── GameMap/

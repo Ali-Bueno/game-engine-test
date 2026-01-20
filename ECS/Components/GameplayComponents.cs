@@ -135,7 +135,116 @@ namespace Game3.ECS.Components
         Door,
         Item,
         NPC,
-        Trigger
+        Trigger,
+        Switch,
+        Pickup
+    }
+
+    /// <summary>
+    /// Item pickup component for collectable items.
+    /// </summary>
+    public struct ItemPickup
+    {
+        /// <summary>
+        /// Type/name of the item (e.g., "key", "health", "ammo").
+        /// </summary>
+        public string ItemType;
+
+        /// <summary>
+        /// Quantity of the item.
+        /// </summary>
+        public int Quantity;
+
+        /// <summary>
+        /// Sound to play when picked up.
+        /// </summary>
+        public string PickupSound;
+
+        /// <summary>
+        /// Whether this pickup has been collected.
+        /// </summary>
+        public bool IsCollected;
+
+        public ItemPickup(string itemType, int quantity = 1, string pickupSound = null)
+        {
+            ItemType = itemType;
+            Quantity = quantity;
+            PickupSound = pickupSound;
+            IsCollected = false;
+        }
+    }
+
+    /// <summary>
+    /// Switch/button component that can trigger actions on other entities.
+    /// </summary>
+    public struct Switch
+    {
+        /// <summary>
+        /// Whether the switch is currently activated.
+        /// </summary>
+        public bool IsActivated;
+
+        /// <summary>
+        /// Target entity to affect when activated.
+        /// </summary>
+        public Arch.Core.Entity Target;
+
+        /// <summary>
+        /// Action to perform on the target.
+        /// </summary>
+        public SwitchAction Action;
+
+        /// <summary>
+        /// Sound to play when activated.
+        /// </summary>
+        public string ActivateSound;
+
+        /// <summary>
+        /// Sound to play when deactivated (for toggle switches).
+        /// </summary>
+        public string DeactivateSound;
+
+        /// <summary>
+        /// Whether this switch can be toggled (true) or is one-time (false).
+        /// </summary>
+        public bool IsToggle;
+    }
+
+    /// <summary>
+    /// Actions that a switch can perform on its target.
+    /// </summary>
+    public enum SwitchAction
+    {
+        ToggleDoor,
+        MovePlatform,
+        TriggerEvent,
+        EnableEntity,
+        DisableEntity,
+        PlaySound
+    }
+
+    /// <summary>
+    /// Tag component to disable an entity temporarily.
+    /// </summary>
+    public struct Disabled
+    {
+        // Tag component - entity is inactive but not destroyed
+    }
+
+    /// <summary>
+    /// Event raised when player interacts with something.
+    /// </summary>
+    public struct InteractionEvent
+    {
+        /// <summary>
+        /// The entity being interacted with.
+        /// </summary>
+        public Arch.Core.Entity Target;
+
+        /// <summary>
+        /// Type of interaction.
+        /// </summary>
+        public InteractionType Type;
     }
 
     /// <summary>

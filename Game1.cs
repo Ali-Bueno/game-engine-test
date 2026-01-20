@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -74,6 +76,19 @@ namespace Game3
                 Program.Log($"AudioManager error: {ex}");
             }
 
+            // Initialize MaterialSoundRegistry
+            try
+            {
+                Program.Log("Initializing MaterialSoundRegistry...");
+                string soundsPath = Path.Combine(AppContext.BaseDirectory, "sounds");
+                MaterialSoundRegistry.Instance.Initialize(soundsPath);
+                Program.Log("MaterialSoundRegistry initialized");
+            }
+            catch (System.Exception ex)
+            {
+                Program.Log($"MaterialSoundRegistry error: {ex.Message}");
+            }
+
             // Initialize ECS World
             Program.Log("Creating ECS World...");
             ecsWorld = World.Create();
@@ -125,6 +140,9 @@ namespace Game3
                 var (player, doors, soundSources, stairs, platforms) = worldBuilder.BuildFromGameMap(gameMap);
                 playerEntity = player;
                 Program.Log($"ECS entities created: 1 player, {doors.Count} doors, {soundSources.Count} sound sources, {stairs.Count} stairs, {platforms.Count} platforms");
+
+                // Create SurfaceMaterial entities from GameMap
+                SurfaceInitSystem.InitializeFromGameMap(ecsWorld, gameMap);
 
                 // Initialize ECS queries in SharedResources (must be after entities are created)
                 sharedResources.InitializeQueries();

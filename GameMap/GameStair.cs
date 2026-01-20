@@ -31,6 +31,30 @@ namespace Game3.GameMap
         public float Width => width;
         public float HeightChange => heightChange;
         public StairDirection Direction => direction;
+        public MaterialType Material => material;
+
+        /// <summary>
+        /// End position of the stair (top of the stairs).
+        /// </summary>
+        public Vector3 EndPosition
+        {
+            get
+            {
+                switch (direction)
+                {
+                    case StairDirection.North:
+                        return new Vector3(startPosition.X, startPosition.Y + length, startPosition.Z + heightChange);
+                    case StairDirection.South:
+                        return new Vector3(startPosition.X, startPosition.Y - length, startPosition.Z + heightChange);
+                    case StairDirection.East:
+                        return new Vector3(startPosition.X + length, startPosition.Y, startPosition.Z + heightChange);
+                    case StairDirection.West:
+                        return new Vector3(startPosition.X - length, startPosition.Y, startPosition.Z + heightChange);
+                    default:
+                        return startPosition + new Vector3(0, 0, heightChange);
+                }
+            }
+        }
 
         /// <summary>
         /// Esquina mínima del bounding box de la escalera

@@ -1,20 +1,22 @@
 using System;
 using Arch.Core;
 using Microsoft.Xna.Framework;
+using Game3.Audio;
 using Game3.ECS.Components;
+using vaudio;
 
 namespace Game3.ECS.Systems
 {
     /// <summary>
     /// Plays footstep sounds when entities are moving and grounded.
-    /// Pure ECS system - uses SharedResources for stair detection.
+    /// Uses MaterialSoundRegistry for material-based sound selection.
     /// </summary>
     public class FootstepSystem
     {
         private readonly World world;
         private readonly SharedResources resources;
         private readonly QueryDescription footstepQuery;
-        private readonly Random random = new Random();
+        private readonly QueryDescription surfaceQuery;
 
         public FootstepSystem(World world, SharedResources resources)
         {
@@ -22,6 +24,8 @@ namespace Game3.ECS.Systems
             this.resources = resources;
             this.footstepQuery = new QueryDescription()
                 .WithAll<Position, PlayerMovement, Gravity, FootstepSounds>();
+            this.surfaceQuery = new QueryDescription()
+                .WithAll<SurfaceMaterial>();
         }
 
         public void Update(GameTime gameTime)
@@ -31,15 +35,24 @@ namespace Game3.ECS.Systems
             world.Query(in footstepQuery, (ref Position pos, ref PlayerMovement movement,
                 ref Gravity gravity, ref FootstepSounds footsteps) =>
             {
-                // Update stair status using SharedResources (ECS query)
                 Vector3 position = pos.ToVector3();
+
+                // Update stair status using SharedResources (ECS query)
                 footsteps.IsOnStair = resources.IsOnStair(position);
+
+                // Detect current material from SurfaceMaterial entities
+                footsteps.CurrentMaterial = DetectMaterial(position, footsteps.CurrentMaterial);
+
+                // Calculate effective interval (slower on stairs)
+                float effectiveInterval = footsteps.IsOnStair
+                    ? footsteps.Interval * footsteps.StairIntervalMultiplier
+                    : footsteps.Interval;
 
                 // Only play footsteps if moving and grounded
                 if (movement.IsMoving && gravity.IsGrounded)
                 {
                     footsteps.Timer += deltaTime;
-                    if (footsteps.Timer >= footsteps.Interval)
+                    if (footsteps.Timer >= effectiveInterval)
                     {
                         footsteps.Timer = 0f;
                         PlayFootstep(pos, footsteps);
@@ -48,9 +61,31 @@ namespace Game3.ECS.Systems
                 else
                 {
                     // Reset timer to play immediately when starting to move
-                    footsteps.Timer = footsteps.Interval;
+                    footsteps.Timer = effectiveInterval;
                 }
             });
+        }
+
+        /// <summary>
+        /// Detects the material at a given position from SurfaceMaterial entities.
+        /// Returns the material with highest priority if multiple surfaces overlap.
+        /// </summary>
+        private MaterialType DetectMaterial(Vector3 position, MaterialType fallback)
+        {
+            MaterialType detectedMaterial = fallback;
+            int highestPriority = int.MinValue;
+
+            world.Query(in surfaceQuery, (ref SurfaceMaterial surface) =>
+            {
+                if (surface.Contains(position.X, position.Y, position.Z) &&
+                    surface.Priority > highestPriority)
+                {
+                    detectedMaterial = surface.Material;
+                    highestPriority = surface.Priority;
+                }
+            });
+
+            return detectedMaterial;
         }
 
         private void PlayFootstep(Position pos, FootstepSounds footsteps)
@@ -59,19 +94,15 @@ namespace Game3.ECS.Systems
             float footY = pos.Y;
             float footZ = pos.Z + 0.1f;
 
-            string soundPath;
-            if (footsteps.IsOnStair)
-            {
-                int stepNumber = random.Next(1, footsteps.StairSoundCount + 1);
-                soundPath = $"{footsteps.StairSoundFolder}/{stepNumber}.wav";
-            }
-            else
-            {
-                int stepNumber = random.Next(1, footsteps.NormalSoundCount + 1);
-                soundPath = $"{footsteps.NormalSoundFolder}/{stepNumber}.ogg";
-            }
+            // Get random sound from MaterialSoundRegistry
+            string soundPath = MaterialSoundRegistry.Instance.GetRandomSound(
+                footsteps.CurrentMaterial,
+                SoundCategory.Steps);
 
-            resources.AudioManager.Play3D(soundPath, footX, footY, footZ, false, footsteps.Volume);
+            if (soundPath != null)
+            {
+                resources.AudioManager.Play3D(soundPath, footX, footY, footZ, false, footsteps.Volume);
+            }
         }
     }
 }

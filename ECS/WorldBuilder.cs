@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using Arch.Core;
+using Arch.Core.Extensions;
 using Microsoft.Xna.Framework;
 using Game3.ECS.Components;
 using Game3.GameMap;
+using vaudio;
 
 namespace Game3.ECS
 {
@@ -47,14 +49,12 @@ namespace Game3.ECS
                 new CollisionShape(0.3f, PlayerHeight),
                 new FootstepSounds
                 {
-                    NormalSoundFolder = "sounds/steps/womanstep",
-                    StairSoundFolder = "sounds/steps/wood",
-                    NormalSoundCount = 13,
-                    StairSoundCount = 4,
+                    CurrentMaterial = MaterialType.Concrete,  // Default material
                     Interval = 0.4f,
                     Volume = 0.5f,
                     Timer = 0.4f,
-                    IsOnStair = false
+                    IsOnStair = false,
+                    StairIntervalMultiplier = 1.2f  // Slightly slower on stairs
                 },
                 new AudioListener(EyeHeight)
             );
@@ -165,6 +165,161 @@ namespace Game3.ECS
             Program.Log($"ECS: Created ambient sound entity at ({position.X:F1}, {position.Y:F1}, {position.Z:F1})");
             return entity;
         }
+
+        #region New Entity Creation Methods
+
+        /// <summary>
+        /// Creates a destructible object entity.
+        /// </summary>
+        public Entity CreateDestructible(Vector3 position, float health, MaterialType material, bool removeOnBreak = true)
+        {
+            var entity = world.Create(
+                new Position(position.X, position.Y, position.Z),
+                new Health(health),
+                new Destructible(material, removeOnBreak)
+            );
+
+            Program.Log($"ECS: Created destructible entity at ({position.X:F1}, {position.Y:F1}, {position.Z:F1})");
+            return entity;
+        }
+
+        /// <summary>
+        /// Creates an item pickup entity.
+        /// </summary>
+        public Entity CreatePickup(Vector3 position, string itemType, int quantity = 1, string pickupSound = null, float interactRadius = 1.5f)
+        {
+            var entity = world.Create(
+                new Position(position.X, position.Y, position.Z),
+                new ItemPickup(itemType, quantity, pickupSound),
+                new Interactable
+                {
+                    Radius = interactRadius,
+                    Type = InteractionType.Pickup
+                }
+            );
+
+            Program.Log($"ECS: Created pickup entity '{itemType}' at ({position.X:F1}, {position.Y:F1}, {position.Z:F1})");
+            return entity;
+        }
+
+        /// <summary>
+        /// Creates a switch entity that controls another entity.
+        /// </summary>
+        public Entity CreateSwitch(Vector3 position, Entity target, SwitchAction action, bool isToggle = true, string activateSound = null, float interactRadius = 2f)
+        {
+            var entity = world.Create(
+                new Position(position.X, position.Y, position.Z),
+                new Switch
+                {
+                    IsActivated = false,
+                    Target = target,
+                    Action = action,
+                    ActivateSound = activateSound,
+                    DeactivateSound = null,
+                    IsToggle = isToggle
+                },
+                new Interactable
+                {
+                    Radius = interactRadius,
+                    Type = InteractionType.Switch
+                }
+            );
+
+            Program.Log($"ECS: Created switch entity at ({position.X:F1}, {position.Y:F1}, {position.Z:F1})");
+            return entity;
+        }
+
+        /// <summary>
+        /// Creates a moving platform entity.
+        /// </summary>
+        public Entity CreateMovingPlatform(Vector3 start, Vector3 end, float width, float length, float speed, bool pingPong = true, float waitTime = 0f)
+        {
+            var entity = world.Create(
+                new Position(start.X, start.Y, start.Z),
+                new PlatformData
+                {
+                    MinX = start.X - width / 2,
+                    MinY = start.Y - length / 2,
+                    MaxX = start.X + width / 2,
+                    MaxY = start.Y + length / 2,
+                    Height = start.Z
+                },
+                new MovingPlatform(start, end, speed, pingPong)
+                {
+                    WaitTime = waitTime,
+                    IsMoving = true  // Start moving immediately
+                }
+            );
+
+            Program.Log($"ECS: Created moving platform from ({start.X:F1}, {start.Y:F1}, {start.Z:F1}) to ({end.X:F1}, {end.Y:F1}, {end.Z:F1})");
+            return entity;
+        }
+
+        /// <summary>
+        /// Creates a disappearing platform entity.
+        /// </summary>
+        public Entity CreateDisappearingPlatform(Vector3 position, float width, float length, float visibleTime, float invisibleTime, float collapseDelay = 0f)
+        {
+            var entity = world.Create(
+                new Position(position.X, position.Y, position.Z),
+                new PlatformData
+                {
+                    MinX = position.X - width / 2,
+                    MinY = position.Y - length / 2,
+                    MaxX = position.X + width / 2,
+                    MaxY = position.Y + length / 2,
+                    Height = position.Z
+                },
+                new DisappearingPlatform(visibleTime, invisibleTime)
+                {
+                    CollapseDelay = collapseDelay
+                }
+            );
+
+            Program.Log($"ECS: Created disappearing platform at ({position.X:F1}, {position.Y:F1}, {position.Z:F1})");
+            return entity;
+        }
+
+        /// <summary>
+        /// Creates an enemy entity with AI.
+        /// </summary>
+        public Entity CreateEnemy(Vector3 position, string enemyType, float health = 100f, float sightRange = 15f, float hearingRange = 20f)
+        {
+            var entity = world.Create(
+                new Position(position.X, position.Y, position.Z),
+                new Rotation(0f),
+                new Velocity(0, 0, 0),
+                new Health(health),
+                new Enemy(enemyType),
+                new AIAgent(sightRange, hearingRange),
+                new AIMovement(2f, 4f),
+                new CollisionShape(0.4f, 1.8f),
+                new Gravity(true)
+            );
+
+            Program.Log($"ECS: Created enemy '{enemyType}' at ({position.X:F1}, {position.Y:F1}, {position.Z:F1})");
+            return entity;
+        }
+
+        /// <summary>
+        /// Creates an enemy entity with a patrol route.
+        /// </summary>
+        public Entity CreatePatrollingEnemy(Vector3 position, string enemyType, List<Vector3> patrolPoints, float health = 100f)
+        {
+            var entity = CreateEnemy(position, enemyType, health);
+
+            // Add patrol route
+            entity.Add(new PatrolRoute(patrolPoints, loop: true, waitTime: 1f));
+
+            // Start in patrol state
+            ref var ai = ref entity.Get<AIAgent>();
+            ai.State = AIState.Patrolling;
+
+            Program.Log($"ECS: Added patrol route with {patrolPoints.Count} waypoints to enemy");
+            return entity;
+        }
+
+        #endregion
 
         /// <summary>
         /// Creates all ECS entities from a GameMap.
