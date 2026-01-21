@@ -104,15 +104,23 @@ namespace Game3.GameMap
             float balconyHeight = 3f;   // Altura de la habitación del balcón
 
             // Crear balcón como habitación cerrada para que funcione el reverb
+            // La apertura debe estar centrada exactamente donde termina la escalera
+            // Stair center X = -10, room center X = -13, room width = 14
+            // Position = 0.5 + (stairX - roomCenterX) / roomWidth = 0.5 + 3/14 ≈ 0.714
+            // Width = stairWidth + 1 para margen con radio de colisión del jugador
+            float openingPosition = 0.5f + (stairX - (-13f)) / balconyWidth;  // ≈ 0.714
+            float openingWidth = stairWidth + 1f;  // 5 units (4 + margin)
+
             var balcony = map.CreateRoom("Balcón Superior",
                 center: new Vector3(-13f, (balconyStartY + 75f) / 2f, upperFloorHeight),
                 size: new Vector3(balconyWidth, balconyLength, balconyHeight))
                 .SetFloorMaterial(MaterialType.WoodIndoor)
                 .SetWallMaterial(MaterialType.Brick)
-                .AddOpening("stair_entrance", WallSide.South, 0.7f, stairWidth, balconyHeight, 0f);  // Entrada desde escaleras
+                .AddOpening("stair_entrance", WallSide.South, openingPosition, openingWidth, balconyHeight, 0f);  // Entrada desde escaleras
 
             // Añadir plataforma para que el jugador pueda caminar
-            map.Platforms.Add(new Platform(-20f, balconyStartY, -6f, 75f, upperFloorHeight));
+            // Extender ligeramente hacia el sur para asegurar transición suave con la escalera
+            map.Platforms.Add(new Platform(-20f, balconyStartY - 0.5f, -6f, 75f, upperFloorHeight));
 
             // Barandilla del balcón (borde este) - decorativa, el este tiene pared de la habitación
             float railHeight = 1.2f;
